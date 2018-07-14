@@ -382,7 +382,7 @@ Contact our support team at <a href="mailto:support@epiapi.com">supoort@epiapi.c
 We will send you links to join us on Slack or other chat apps (DingTalk, QQ etc) - any questions just ask! <br></p>
 
 <p><strong>Step 5. Register a production account</strong> <br>
-Once testing has completed, you can register a live account <a href="https://sendwyre.com">here</a>. You must go through the entire onboarding and verification process before you are allowed to interact with the account. <br></p>
+Once testing has completed, you can register a live account <a href="https://testwyre.com">here</a>. You must go through the entire onboarding and verification process before you are allowed to interact with the account. <br></p>
 
 <p><strong>Step 6. Go live!</strong><br>
 Once fully onboarded you are ready to go!</p>
@@ -425,7 +425,7 @@ Once fully onboarded you are ready to go!</p>
         </span><span class="s2">"transient"</span><span class="p">:</span><span class="kc">false</span><span class="w"> </span><span class="err">&lt;br&gt;</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='production-test-endpoints'>Production/Test Endpoints</h2>
-<p>We have two environments, <code>testwyre</code> for API integration testing and <code>sendwyre</code>, our production environment.</p>
+<p>We have two environments, <code>testwyre</code> for API integration testing and <code>testwyre</code>, our production environment.</p>
 
 <table><thead>
 <tr>
@@ -439,7 +439,7 @@ Once fully onboarded you are ready to go!</p>
 </tr>
 <tr>
 <td>Production</td>
-<td><a href="https://sendwyre.com"> https://sendwyre.com </a></td>
+<td><a href="https://testwyre.com"> https://testwyre.com </a></td>
 </tr>
 </tbody></table>
 <h2 id='pagination'>Pagination</h2>
@@ -477,7 +477,7 @@ Once fully onboarded you are ready to go!</p>
   <span class="nc">ACCOUNT_ID</span> <span class="o">=</span> <span class="s1">'YOUR_ACCOUNT_ID_HERE'</span>
   <span class="no">API_KEY</span> <span class="o">=</span> <span class="s1">'YOUR_API_KEY_HERE'</span>
   <span class="no">SEC_KEY</span> <span class="o">=</span> <span class="s1">'YOUR_SECRET_KEY_HERE'</span>
-  <span class="no">API_URL</span> <span class="o">=</span> <span class="s1">'https://api.sendwyre.com'</span>
+  <span class="no">API_URL</span> <span class="o">=</span> <span class="s1">'https://api.testwyre.com'</span>
 
   <span class="k">def</span> <span class="nf">create_transfer</span> <span class="n">options</span>
     <span class="n">api_post</span> <span class="s1">'/transfers'</span><span class="p">,</span> <span class="n">options</span>
@@ -527,7 +527,7 @@ Once fully onboarded you are ready to go!</p>
 <span class="k">class</span> <span class="nc">MassPay_API</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">account_id</span><span class="p">,</span> <span class="n">api_version</span><span class="p">,</span> <span class="n">api_key</span><span class="p">,</span> <span class="n">api_secret</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">account_id</span> <span class="o">=</span> <span class="n">account_id</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">=</span> <span class="s">'https://api.sendwyre.com/{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">api_version</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">=</span> <span class="s">'https://api.testwyre.com/{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">api_version</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_version</span> <span class="o">=</span> <span class="n">api_version</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_secret</span> <span class="o">=</span> <span class="n">api_secret</span>
@@ -626,17 +626,17 @@ Once fully onboarded you are ready to go!</p>
     <span class="n">String</span> <span class="n">apiKey</span> <span class="o">=</span> <span class="s">"YOUR_API_KEY_HERE"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">secretKey</span> <span class="o">=</span> <span class="s">"YOUR_SECRET_KEY_HERE"</span><span class="o">;</span>
 
-    <span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.sendwyre.com/account"</span><span class="o">;</span>
+    <span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.testwyre.com/account"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">method</span> <span class="o">=</span> <span class="s">"GET"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">data</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
 
     <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">executeWyreRequest</span><span class="o">(</span><span class="n">url</span><span class="o">,</span> <span class="s">""</span><span class="o">,</span> <span class="n">method</span><span class="o">,</span> <span class="n">apiKey</span><span class="o">,</span> <span class="n">secretKey</span><span class="o">);</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
 
-    <span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.sendwyre.com/transfers"</span><span class="o">;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.testwyre.com/transfers"</span><span class="o">;</span>
     <span class="n">method</span> <span class="o">=</span> <span class="s">"POST"</span><span class="o">;</span>
     <span class="n">data</span> <span class="o">=</span> <span class="s">"{"</span> <span class="o">+</span>
-        <span class="s">"  \"dest\": \"sam@sendwyre.com\","</span> <span class="o">+</span>
+        <span class="s">"  \"dest\": \"sam@testwyre.com\","</span> <span class="o">+</span>
         <span class="s">"  \"destCurrency\": \"USD\","</span> <span class="o">+</span>
         <span class="s">"  \"sourceCurrency\" : \"BTC\","</span> <span class="o">+</span>
         <span class="s">"  \"sourceAmount\" : \"1\","</span> <span class="o">+</span>
@@ -744,7 +744,7 @@ Once fully onboarded you are ready to go!</p>
 <!-- ```php
 <?php
     function make_authenticated_request($endpoint, $method, $body) {
-        $url = 'https://api.sendwyre.com';
+        $url = 'https://api.testwyre.com';
         $api_key = "YOUR_API_KEY_HERE";
         $secret_key = "YOUR_SECRET_KEY_HERE";
 
@@ -828,7 +828,7 @@ Once fully onboarded you are ready to go!</p>
             <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">body</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;();</span>
             <span class="n">body</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"sourceCurrency"</span><span class="p">,</span> <span class="s">"USD"</span><span class="p">);</span>
             <span class="n">body</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"sourceAmount"</span><span class="p">,</span> <span class="s">"10"</span><span class="p">);</span>
-            <span class="n">body</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"dest"</span><span class="p">,</span> <span class="s">"test@sendwyre.com"</span><span class="p">);</span>
+            <span class="n">body</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"dest"</span><span class="p">,</span> <span class="s">"test@testwyre.com"</span><span class="p">);</span>
             <span class="n">HttpWebResponse</span> <span class="n">transferResponse</span> <span class="p">=</span> <span class="n">wyre</span><span class="p">.</span><span class="nf">Post</span><span class="p">(</span><span class="s">"/transfers"</span><span class="p">,</span> <span class="n">body</span><span class="p">);</span>
             <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="nf">GetResponseBody</span><span class="p">(</span><span class="n">transferResponse</span><span class="p">));</span>
         <span class="p">}</span>
@@ -839,7 +839,7 @@ Once fully onboarded you are ready to go!</p>
     <span class="p">}</span>
     <span class="k">public</span> <span class="k">class</span> <span class="nc">WyreApi</span>
     <span class="p">{</span>
-        <span class="k">private</span> <span class="k">const</span> <span class="n">String</span> <span class="n">domain</span> <span class="p">=</span> <span class="s">"https://api.sendwyre.com"</span><span class="p">;</span>
+        <span class="k">private</span> <span class="k">const</span> <span class="n">String</span> <span class="n">domain</span> <span class="p">=</span> <span class="s">"https://api.testwyre.com"</span><span class="p">;</span>
         <span class="k">private</span> <span class="k">const</span> <span class="n">String</span> <span class="n">apiKey</span> <span class="p">=</span> <span class="s">"YOUR_API_KEY_HERE"</span><span class="p">;</span>
         <span class="k">private</span> <span class="k">const</span> <span class="n">String</span> <span class="n">secKey</span> <span class="p">=</span> <span class="s">"YOUR_SECRET_KEY_HERE"</span><span class="p">;</span>
         <span class="k">public</span> <span class="n">HttpWebResponse</span> <span class="nf">Get</span><span class="p">(</span><span class="kt">string</span> <span class="n">path</span><span class="p">)</span>
@@ -1038,7 +1038,7 @@ Once fully onboarded you are ready to go!</p>
 </tr>
 <tr>
 <td>CustomerSupportException</td>
-<td>Please contact us at support@sendwyre.com to resolve this!</td>
+<td>Please contact us at support@testwyre.com to resolve this!</td>
 <td>400</td>
 </tr>
 <tr>
@@ -1155,7 +1155,7 @@ curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
 <td>ownerSrn: &quot;wallet:[WALLET_ID]&quot;</td>
 </tr>
 <tr>
-<td>filename (optional): “coiDoc.pdf”</td>
+<td>filename (optional): &quot;coiDoc.pdf&quot;</td>
 </tr>
 </tbody></table>
 
@@ -1282,7 +1282,7 @@ curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
 </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"USD Personal example"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><code>POST</code> https://api.sendwyre.com/v2/transfers <br></p>
+<p><code>POST</code> https://api.testwyre.com/v2/transfers <br></p>
 
 <p>The user decides to buy BTC with a portion of their USD. <br></p>
 
@@ -1298,9 +1298,9 @@ curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
 </span></code></pre>
 <p><code>POST</code> https://api.testwyre.com/v2/transfers <br></p>
 
-<p>Once the user deposits USD on the client&#39;s platform, <a href="http://sendwyre.com/docs/#create-transfer">create a transfer</a> on Wyre by sending USD from the master account to that user&#39;s wallet from Step 1 and automatically Confirm Transfer. <br></p>
+<p>Once the user deposits USD on the client&#39;s platform, <a href="http://testwyre.com/docs/#create-transfer">create a transfer</a> on Wyre by sending USD from the master account to that user&#39;s wallet from Step 1 and automatically Confirm Transfer. <br></p>
 
-<p>For <code>source</code>, put your Wyre account ID which can be found <a href="https://www.sendwyre.com/settings/basic-info">here</a>.</p>
+<p>For <code>source</code>, put your Wyre account ID which can be found <a href="https://www.testwyre.com/settings/basic-info">here</a>.</p>
 <h3 id='step-6-user-withdraws-some-btc'>Step 6. User withdraws some BTC</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
 </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:walletId"</span><span class="w">
 </span><span class="s2">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bitcoin: bitcoin address"</span><span class="p">,</span><span class="w">
@@ -1310,7 +1310,7 @@ curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
 </span><span class="s2">"autoConfirm"</span><span class="p">:</span><span class="s2">"true"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><code>POST</code> https://api.sendwyre.com/v2/transfers <br></p>
+<p><code>POST</code> https://api.testwyre.com/v2/transfers <br></p>
 
 <p>Let&#39;s say the user wants to withdraw BTC from the client&#39;s platform. <br></p>
 
@@ -1334,13 +1334,13 @@ curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
 
 <p>Afterwards, the client&#39;s platform should deliver payout to the user from the client&#39;s bank account.</p>
 <h3 id='step-8-your-platform-wants-to-withdraw-usd-back-to-own-account'>Step 8. Your platform wants to withdraw USD back to own account.</h3>
-<p>You can send a request to our payment operations team at <code>payops@sendwyre.com</code>.</p>
+<p>You can send a request to our payment operations team at <code>payops@testwyre.com</code>.</p>
 <h1 id='account'>Account</h1><h2 id='account-details'>Account Details</h2>
 <p>This endpoint retrieves all the information related to your account. <br></p>
 
 <p><strong>Definition</strong> <br></p>
 
-<p><code>GET</code> https://api.sendwyre.com/v2/account <br></p>
+<p><code>GET</code> https://api.testwyre.com/v2/account <br></p>
 
 <p>When checking your balance you should refer to the <code>availableBalance</code> object to see how much of a given currency you have available to transfer.</p>
 
@@ -1405,64 +1405,60 @@ curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
 </tbody></table>
 
 <p><strong>Result Format</strong> <br></p>
-
-<pre class="center-column">
-{
-  "id": "121pd02kt0rnb24nclsg4bglanimurqp",
-  "createdAt": 1404177262332,
-  "updatedAt": 1404177262332,
-  "loginAt": 1404177262332,
-  "rank": 0,
-  "profile": {
-    "firstName": "",
-    "lastName": "",
-    "locale": "EN_us",
-    "address": {
-      "street1": null,
-      "street2": null,
-      "city": null,
-      "state": null,
-      "postalCode": null,
-      "country": "USA"
-    },
-    "businessAccount": true,
-    "taxId": null,
-    "doingBusinessAs": null,
-    "website": null,
-    "dateOfBirth": 1404177262332,
-    "notifyEmail": true,
-    "notifyCellphone": true,
-    "notifyApnsDevice": true,
-    "mfaRequiredForPwChange": false,
-    "mfaRequiredForDcPurchase": false,
-    "mfaRequiredForSendingFunds": false,
-    "authyPhoneNumber": null
-  },
-  "paymentMethods": [],
-  "identities": [
-    {
-      "srn": "email:richard@apiepi.com",
-      "createdAt": 1404177262332,
-      "verifiedAt": 1404177262332
-    }
-  ],
-  "depositAddresses": {
-    "BTC": "1H9K67J9NcYtzmFGojR9cgM5ybxEddySwu"
-  },
-  "totalBalances": {
-    "USD": 11.8934023
-  },
-  "availableBalances": {
-    "USD": 10.8934023,
-  },
-  "email": "richard@apiepi.com",
-  "cellphone": "+12312313112"
-}
-</pre>
-<h1 id='wallets'>Wallets</h1>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"121pd02kt0rnb24nclsg4bglanimurqp"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1404177262332</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1404177262332</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"loginAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1404177262332</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EN_us"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"street1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"street2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"postalCode"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"businessAccount"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"taxId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"doingBusinessAs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"website"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="mi">1404177262332</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notifyEmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notifyCellphone"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notifyApnsDevice"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mfaRequiredForPwChange"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mfaRequiredForDcPurchase"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mfaRequiredForSendingFunds"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"authyPhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"paymentMethods"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+  </span><span class="s2">"identities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"srn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email:richard@apiepi.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1404177262332</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"verifiedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1404177262332</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"depositAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1H9K67J9NcYtzmFGojR9cgM5ybxEddySwu"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"totalBalances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">11.8934023</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"availableBalances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.8934023</span><span class="p">,</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"richard@apiepi.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"cellphone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+12312313112"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h1 id='wallets'>Wallets</h1>
 <p>If you need to manage your account&#39;s balances into individual buckets, you may choose to use the Wallets API. You can send Bitcoin or Ethereum to the wallet which will be automatically assigned a unique bitcoin or ethereum deposit address.</p>
-<h2 id='create-wallet'>Create Wallet</h2><pre class="highlight plaintext"><code>
-curl -v -XPOST 'https://api.sendwyre.com/v2/wallets' \
+<h2 id='create-wallet'>Create Wallet</h2><pre class="highlight plaintext"><code>curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
   -H "Content-Type: application/json" \
   -H "X-Api-Key: {api-key}" \
   -H "X-Api-Signature: {signature}" \
@@ -1488,7 +1484,7 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallets' \
     <span class="n">String</span> <span class="n">apiKey</span> <span class="o">=</span> <span class="s">"fll36l3t35udalcqlh4ng6bm4qpbgher"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">secretKey</span> <span class="o">=</span> <span class="s">"tr3epinbk3maist0n3ijk18bm6dikrq6"</span><span class="o">;</span>
 
-    <span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.sendwyre.com/v2/wallets"</span><span class="o">;</span>
+    <span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.testwyre.com/v2/wallets"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">method</span> <span class="o">=</span> <span class="s">"POST"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">data</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
 
@@ -1623,7 +1619,7 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallets' \
 <span class="k">class</span> <span class="nc">MassPay_API</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">account_id</span><span class="p">,</span> <span class="n">api_version</span><span class="p">,</span> <span class="n">api_key</span><span class="p">,</span> <span class="n">api_secret</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">account_id</span> <span class="o">=</span> <span class="n">account_id</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">=</span> <span class="s">'https://api.sendwyre.com/{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">api_version</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">=</span> <span class="s">'https://api.testwyre.com/{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">api_version</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_version</span> <span class="o">=</span> <span class="n">api_version</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_secret</span> <span class="o">=</span> <span class="n">api_secret</span>
@@ -1701,7 +1697,7 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallets' \
 '''</span><span class="n">php</span>
 <span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
     <span class="n">function</span> <span class="n">make_authenticated_request</span><span class="p">(</span><span class="err">$</span><span class="n">endpoint</span><span class="p">,</span> <span class="err">$</span><span class="n">method</span><span class="p">,</span> <span class="err">$</span><span class="n">body</span><span class="p">)</span> <span class="p">{</span>
-        <span class="err">$</span><span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.sendwyre.com'</span><span class="p">;</span>
+        <span class="err">$</span><span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.testwyre.com'</span><span class="p">;</span>
         <span class="err">$</span><span class="n">api_key</span> <span class="o">=</span> <span class="s">"bh405n7stsuo5ut30iftrsl71b4iqjnv"</span><span class="p">;</span>
         <span class="err">$</span><span class="n">secret_key</span> <span class="o">=</span> <span class="s">"a19cvrchgja82urvn47kirrlrrb7stgg"</span><span class="p">;</span>
 
@@ -1782,7 +1778,7 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallets' \
 
 <p><strong>Definition</strong> <br></p>
 
-<p><code>POST</code> https://api.sendwyre.com/v2/wallets <br></p>
+<p><code>POST</code> https://api.testwyre.com/v2/wallets <br></p>
 
 <p><strong>Parameters</strong></p>
 
@@ -1821,30 +1817,27 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallets' \
 </tbody></table>
 
 <p><strong>Result Format</strong></p>
-
-<pre class="center-column">
-{
-  "name" : "{your-unique-identifier}",
-  "id" : "WA-AYBNA3lBiWAM4l3",
-  "depositAddresses" : {
-    "BTC" : "2ShL7kzSNNxedit6hC2fjSQhVcAucTeS1m7"
-  },
-  "totalBalances" : {
-    "BTC" : 0
-  },
-  "availableBalances" : {
-    "BTC" : 0
-  },
-  "srn" : "wallet:AYBNA3lBiWAM4l3",
-  "balances" : {
-    "BTC" : 0
-  },
-  "callbackUrl" : "https://your.website.io/callback",
-  "notes" : "Notes about the user"
-}
-</pre>
-<h2 id='create-mulitple-wallets'>Create Mulitple Wallets</h2><pre class="highlight plaintext"><code>
-curl -XPOST 'https://api.sendwyre.com/v2/wallets/batch?pretty' \
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"{your-unique-identifier}"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"WA-AYBNA3lBiWAM4l3"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"depositAddresses"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2ShL7kzSNNxedit6hC2fjSQhVcAucTeS1m7"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"totalBalances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"availableBalances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"srn"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:AYBNA3lBiWAM4l3"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"balances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"callbackUrl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://your.website.io/callback"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"notes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Notes about the user"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='create-mulitple-wallets'>Create Mulitple Wallets</h2><pre class="highlight plaintext"><code>
+curl -XPOST 'https://api.testwyre.com/v2/wallets/batch?pretty' \
 -H 'Content-Type:application/json' \
 -d '{
   "wallets":[
@@ -1858,7 +1851,7 @@ curl -XPOST 'https://api.sendwyre.com/v2/wallets/batch?pretty' \
 
 <p><strong>Definition</strong> <br></p>
 
-<p><code>POST</code> https://api.sendwyre.com/v2/wallets/batch <br></p>
+<p><code>POST</code> https://api.testwyre.com/v2/wallets/batch <br></p>
 
 <p><strong>Parameters</strong></p>
 
@@ -1879,90 +1872,83 @@ curl -XPOST 'https://api.sendwyre.com/v2/wallets/batch?pretty' \
 </tbody></table>
 
 <p><strong>Result Format</strong></p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"walletOne"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"AxVA57edP0H33x3"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"notes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"srn"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:AxVA57edP0H33x3"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"callbackUrl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"verificationData"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"depositAddresses"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2ShKKFb9gEP5uvRXtMbs7ykJAMPgoSSnSWB"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"totalBalances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"availableBalances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"balances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"walletTwo"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"AtEhoXje3C1V5zq"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"notes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"srn"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:AtEhoXje3C1V5zq"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"callbackUrl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"verificationData"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"depositAddresses"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2ShKndBJNHvzABhBzLxvfzzD2vt64C36dPc"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"totalBalances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"availableBalances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"balances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"walletThree"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"U07tSKMvofeMmx0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"notes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"srn"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:U07tSKMvofeMmx0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"callbackUrl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"verificationData"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"depositAddresses"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2ShJsBPUb4HrNtgaNZk3YQSi2ynpZ5YY7sT"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"totalBalances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 
-<pre class="center-column">
-{
-  "name" : "walletOne",
-  "id" : "AxVA57edP0H33x3",
-  "notes" : null,
-  "srn" : "wallet:AxVA57edP0H33x3",
-  "callbackUrl" : null,
-  "verificationData" : null,
-  "depositAddresses" : {
-    "BTC" : "2ShKKFb9gEP5uvRXtMbs7ykJAMPgoSSnSWB"
-  },
-  "totalBalances" : {
-    "BTC" : 0
-  },
-  "availableBalances" : {
-    "BTC" : 0
-  },
-  "balances" : {
-    "BTC" : 0
-  }
-}, {
-  "name" : "walletTwo",
-  "id" : "AtEhoXje3C1V5zq",
-  "notes" : null,
-  "srn" : "wallet:AtEhoXje3C1V5zq",
-  "callbackUrl" : null,
-  "verificationData" : null,
-  "depositAddresses" : {
-    "BTC" : "2ShKndBJNHvzABhBzLxvfzzD2vt64C36dPc"
-  },
-  "totalBalances" : {
-    "BTC" : 0
-  },
-  "availableBalances" : {
-    "BTC" : 0
-  },
-  "balances" : {
-    "BTC" : 0
-  }
-}, {
-  "name" : "walletThree",
-  "id" : "U07tSKMvofeMmx0",
-  "notes" : null,
-  "srn" : "wallet:U07tSKMvofeMmx0",
-  "callbackUrl" : null,
-  "verificationData" : null,
-  "depositAddresses" : {
-    "BTC" : "2ShJsBPUb4HrNtgaNZk3YQSi2ynpZ5YY7sT"
-  },
-  "totalBalances" : {
-    "BTC" : 0
-
-  },
-  "availableBalances" : {
-    "BTC" : 0
-  },
-  "balances" : {
-    "BTC" : 0
-  }
-}
-
-</pre>
-<h2 id='lookup-wallet'>Lookup Wallet</h2><pre class="highlight plaintext"><code>
-Lookup by user ID:
-
-curl -v -XGET 'https://api.sendwyre.com/v2/wallet/{wallet-id}' \
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"availableBalances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"balances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='lookup-wallet'>Lookup Wallet</h2>
+<p>Lookup by user ID:</p>
+<pre class="highlight plaintext"><code>
+curl -v -XGET 'https://api.testwyre.com/v2/wallet/{wallet-id}' \
   -H "X-Api-Key: {api-key}" \
   -H "X-Api-Signature: {signature}" \
-
-
-
-Lookup by user name:
-curl -v -XGET 'https://api.sendwyre.com/v2/wallet' \
+</code></pre>
+<p>Lookup by user name:</p>
+<pre class="highlight plaintext"><code>curl -v -XGET 'https://api.testwyre.com/v2/wallet' \
   -H "X-Api-Key: {api-key}" \
   -H "X-Api-Signature: {signature}" \
   -d name={your-identifier}
-
 </code></pre>
 <p>This endpoint allows you to look up the balance of a child wallet by ID or name. <br></p>
 
 <p><strong>Definition</strong> <br></p>
 
-<p><code>GET</code> https://api.sendwyre.com/v2/wallet/{walletId} <br></p>
+<p><code>GET</code> https://api.testwyre.com/v2/wallet/{walletId} <br></p>
 
 <p><strong>Parameters</strong> <br></p>
 
@@ -1984,7 +1970,7 @@ curl -v -XGET 'https://api.sendwyre.com/v2/wallet' \
 
 <p><strong>Definition</strong> <br></p>
 
-<p><code>GET</code> https://api.sendwyre.com/v2/wallet/ <br></p>
+<p><code>GET</code> https://api.testwyre.com/v2/wallet/ <br></p>
 
 <p><strong>Parameters</strong> <br></p>
 
@@ -2004,33 +1990,31 @@ curl -v -XGET 'https://api.sendwyre.com/v2/wallet' \
 </tr>
 </tbody></table>
 
-<p><strong>Results Format</strong><br>
-<pre class="center-column">
-{
-   “owner”: “account:[account-ID]“,
-   “callbackUrl”: null,
-   “depositAddresses”: {
-       “BTC”: “1FNAkNVt3gXdS3PZ1tDvetbcafKPsJPQTG”
-   },
-   “totalBalances”: {
-       “USD”: 4.96
-   },
-   “availableBalances”: {
-       “USD”: 4.96
-   },
-   “verificationData”: null,
-   “balances”: {
-       “USD”: 4.96
-   },
-   “srn”: “wallet:[Wallet-ID]“,
-   “createdAt”: 1497861843000,
-   “notes”: “test1”,
-   “name”: “richard”,
-   “id”: “[Wallet-ID]”
-}
-</pre></p>
-<h2 id='edit-wallet'>Edit Wallet</h2><pre class="highlight plaintext"><code>
-curl -v -XPOST 'https://api.sendwyre.com/v2/wallet/{wallet-id}/update' \
+<p><strong>Results Format</strong> <br></p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"account:[account-ID]"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"callbackUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"depositAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="s2">"BTC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1FNAkNVt3gXdS3PZ1tDvetbcafKPsJPQTG"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"totalBalances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="s2">"USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.96</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"availableBalances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="s2">"USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.96</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"verificationData"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+       </span><span class="s2">"USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.96</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"srn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:[Wallet-ID]"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1497861843000</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test1"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"richard"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Wallet-ID]"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='edit-wallet'>Edit Wallet</h2><pre class="highlight plaintext"><code>
+curl -v -XPOST 'https://api.testwyre.com/v2/wallet/{wallet-id}/update' \
   -H "Content-Type: application/json" \
   -H "X-Api-Key: {api-key}" \
   -H "X-Api-Signature: {signature}" \
@@ -2048,7 +2032,7 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallet/{wallet-id}/update' \
 <span class="k">class</span> <span class="nc">MassPay_API</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">account_id</span><span class="p">,</span> <span class="n">api_version</span><span class="p">,</span> <span class="n">api_key</span><span class="p">,</span> <span class="n">api_secret</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">account_id</span> <span class="o">=</span> <span class="n">account_id</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">=</span> <span class="s">'https://api.sendwyre.com/{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">api_version</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">=</span> <span class="s">'https://api.testwyre.com/{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">api_version</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_version</span> <span class="o">=</span> <span class="n">api_version</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_secret</span> <span class="o">=</span> <span class="n">api_secret</span>
@@ -2128,7 +2112,7 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallet/{wallet-id}/update' \
 
     <span class="n">String</span> <span class="n">walletId</span> <span class="o">=</span> <span class="s">"{wallet-id}"</span><span class="o">;</span>
 
-    <span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.sendwyre.com/v2/wallet/"</span><span class="o">+</span> <span class="n">walletId</span> <span class="o">+</span><span class="s">"/update"</span><span class="o">;</span>
+    <span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.testwyre.com/v2/wallet/"</span><span class="o">+</span> <span class="n">walletId</span> <span class="o">+</span><span class="s">"/update"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">method</span> <span class="o">=</span> <span class="s">"POST"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">data</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
 
@@ -2236,7 +2220,7 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallet/{wallet-id}/update' \
 
 <p><strong>Definition</strong> <br></p>
 
-<p><code>UPDATE</code> https://api.sendwyre.com/v2/wallet/{walletId} <br></p>
+<p><code>UPDATE</code> https://api.testwyre.com/v2/wallet/{walletId} <br></p>
 
 <p><strong>Parameters</strong></p>
 
@@ -2274,7 +2258,7 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallet/{wallet-id}/update' \
 </tr>
 </tbody></table>
 <h2 id='delete-wallet'>Delete Wallet</h2><pre class="highlight plaintext"><code>
-curl -v -XDELETE 'https://api.sendwyre.com/v2/wallet/{wallet-id}' \
+curl -v -XDELETE 'https://api.testwyre.com/v2/wallet/{wallet-id}' \
   -H "X-Api-Key: {api-key}" \
   -H "X-Api-Signature: {signature}"
 </code></pre>
@@ -2282,7 +2266,7 @@ curl -v -XDELETE 'https://api.sendwyre.com/v2/wallet/{wallet-id}' \
 
 <p><strong>Definition</strong> <br></p>
 
-<p><code>DELETE</code> https://api.sendwyre.com/v2/wallet/{walletId} <br></p>
+<p><code>DELETE</code> https://api.testwyre.com/v2/wallet/{walletId} <br></p>
 
 <p><strong>Parameters</strong></p>
 
@@ -2306,7 +2290,7 @@ curl -v -XDELETE 'https://api.sendwyre.com/v2/wallet/{wallet-id}' \
 
 <p><strong>Definition</strong> <BR></p>
 
-<p><code>GET</code> https://api.sendwyre.com/v2/wallets <BR></p>
+<p><code>GET</code> https://api.testwyre.com/v2/wallets <BR></p>
 
 <p><strong>Parameters</strong></p>
 
@@ -2333,43 +2317,24 @@ curl -v -XDELETE 'https://api.sendwyre.com/v2/wallet/{wallet-id}' \
 </tbody></table>
 
 <p><strong>Result Format</strong></p>
-
-<pre class="center-column">
-
-{
-  "data": {
-      "owner": "account:XAV3CRAC94P",
-      "balances": {},
-      "srn": "wallet:WA-XM4L3JMUQGF",
-      "createdAt": 1508433396000,
-      "callbackUrl": "https://shake.webscript.io/callback",
-      "depositAddresses": {
-        "BTC": "1Q9TqsVwuZf6bYqtxxjqdataXx81x3Q1h7"
-      },
-      "totalBalances": {},
-      "availableBalances": {},
-      "notes": "nope",
-      "name": "Person A",
-      "id": "WA-XM4L3JMUQGF"
-    },
-    {
-      "owner": "account:XAV3CRAC94P",
-      "balances": {},
-      "srn": "wallet:WA-VXRYUHW6JPX",
-      "createdAt": 1508203688000,
-      "callbackUrl": null,
-      "depositAddresses": {
-        "BTC": "13UtPuSaHCTsqRkwYjMbypSnPGkcyrni3r"
-      },
-      "totalBalances": {},
-      "availableBalances": {},
-      "notes": null,
-      "name": "123456",
-      "id": "WA-VXRYUHW6JPX"
-    }
-}
-</pre>
-<h2 id='callbacks'>Callbacks</h2>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"account:XAV3CRAC94P"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="s2">"srn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:WA-XM4L3JMUQGF"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1508433396000</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"callbackUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shake.webscript.io/callback"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"depositAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"BTC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1Q9TqsVwuZf6bYqtxxjqdataXx81x3Q1h7"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"totalBalances"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="s2">"availableBalances"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nope"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Person A"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WA-XM4L3JMUQGF"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre><h2 id='callbacks'>Callbacks</h2>
 <p>We provide a series of HTTP callbacks that allow you to notify users when funds have been deposited and when they become available.</p>
 
 <p><strong>When callbacks are sent</strong> <br>
@@ -2386,47 +2351,44 @@ Callbacks are sent whenever a transactional event occurs that will affect the wa
 Your system should respond to the callback request with a 200 response. If we do not receive a valid repsonse our system will continue to attempt to send the request.</p>
 
 <p><strong>Result Format</strong> <br></p>
-
-<pre class="center-column">
-{
-  "createdAt":1531445525097,
-  "id":"TR-F3947W8C2C6",
-  "source":"transfer:TF-HP4A42EC6DX",
-  "dest":"wallet:WA-CF9RFZ7QU6W",
-  "currency":"USD",
-  "amount":5005.00,
-  "status":"CONFIRMED",
-  "confirmedAt":1531445525097,
-  "cancelledAt":null,
-  "reversedAt":null,
-  "message":"Deposit for transfer TF-HP4A42EC6DX",
-  "allowOverdraft":true,
-  "authorizer":"account:AC-XXXXXXXXX",
-  "senderProvidedId":null,
-  "reversedBy":null,
-  "fees":0,
-  "feesDest":null,
-  "metadata":{
-    "Description":"Pending: Transfer of $5005.00 to wallet:WA-CF9RFZ7QU6W",
-    "transferId":"TF-HP4A42EC6DX"},
-    "tags":[],
-    "sourceFees":null,
-    "destFees":null
-  }
-</pre>
-
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="mi">1531445525097</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"TR-F3947W8C2C6"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"transfer:TF-HP4A42EC6DX"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dest"</span><span class="p">:</span><span class="s2">"wallet:WA-CF9RFZ7QU6W"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"amount"</span><span class="p">:</span><span class="mf">5005.00</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"CONFIRMED"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"confirmedAt"</span><span class="p">:</span><span class="mi">1531445525097</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"cancelledAt"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reversedAt"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"Deposit for transfer TF-HP4A42EC6DX"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"allowOverdraft"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"authorizer"</span><span class="p">:</span><span class="s2">"account:AC-XXXXXXXXX"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"senderProvidedId"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reversedBy"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fees"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"feesDest"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"metadata"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"Description"</span><span class="p">:</span><span class="s2">"Pending: Transfer of $5005.00 to wallet:WA-CF9RFZ7QU6W"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transferId"</span><span class="p">:</span><span class="s2">"TF-HP4A42EC6DX"</span><span class="p">},</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:[],</span><span class="w">
+    </span><span class="s2">"sourceFees"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"destFees"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p>The callback payload will be a JSON representation of the transaction that has caused the callback to trigger.</p>
 <h1 id='transfers'>Transfers</h1><h2 id='introduction'>Introduction</h2>
 <p>Transfers represent the building blocks of our API. Our Transfer API is an incredibly versatile way of moving funds not only externally but internally as well, whether it&#39;s through internal account management or internal exchanges.  Additionally, you can specify differing source and destination currencies and the funds will automatically exchanged into the appropriate currency in our backend. <br>
 Anytime you want to move funds around on the Wyre platform you will create a Transfer. The Transfer will go through a number of states as funds are moved to the destination of your choice.<BR></p>
 
-<p>Please refer <a href="http://sendwyre.com/docs/#country-currency-requirements">here</a> for each country&#39;s individual requirements when conducting international transfers.</p>
+<p>Please refer <a href="http://testwyre.com/docs/#country-currency-requirements">here</a> for each country&#39;s individual requirements when conducting international transfers.</p>
 <h2 id='list-of-supported-banks'>List of Supported Banks</h2>
 <p>This list will return the latest set of supported banks for either <code>China</code> or <code>Brazil</code>.</p>
 
 <p><strong>Definition</strong> <br></p>
 
-<p><code>GET</code> https://api.sendwyre.com/v2/bankinfo/:country <br></p>
+<p><code>GET</code> https://api.testwyre.com/v2/bankinfo/:country <br></p>
 
 <p><strong>Parameters</strong></p>
 
@@ -2445,16 +2407,11 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 <td>yes</td>
 </tr>
 </tbody></table>
-
-<ul>
-<li>List of supported banks in Brazil also located <a href="https://support.sendwyre.com/sending-money/send-money-to-brazil/supported-banks-in-brazil" target="_blank">here</a>.</li>
-<li>List of supported banks in China also located <a href="https://support.sendwyre.com/sending-money/send-money-to-china/list-of-supported-chinese-banks" target="_blank">here</a>.</li>
-</ul>
 <h2 id='quote-transfer'>Quote Transfer</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
    </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"account:i6rgs8mjdmmu7cnf7a5bgl0r0vudsfe5"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"sourceCurrency"</span><span class="p">:</span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"sourceAmount"</span><span class="p">:</span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"dest"</span><span class="p">:</span><span class="s2">"email:sam@sendwyre.com"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dest"</span><span class="p">:</span><span class="s2">"email:sam@testwyre.com"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"destCurrency"</span><span class="p">:</span><span class="s2">"CNY"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"preview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"amountIncludesFees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
@@ -2470,7 +2427,7 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 <p>The JSON response will return object <code>totalFees</code> which will include all Wyre fees and BTC miner fees (if applicable).</p>
 
 <p><strong>Definition</strong> <br>
-<code>POST</code> https://api.sendwyre.com/v2/transfer/<br></p>
+<code>POST</code> https://api.testwyre.com/v2/transfer/<br></p>
 
 <table><thead>
 <tr>
@@ -2539,7 +2496,7 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
    </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"account:i6rgs8mjdmmu7cnf7a5bgl0r0vudsfe5"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"sourceCurrency"</span><span class="p">:</span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"sourceAmount"</span><span class="p">:</span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"dest"</span><span class="p">:</span><span class="s2">"email:sam@sendwyre.com"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dest"</span><span class="p">:</span><span class="s2">"email:sam@testwyre.com"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"destCurrency"</span><span class="p">:</span><span class="s2">"CNY"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="err">//optional</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -2547,7 +2504,7 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 <p>This endpoint creates a new money transfer. <br></p>
 
 <p><strong>Definition</strong> <br>
-<code>POST</code> https://api.sendwyre.com/v2/transfers <br></p>
+<code>POST</code> https://api.testwyre.com/v2/transfers <br></p>
 
 <table><thead>
 <tr>
@@ -2631,7 +2588,7 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 </tr>
 </tbody></table>
 
-<p>Once you&#39;ve created the transfer it will be in an UNCONFIRMED state. You will have 30 seconds to review the transfer and <a href="http://sendwyre.com/docs/#confirm-transfer">confirm it</a> before the quote expires. If the quote expires you&#39;ll have to reissue the transfer request and confirm the new transfer. However you can CONFIRM the transfer AUTOMATICALLY by setting <code>autoConfirm</code> to <code>true</code>. <br></p>
+<p>Once you&#39;ve created the transfer it will be in an UNCONFIRMED state. You will have 30 seconds to review the transfer and <a href="http://testwyre.com/docs/#confirm-transfer">confirm it</a> before the quote expires. If the quote expires you&#39;ll have to reissue the transfer request and confirm the new transfer. However you can CONFIRM the transfer AUTOMATICALLY by setting <code>autoConfirm</code> to <code>true</code>. <br></p>
 
 <p>When reviewing the transfer the main things you&#39;ll want to check out are the following: <br></p>
 
@@ -2691,10 +2648,10 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 }
 </pre>
 <h2 id='confirm-transfer'>Confirm Transfer</h2>
-<p>This endpoint confirms a money transfer. Once you&#39;ve created the transfer and receive a 200 response, you will have 30 seconds to confirm the transfer. Note the <code>transferId</code> after you create the transfer. If you want to automatically confirm the transfer without making an additional API call, set parameter <code>autoConfirm</code> to &quot;true&quot; in your <a href="http://sendwyre.com/docs/#create-transfer">Create Transfer</a> request. <br></p>
+<p>This endpoint confirms a money transfer. Once you&#39;ve created the transfer and receive a 200 response, you will have 30 seconds to confirm the transfer. Note the <code>transferId</code> after you create the transfer. If you want to automatically confirm the transfer without making an additional API call, set parameter <code>autoConfirm</code> to &quot;true&quot; in your <a href="http://testwyre.com/docs/#create-transfer">Create Transfer</a> request. <br></p>
 
 <p><strong>Definition</strong> <br>
-<code>POST</code> https://api.sendwyre.com/v2/transfer/transferId:/confirm <br></p>
+<code>POST</code> https://api.testwyre.com/v2/transfer/transferId:/confirm <br></p>
 
 <table><thead>
 <tr>
@@ -2765,7 +2722,7 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 <p>This endpoint allows you to look up information related to a transfer you already created.</p>
 
 <p><strong>Definition</strong> <br>
-<code>GET</code> https://api.sendwyre.com/v2/transfer?customId=</p>
+<code>GET</code> https://api.testwyre.com/v2/transfer?customId=</p>
 
 <table><thead>
 <tr>
@@ -2834,7 +2791,7 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 </pre>
 <h2 id='transfer-status'>Transfer Status</h2>
 <p><strong>Definition</strong> <br>
-<code>GET</code> https://api.sendwyre.com/v2/transfer/:transferId</p>
+<code>GET</code> https://api.testwyre.com/v2/transfer/:transferId</p>
 
 <table><thead>
 <tr>
@@ -3017,7 +2974,7 @@ Your system should respond to the callback request with a 200 response. We only 
     </span><span class="s2">"beneficiaryState"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"beneficiaryPostal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94108"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"beneficiaryLandlineNumber"</span><span class="p">:</span><span class="s2">"+123464542947"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"beneficiaryEmailAddress"</span><span class="p">:</span><span class="s2">"tes@sendwyre.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"beneficiaryEmailAddress"</span><span class="p">:</span><span class="s2">"tes@testwyre.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"beneficiaryEinTin"</span><span class="p">:</span><span class="s2">"00000000"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"beneficiaryDobDay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15"</span><span class="p">,</span><span class="w"> </span><span class="err">//Date</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Incorporation</span><span class="w">
     </span><span class="s2">"beneficiaryDobMonth"</span><span class="p">:</span><span class="s2">"12"</span><span class="p">,</span><span class="w"> </span><span class="err">//Date</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Incorporation</span><span class="w">
@@ -3033,7 +2990,7 @@ Your system should respond to the callback request with a 200 response. We only 
 <p>This endpoint creates a bank account. <br></p>
 
 <p><strong>Definition</strong><br>
-<code>POST</code> https://api.sendwyre.com/v2/paymentMethods <br></p>
+<code>POST</code> https://api.testwyre.com/v2/paymentMethods <br></p>
 
 <p><strong>Parameters</strong></p>
 
@@ -3223,7 +3180,7 @@ Your system should respond to the callback request with a 200 response. We only 
 <p>This endpoint looks up the bank details associated with a payment method you created.<br></p>
 
 <p><strong>Definition</strong> <br>
-<code>GET</code> https://api.sendwyre.com/v2/paymentMethod/:paymentMethodId</p>
+<code>GET</code> https://api.testwyre.com/v2/paymentMethod/:paymentMethodId</p>
 
 <p><strong>Result Format</strong>
 <pre class="center-column"></p>
@@ -3277,7 +3234,7 @@ Your system should respond to the callback request with a 200 response. We only 
 <p>Please note that the minimum amount to transfer CNY is 100 CNY. <br></p>
 
 <p><strong>Definition</strong><br>
-<code>POST</code> https://api.sendwyre.com/v2/transfers <br><br></p>
+<code>POST</code> https://api.testwyre.com/v2/transfers <br><br></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"dest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"paymentMethodType"</span><span class="p">:</span><span class="s2">"INTERNATIONAL_TRANSFER"</span><span class="p">,</span><span class="w">
@@ -3387,13 +3344,13 @@ Your system should respond to the callback request with a 200 response. We only 
 <p><strong>Supported Banks</strong><br></p>
 
 <ul>
-<li>The list of supported banks are located <a href="https://support.sendwyre.com/sending-money/send-money-to-china/list-of-supported-chinese-banks" target="_blank">here</a>.</li>
+<li>The list of supported banks are located <a href="https://support.testwyre.com/sending-money/send-money-to-china/list-of-supported-chinese-banks" target="_blank">here</a>.</li>
 </ul>
 <h2 id='usa'>USA</h2>
 <p>USD payouts are initiated from one of our banks that corresponds to the country delivered. Please note that the minimum amount to transfer USD is $5.00.</p>
 
 <p><strong>Definition</strong><br>
-<code>POST</code> https://api.sendwyre.com/v2/transfers <br> <br></p>
+<code>POST</code> https://api.testwyre.com/v2/transfers <br> <br></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"dest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"paymentMethodType"</span><span class="p">:</span><span class="s2">"INTERNATIONAL_TRANSFER"</span><span class="p">,</span><span class="w">
