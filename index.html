@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Wyre API Documentation</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -199,17 +199,20 @@
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
       <script src="javascripts/all.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
   </head>
 
   <body class="index" data-languages="[&quot;cURL&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;java&quot;,&quot;php&quot;,&quot;json&quot;,&quot;csharp&quot;]">
-    <a href="#" id="nav-button">
-      <span>
-        NAV
-        <img src="images/navbar.png" alt="Navbar" />
-      </span>
-    </a>
+    <div class="mobile-nav">
+        <a href="#" id="nav-button">
+            <span>
+                <!--NAV-->
+                <img src="images/navbar.png" alt="Navbar" />
+            </span>
+        </a>
+    </div>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <img src="images/WyreDocsLogo.svg" class="logo" alt="Wyredocslogo" />
         <div class="lang-selector">
               <a href="#" data-language-name="cURL">cURL</a>
               <a href="#" data-language-name="ruby">ruby</a>
@@ -223,136 +226,184 @@
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
         <ul class="search-results"></ul>
-      <ul id="toc" class="toc-list-h1">
+      <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#overview" class="toc-h1 toc-link" data-title="Overview">Overview</a>
+            <a href="#overview" class="toc-h1 toc-link" data-title="overview">Overview</a>
           </li>
           <li>
-            <a href="#getting-started" class="toc-h1 toc-link" data-title="Getting Started">Getting Started</a>
+            <a href="#getting-started" class="toc-h1 toc-link" data-title="getting-started">Getting Started</a>
           </li>
           <li>
-            <a href="#general" class="toc-h1 toc-link" data-title="General">General</a>
+            <a href="#general" class="toc-h1 toc-link" data-title="general">General</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#supported-countries" class="toc-h2 toc-link" data-title="Supported Countries">Supported Countries</a>
+                    
+                    <a href="#supported-countries" class="toc-h2 toc-link" data-title="supported-countries">Supported Countries</a>
                   </li>
                   <li>
-                    <a href="#transport-method" class="toc-h2 toc-link" data-title="Transport Method">Transport Method</a>
+                    
+                    <a href="#transport-method" class="toc-h2 toc-link" data-title="transport-method">Transport Method</a>
                   </li>
                   <li>
-                    <a href="#production-test-endpoints" class="toc-h2 toc-link" data-title="Production/Test Endpoints">Production/Test Endpoints</a>
+                    
+                    <a href="#production-test-endpoints" class="toc-h2 toc-link" data-title="production-test-endpoints">Production/Test Endpoints</a>
                   </li>
                   <li>
-                    <a href="#pagination" class="toc-h2 toc-link" data-title="Pagination">Pagination</a>
+                    
+                    <a href="#pagination" class="toc-h2 toc-link" data-title="pagination">Pagination</a>
                   </li>
                   <li>
-                    <a href="#authentication" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
+                    
+                    <a href="#authentication" class="toc-h2 toc-link" data-title="authentication">Authentication</a>
                   </li>
                   <li>
-                    <a href="#srns" class="toc-h2 toc-link" data-title="SRNs">SRNs</a>
+                    
+                    <a href="#srns" class="toc-h2 toc-link" data-title="srns">SRNs</a>
                   </li>
                   <li>
-                    <a href="#fees" class="toc-h2 toc-link" data-title="Fees">Fees</a>
+                    
+                    <a href="#fees" class="toc-h2 toc-link" data-title="fees">Fees</a>
                   </li>
                   <li>
-                    <a href="#error-table" class="toc-h2 toc-link" data-title="Error Table">Error Table</a>
+                    
+                    <a href="#error-table" class="toc-h2 toc-link" data-title="error-table">Error Table</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#step-by-step-guide" class="toc-h1 toc-link" data-title="Step-by-step Guide">Step-by-step Guide</a>
+            <a href="#step-by-step-guide" class="toc-h1 toc-link" data-title="step-by-step-guide">Step-by-step Guide</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#virtual-banking" class="toc-h2 toc-link" data-title="Virtual Banking">Virtual Banking</a>
+                    
+                    <a href="#virtual-banking" class="toc-h2 toc-link" data-title="virtual-banking">Virtual Banking</a>
+                  </li>
+  <ul class="toc-list-h3">
+      <li>
+        <a href="#step-1-create-a-wallet-with-kyc-data" class="toc-h3 toc-link" data-title="Step-by-step Guide">Step 1. Create a Wallet with KYC Data</a>
+      </li>
+      <li>
+        <a href="#step-2-upload-kyc-documents" class="toc-h3 toc-link" data-title="Step-by-step Guide">Step 2. Upload KYC documents</a>
+      </li>
+      <li>
+        <a href="#step-3-update-kyc-data-to-include-documents" class="toc-h3 toc-link" data-title="Step-by-step Guide">Step 3. Update KYC Data to include documents</a>
+      </li>
+      <li>
+        <a href="#step-4-check-for-banking-data" class="toc-h3 toc-link" data-title="Step-by-step Guide">Step 4. Check for banking data</a>
+      </li>
+      <li>
+        <a href="#step-5-receiving-funds-and-callbacks" class="toc-h3 toc-link" data-title="Step-by-step Guide">Step 5. Receiving Funds and Callbacks</a>
+      </li>
+      <li>
+        <a href="#step-6-transfer-usd-from-wallet-to-account" class="toc-h3 toc-link" data-title="Step-by-step Guide">Step 6. Transfer USD from wallet to Account</a>
+      </li>
+      <li>
+        <a href="#step-7-the-user-wants-to-cash-out-their-remaining-usd" class="toc-h3 toc-link" data-title="Step-by-step Guide">Step 7. The user wants to cash out their remaining USD</a>
+      </li>
+  </ul>
+              </ul>
+          </li>
+          <li>
+            <a href="#account" class="toc-h1 toc-link" data-title="account">Account</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    
+                    <a href="#account-details" class="toc-h2 toc-link" data-title="account-details">Account Details</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#account" class="toc-h1 toc-link" data-title="Account">Account</a>
+            <a href="#wallets" class="toc-h1 toc-link" data-title="wallets">Wallets</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#account-details" class="toc-h2 toc-link" data-title="Account Details">Account Details</a>
+                    
+                    <a href="#create-wallet" class="toc-h2 toc-link" data-title="create-wallet">Create Wallet</a>
+                  </li>
+                  <li>
+                    
+                    <a href="#create-mulitple-wallets" class="toc-h2 toc-link" data-title="create-mulitple-wallets">Create Mulitple Wallets</a>
+                  </li>
+                  <li>
+                    
+                    <a href="#lookup-wallet" class="toc-h2 toc-link" data-title="lookup-wallet">Lookup Wallet</a>
+                  </li>
+                  <li>
+                    
+                    <a href="#edit-wallet" class="toc-h2 toc-link" data-title="edit-wallet">Edit Wallet</a>
+                  </li>
+                  <li>
+                    
+                    <a href="#delete-wallet" class="toc-h2 toc-link" data-title="delete-wallet">Delete Wallet</a>
+                  </li>
+                  <li>
+                    
+                    <a href="#list-wallets" class="toc-h2 toc-link" data-title="list-wallets">List Wallets</a>
+                  </li>
+                  <li>
+                    
+                    <a href="#callbacks" class="toc-h2 toc-link" data-title="callbacks">Callbacks</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#wallets" class="toc-h1 toc-link" data-title="Wallets">Wallets</a>
+            <a href="#transfers" class="toc-h1 toc-link" data-title="transfers">Transfers</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#create-wallet" class="toc-h2 toc-link" data-title="Create Wallet">Create Wallet</a>
+                    
+                    <a href="#introduction" class="toc-h2 toc-link" data-title="introduction">Introduction</a>
                   </li>
                   <li>
-                    <a href="#create-mulitple-wallets" class="toc-h2 toc-link" data-title="Create Mulitple Wallets">Create Mulitple Wallets</a>
+                    
+                    <a href="#transfers-2" class="toc-h2 toc-link" data-title="transfers">Transfers</a>
                   </li>
                   <li>
-                    <a href="#lookup-wallet" class="toc-h2 toc-link" data-title="Lookup Wallet">Lookup Wallet</a>
+                    
+                    <a href="#create-transfer" class="toc-h2 toc-link" data-title="create-transfer">Create Transfer</a>
                   </li>
                   <li>
-                    <a href="#edit-wallet" class="toc-h2 toc-link" data-title="Edit Wallet">Edit Wallet</a>
+                    
+                    <a href="#confirm-transfer" class="toc-h2 toc-link" data-title="confirm-transfer">Confirm Transfer</a>
                   </li>
                   <li>
-                    <a href="#delete-wallet" class="toc-h2 toc-link" data-title="Delete Wallet">Delete Wallet</a>
+                    
+                    <a href="#lookup-transfer" class="toc-h2 toc-link" data-title="lookup-transfer">Lookup Transfer</a>
                   </li>
                   <li>
-                    <a href="#list-wallets" class="toc-h2 toc-link" data-title="List Wallets">List Wallets</a>
+                    
+                    <a href="#transfer-status" class="toc-h2 toc-link" data-title="transfer-status">Transfer Status</a>
                   </li>
                   <li>
-                    <a href="#callbacks" class="toc-h2 toc-link" data-title="Callbacks">Callbacks</a>
+                    
+                    <a href="#callbacks-2" class="toc-h2 toc-link" data-title="callbacks">Callbacks</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#transfers" class="toc-h1 toc-link" data-title="Transfers">Transfers</a>
+            <a href="#payment-methods" class="toc-h1 toc-link" data-title="payment-methods">Payment Methods</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#introduction" class="toc-h2 toc-link" data-title="Introduction">Introduction</a>
+                    
+                    <a href="#create-payment-method" class="toc-h2 toc-link" data-title="create-payment-method">Create Payment Method</a>
                   </li>
                   <li>
-                    <a href="#list-of-supported-banks" class="toc-h2 toc-link" data-title="List of Supported Banks">List of Supported Banks</a>
-                  </li>
-                  <li>
-                    <a href="#quote-transfer" class="toc-h2 toc-link" data-title="Quote Transfer">Quote Transfer</a>
-                  </li>
-                  <li>
-                    <a href="#create-transfer" class="toc-h2 toc-link" data-title="Create Transfer">Create Transfer</a>
-                  </li>
-                  <li>
-                    <a href="#confirm-transfer" class="toc-h2 toc-link" data-title="Confirm Transfer">Confirm Transfer</a>
-                  </li>
-                  <li>
-                    <a href="#lookup-transfer" class="toc-h2 toc-link" data-title="Lookup Transfer">Lookup Transfer</a>
-                  </li>
-                  <li>
-                    <a href="#transfer-status" class="toc-h2 toc-link" data-title="Transfer Status">Transfer Status</a>
-                  </li>
-                  <li>
-                    <a href="#callbacks-2" class="toc-h2 toc-link" data-title="Callbacks">Callbacks</a>
+                    
+                    <a href="#lookup-payment-method" class="toc-h2 toc-link" data-title="lookup-payment-method">Lookup Payment Method</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#payment-methods" class="toc-h1 toc-link" data-title="Payment Methods">Payment Methods</a>
+            <a href="#country-currency-requirements" class="toc-h1 toc-link" data-title="country-currency-requirements">Country/Currency Requirements</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#create-payment-method" class="toc-h2 toc-link" data-title="Create Payment Method">Create Payment Method</a>
+                    
+                    <a href="#china" class="toc-h2 toc-link" data-title="china">China</a>
                   </li>
                   <li>
-                    <a href="#lookup-payment-method" class="toc-h2 toc-link" data-title="Lookup Payment Method">Lookup Payment Method</a>
+                    
+                    <a href="#usa" class="toc-h2 toc-link" data-title="usa">USA</a>
                   </li>
               </ul>
           </li>
-          <li>
-            <a href="#country-currency-requirements" class="toc-h1 toc-link" data-title="Country/Currency Requirements">Country/Currency Requirements</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#china" class="toc-h2 toc-link" data-title="China">China</a>
-                  </li>
-                  <li>
-                    <a href="#usa" class="toc-h2 toc-link" data-title="USA">USA</a>
-                  </li>
-              </ul>
-          </li>
-      </ul>
+      </div>
         <ul class="toc-footer">
             <li><a href='https://www.epiapi.com'>Visit us!</a></li>
         </ul>
@@ -376,7 +427,7 @@ You are already doing this. Congratulations! <br></p>
 Sign up <a href="https://www.testwyre.com">here</a> to interact with our test environment. No need to upload any documents for the test envornment (though this will be required on production) - jump straight to Step 3. <br></p>
 
 <p><strong>Step 3. Verify your test account</strong> <br>
-Contact our support team at <a href="mailto:support@epiapi.com">supoort@epiapi.com</a> so we can verify your test account and add test funds that you can start using. The test API does not execute real transactions so feel free to go crazy. <br></p>
+Contact our support team at <a href="mailto:support@epiapi.com">support@epiapi.com</a> so we can verify your test account and add test funds that you can start using. The test API does not execute real transactions so feel free to go crazy. <br></p>
 
 <p><strong>Step 4. Get Support</strong><br>
 We will send you links to join us on Slack or other chat apps (DingTalk, QQ etc) - any questions just ask! <br></p>
@@ -405,7 +456,7 @@ Once fully onboarded you are ready to go!</p>
 <p>We provide a REST API that will always return a JSON Object as the response.<br></p>
 
 <p>During troubleshooting, please note that if your error response does not follow the previously mentioned format, the error is most likely due to a different endpoint.</p>
-<pre class="highlight json tab-json"><code><span class="err">For</span><span class="w"> </span><span class="err">successful</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">calls</span><span class="p">:</span><span class="err">&lt;br&gt;</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="err">For</span><span class="w"> </span><span class="err">successful</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">calls</span><span class="p">:</span><span class="w">
 
 </span><span class="p">{</span><span class="w">
         </span><span class="s2">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="err">&lt;br&gt;</span><span class="w">
@@ -413,7 +464,7 @@ Once fully onboarded you are ready to go!</p>
 
 </span><span class="p">}</span><span class="w">
 
-</span><span class="err">For</span><span class="w"> </span><span class="err">unsuccessful</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">calls</span><span class="p">:</span><span class="err">&lt;br&gt;</span><span class="w">
+</span><span class="err">For</span><span class="w"> </span><span class="err">unsuccessful</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">calls</span><span class="p">:</span><span class="w">
 
 </span><span class="p">{</span><span class="w">
         </span><span class="s2">"language"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="err">&lt;br&gt;</span><span class="w">
@@ -435,11 +486,11 @@ Once fully onboarded you are ready to go!</p>
 </thead><tbody>
 <tr>
 <td>Test</td>
-<td><a href="https://www.testwyre.com"> https://www.testwyre.com </a></td>
+<td><a href="https://api.testwyre.com"> https://api.testwyre.com </a></td>
 </tr>
 <tr>
 <td>Production</td>
-<td><a href="https://testwyre.com"> https://testwyre.com </a></td>
+<td><a href="https://api.sendwyre.com"> https://api.sendwyre.com </a></td>
 </tr>
 </tbody></table>
 <h2 id='pagination'>Pagination</h2>
@@ -983,7 +1034,7 @@ Once fully onboarded you are ready to go!</p>
 </tr>
 </tbody></table>
 <h2 id='fees'>Fees</h2>
-<p>To understand how are fees are calculated and charged, please refer <a href="XXXXXXXXXXXXXX"></a>.</p>
+<p>To understand how are fees are calculated and charged, please refer <a href="XXXXXXXXXXXXXX">here</a>.</p>
 <h2 id='error-table'>Error Table</h2>
 <p>Successful requests will be a HTTP 200 response after any successful call. The body of successful requests depend on the endpoint. <br></p>
 
@@ -1078,8 +1129,7 @@ PAYMENT_METHOD_DOESNT_SUPPORT_MICRODEPOSIT_VERIFICATION <br></p>
 <p>We will show you an example of how an online platform may create USD virtual bank accounts with unique account numbers for its users, and receive funds for delivery into a dedicated settlement account. <br></p>
 <h3 id='step-1-create-a-wallet-with-kyc-data'>Step 1. Create a Wallet with KYC Data</h3>
 <p>Wyre uses the concept of <code>wallets</code> to represent individual merchant accounts under your <code>account</code>. Upon creation, each of these wallets are assigned various fund receiving capabilities, for <code>TYPE=VBA</code> wallets a Virtual Bank Account (with a unique bank account and routing number) will be created. <br></p>
-<pre class="highlight plaintext"><code>
-curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
+<pre class="highlight plaintext"><code>curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
   -H "Content-Type: application/json" \
   -H "X-Api-Key: {api-key}" \
   -H "X-Api-Signature: {signature}" \
@@ -1132,7 +1182,7 @@ curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Once a new user requests a VBA via your platform, <a href="http://XXXXXXXXXXXXXX">create a wallet</a> for that user. <br></p>
+<p>Once a new user requests a VBA via your platform, <a href="/#wallets">create a wallet</a> for that user. <br></p>
 
 <p>Note: You should collect the required documentation and pass through to us through this endpoint. The data is used for KYC purposes and is necessary in order to open the virtual banking facilities. The wallet will be opened immediately, and the banking information will be appended to the account once approved (after step 3)</p>
 
@@ -1266,18 +1316,18 @@ curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
 <h3 id='step-5-receiving-funds-and-callbacks'>Step 5. Receiving Funds and Callbacks</h3>
 <p>Whenever we receive a payment to the <code>accountNumber</code>, once approved (note: payments from unapproved platforms will be rejected) a callback will be sent if you have set up a <code>callbackUrl</code>.</p>
 
-<p>See <a href="https://rbensberg.github.io/slate/#callbacks-2">Callbacks</a></p>
+<p>See <a href="#callbacks-2">Callbacks</a></p>
 
 <p>If you wish to validate the callback you can use the <code>id</code> to <code>GET</code> the necessary information. For transfers within our system the id will belong to a transfer (e.g. TF-123123123) and you can query:
 <em>https://api.testwyre.com/v2/transfer/[id]</em><br></p>
 
 <p>For the initial funding transation from outside our system (such as Amazon) the id will belong to a transaction (e.g. TR-123123123) and you can query: <em>https://api.testwyre.com/v2//transaction/[id]</em><br></p>
 <h3 id='step-6-transfer-usd-from-wallet-to-account'>Step 6. Transfer USD from wallet to Account</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:walletId"</span><span class="w">
+</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:walletId"</span><span class="p">,</span><span class="w">
 </span><span class="s2">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:walletId"</span><span class="p">,</span><span class="w">
 </span><span class="s2">"sourceCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
 </span><span class="s2">"destCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"destAmount"</span><span class="p">:</span><span class="w"> </span><span class="err">n</span><span class="mi">1000</span><span class="p">,</span><span class="w">
+</span><span class="s2">"destAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
 </span><span class="s2">"autoConfirm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
 </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"USD Personal example"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1301,29 +1351,15 @@ curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
 <p>Once the user deposits USD on the client&#39;s platform, <a href="http://testwyre.com/docs/#create-transfer">create a transfer</a> on Wyre by sending USD from the master account to that user&#39;s wallet from Step 1 and automatically Confirm Transfer. <br></p>
 
 <p>For <code>source</code>, put your Wyre account ID which can be found <a href="https://www.testwyre.com/settings/basic-info">here</a>.</p>
-<h3 id='step-6-user-withdraws-some-btc'>Step 6. User withdraws some BTC</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:walletId"</span><span class="w">
-</span><span class="s2">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bitcoin: bitcoin address"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"sourceCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"destCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
-</span><span class="s2">"destAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-</span><span class="s2">"autoConfirm"</span><span class="p">:</span><span class="s2">"true"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p><code>POST</code> https://api.testwyre.com/v2/transfers <br></p>
-
-<p>Let&#39;s say the user wants to withdraw BTC from the client&#39;s platform. <br></p>
-
-<p>On Wyre, you can create a third transfer to send BTC from the user&#39;s wallet to their external bitcoin address. <br></p>
 
 <p>Set <code>autoConfirm</code> to &quot;true&quot; to automatically confirm the transfer.</p>
 <h3 id='step-7-the-user-wants-to-cash-out-their-remaining-usd'>Step 7. The user wants to cash out their remaining USD</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:walletId"</span><span class="w">
+</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:walletId"</span><span class="p">,</span><span class="w">
 </span><span class="s2">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"account:accountId"</span><span class="p">,</span><span class="w">
 </span><span class="s2">"sourceCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
 </span><span class="s2">"destCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
 </span><span class="s2">"destAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
-</span><span class="s2">"autoConfirm"</span><span class="p">:</span><span class="s2">"true"</span><span class="w"> </span><span class="err">//automatically</span><span class="w"> </span><span class="err">confirms</span><span class="w"> </span><span class="err">transfer</span><span class="w">
+</span><span class="s2">"autoConfirm"</span><span class="p">:</span><span class="s2">"true"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Let&#39;s say the user wants to withdraw their remaining USD balance from the client&#39;s platform. <br></p>
@@ -1333,8 +1369,6 @@ curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
 <p>Automatically confirm transfer by setting <code>autoConfirm</code> to &quot;true&quot;. <br></p>
 
 <p>Afterwards, the client&#39;s platform should deliver payout to the user from the client&#39;s bank account.</p>
-<h3 id='step-8-your-platform-wants-to-withdraw-usd-back-to-own-account'>Step 8. Your platform wants to withdraw USD back to own account.</h3>
-<p>You can send a request to our payment operations team at <code>payops@testwyre.com</code>.</p>
 <h1 id='account'>Account</h1><h2 id='account-details'>Account Details</h2>
 <p>This endpoint retrieves all the information related to your account. <br></p>
 
@@ -1405,58 +1439,61 @@ curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
 </tbody></table>
 
 <p><strong>Result Format</strong> <br></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"121pd02kt0rnb24nclsg4bglanimurqp"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1404177262332</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1404177262332</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"loginAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1404177262332</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EN_us"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"street1"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"street2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"postalCode"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USA"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"businessAccount"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"taxId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"doingBusinessAs"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"website"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"dateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="mi">1404177262332</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"notifyEmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"notifyCellphone"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"notifyApnsDevice"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mfaRequiredForPwChange"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mfaRequiredForDcPurchase"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mfaRequiredForSendingFunds"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"authyPhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"paymentMethods"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-  </span><span class="s2">"identities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"srn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email:richard@apiepi.com"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1404177262332</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"verifiedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1404177262332</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"depositAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1H9K67J9NcYtzmFGojR9cgM5ybxEddySwu"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"totalBalances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">11.8934023</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"availableBalances"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"USD"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.8934023</span><span class="p">,</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"richard@apiepi.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cellphone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+12312313112"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='wallets'>Wallets</h1>
+
+<pre class="center-column">
+{
+  "id": "121pd02kt0rnb24nclsg4bglanimurqp",
+  "createdAt": 1404177262332,
+  "updatedAt": 1404177262332,
+  "loginAt": 1404177262332,
+  "rank": 0,
+  "profile": {
+    "firstName": "",
+    "lastName": "",
+    "locale": "EN_us",
+    "address": {
+      "street1": null,
+      "street2": null,
+      "city": null,
+      "state": null,
+      "postalCode": null,
+      "country": "USA"
+    },
+    "businessAccount": true,
+    "taxId": null,
+    "doingBusinessAs": null,
+    "website": null,
+    "dateOfBirth": 1404177262332,
+    "notifyEmail": true,
+    "notifyCellphone": true,
+    "notifyApnsDevice": true,
+    "mfaRequiredForPwChange": false,
+    "mfaRequiredForDcPurchase": false,
+    "mfaRequiredForSendingFunds": false,
+    "authyPhoneNumber": null
+  },
+  "paymentMethods": [],
+  "identities": [
+    {
+      "srn": "email:richard@apiepi.com",
+      "createdAt": 1404177262332,
+      "verifiedAt": 1404177262332
+    }
+  ],
+  "depositAddresses": {
+    "BTC": "1H9K67J9NcYtzmFGojR9cgM5ybxEddySwu"
+  },
+  "totalBalances": {
+    "USD": 11.8934023
+  },
+  "availableBalances": {
+    "USD": 10.8934023,
+  },
+  "email": "richard@apiepi.com",
+  "cellphone": "+12312313112"
+}
+</pre>
+<h1 id='wallets'>Wallets</h1>
 <p>If you need to manage your account&#39;s balances into individual buckets, you may choose to use the Wallets API. You can send Bitcoin or Ethereum to the wallet which will be automatically assigned a unique bitcoin or ethereum deposit address.</p>
 <h2 id='create-wallet'>Create Wallet</h2><pre class="highlight plaintext"><code>curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
   -H "Content-Type: application/json" \
@@ -1465,8 +1502,7 @@ curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
   -d '{"type":"ENTERPRISE","name":"{your-unique-identifier}",
   "callbackUrl":"https://your.website.io/callback",
   "notes":"Notes about the sub account"}'
-
-</code></pre><pre class="highlight java tab-java"><code> <span class="kn">import</span> <span class="nn">javax.crypto.Mac</span><span class="o">;</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">javax.crypto.Mac</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">javax.crypto.spec.SecretKeySpec</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.DataOutputStream</span><span class="o">;</span>
@@ -1774,8 +1810,6 @@ curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
     <span class="n">echo</span> <span class="n">make_authenticated_request</span><span class="p">(</span><span class="s">"/wallets"</span><span class="p">,</span> <span class="s">"POST"</span><span class="p">,</span> <span class="err">$</span><span class="n">userData</span><span class="p">);</span>
 <span class="err">?</span><span class="o">&gt;</span>
 </code></pre>
-<p>This endpoint creates a child wallet for a user and assigns a unique Bitcoin or Ethereum address to that child wallet. <br></p>
-
 <p><strong>Definition</strong> <br></p>
 
 <p><code>POST</code> https://api.testwyre.com/v2/wallets <br></p>
@@ -1817,26 +1851,29 @@ curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
 </tbody></table>
 
 <p><strong>Result Format</strong></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"{your-unique-identifier}"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"WA-AYBNA3lBiWAM4l3"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"depositAddresses"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2ShL7kzSNNxedit6hC2fjSQhVcAucTeS1m7"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"totalBalances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"availableBalances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"srn"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:AYBNA3lBiWAM4l3"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"balances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"callbackUrl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://your.website.io/callback"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"notes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Notes about the user"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='create-mulitple-wallets'>Create Mulitple Wallets</h2><pre class="highlight plaintext"><code>
+
+<pre class="center-column">
+{
+  "name" : "{your-unique-identifier}",
+  "id" : "WA-AYBNA3lBiWAM4l3",
+  "depositAddresses" : {
+    "BTC" : "2ShL7kzSNNxedit6hC2fjSQhVcAucTeS1m7"
+  },
+  "totalBalances" : {
+    "BTC" : 0
+  },
+  "availableBalances" : {
+    "BTC" : 0
+  },
+  "srn" : "wallet:AYBNA3lBiWAM4l3",
+  "balances" : {
+    "BTC" : 0
+  },
+  "callbackUrl" : "https://your.website.io/callback",
+  "notes" : "Notes about the user"
+}
+</pre>
+<h2 id='create-mulitple-wallets'>Create Mulitple Wallets</h2><pre class="highlight plaintext"><code>
 curl -XPOST 'https://api.testwyre.com/v2/wallets/batch?pretty' \
 -H 'Content-Type:application/json' \
 -d '{
@@ -1872,69 +1909,71 @@ curl -XPOST 'https://api.testwyre.com/v2/wallets/batch?pretty' \
 </tbody></table>
 
 <p><strong>Result Format</strong></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"walletOne"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"AxVA57edP0H33x3"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"notes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"srn"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:AxVA57edP0H33x3"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"callbackUrl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"verificationData"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"depositAddresses"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2ShKKFb9gEP5uvRXtMbs7ykJAMPgoSSnSWB"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"totalBalances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"availableBalances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"balances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"walletTwo"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"AtEhoXje3C1V5zq"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"notes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"srn"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:AtEhoXje3C1V5zq"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"callbackUrl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"verificationData"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"depositAddresses"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2ShKndBJNHvzABhBzLxvfzzD2vt64C36dPc"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"totalBalances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"availableBalances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"balances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"walletThree"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"U07tSKMvofeMmx0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"notes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"srn"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:U07tSKMvofeMmx0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"callbackUrl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"verificationData"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"depositAddresses"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2ShJsBPUb4HrNtgaNZk3YQSi2ynpZ5YY7sT"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"totalBalances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"availableBalances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"balances"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"BTC"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='lookup-wallet'>Lookup Wallet</h2>
+<pre class="center-column">
+{
+  "name" : "walletOne",
+  "id" : "AxVA57edP0H33x3",
+  "notes" : null,
+  "srn" : "wallet:AxVA57edP0H33x3",
+  "callbackUrl" : null,
+  "verificationData" : null,
+  "depositAddresses" : {
+    "BTC" : "2ShKKFb9gEP5uvRXtMbs7ykJAMPgoSSnSWB"
+  },
+  "totalBalances" : {
+    "BTC" : 0
+  },
+  "availableBalances" : {
+    "BTC" : 0
+  },
+  "balances" : {
+    "BTC" : 0
+  }
+}, {
+  "name" : "walletTwo",
+  "id" : "AtEhoXje3C1V5zq",
+  "notes" : null,
+  "srn" : "wallet:AtEhoXje3C1V5zq",
+  "callbackUrl" : null,
+  "verificationData" : null,
+  "depositAddresses" : {
+    "BTC" : "2ShKndBJNHvzABhBzLxvfzzD2vt64C36dPc"
+  },
+  "totalBalances" : {
+    "BTC" : 0
+  },
+  "availableBalances" : {
+    "BTC" : 0
+  },
+  "balances" : {
+    "BTC" : 0
+  }
+}, {
+  "name" : "walletThree",
+  "id" : "U07tSKMvofeMmx0",
+  "notes" : null,
+  "srn" : "wallet:U07tSKMvofeMmx0",
+  "callbackUrl" : null,
+  "verificationData" : null,
+  "depositAddresses" : {
+    "BTC" : "2ShJsBPUb4HrNtgaNZk3YQSi2ynpZ5YY7sT"
+  },
+  "totalBalances" : {
+    "BTC" : 0
+
+  },
+  "availableBalances" : {
+    "BTC" : 0
+  },
+  "balances" : {
+    "BTC" : 0
+  }
+}
+</pre>
+<h2 id='lookup-wallet'>Lookup Wallet</h2>
 <p>Lookup by user ID:</p>
-<pre class="highlight plaintext"><code>
-curl -v -XGET 'https://api.testwyre.com/v2/wallet/{wallet-id}' \
+<pre class="highlight plaintext"><code>curl -v -XGET 'https://api.testwyre.com/v2/wallet/{wallet-id}' \
   -H "X-Api-Key: {api-key}" \
   -H "X-Api-Signature: {signature}" \
 </code></pre>
@@ -2013,14 +2052,12 @@ curl -v -XGET 'https://api.testwyre.com/v2/wallet/{wallet-id}' \
    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"richard"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[Wallet-ID]"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='edit-wallet'>Edit Wallet</h2><pre class="highlight plaintext"><code>
-curl -v -XPOST 'https://api.testwyre.com/v2/wallet/{wallet-id}/update' \
+</span></code></pre><h2 id='edit-wallet'>Edit Wallet</h2><pre class="highlight plaintext"><code>curl -v -XPOST 'https://api.testwyre.com/v2/wallet/{wallet-id}/update' \
   -H "Content-Type: application/json" \
   -H "X-Api-Key: {api-key}" \
   -H "X-Api-Signature: {signature}" \
   -d '{"name":"{your-unique-identifier}","notes":"Updated notes about the sub account"}'
-</code></pre><pre class="highlight python tab-python"><code>
-<span class="c">#dependencies:</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c">#dependencies:</span>
 <span class="c">#python3</span>
 <span class="c">#pip3 install requests</span>
 
@@ -2089,10 +2126,7 @@ curl -v -XPOST 'https://api.testwyre.com/v2/wallet/{wallet-id}/update' \
 </span><span class="s">                                )</span><span class="err">
 </span><span class="s">print(result)</span><span class="err">
 </span><span class="s">users_srn = result['</span><span class="n">srn</span><span class="s">'] #grab our srn identifier for the user</span><span class="err">
-
-
-</span></code></pre><pre class="highlight java tab-java"><code>
-<span class="kn">import</span> <span class="nn">javax.crypto.Mac</span><span class="o">;</span>
+</span></code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">javax.crypto.Mac</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">javax.crypto.spec.SecretKeySpec</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.DataOutputStream</span><span class="o">;</span>
@@ -2214,7 +2248,6 @@ curl -v -XPOST 'https://api.testwyre.com/v2/wallet/{wallet-id}/update' \
     <span class="o">}</span>
   <span class="o">}</span>
 <span class="o">}</span>
-
 </code></pre>
 <p>This endpoint updates the information for a accounts child wallet. <br></p>
 
@@ -2317,24 +2350,27 @@ curl -v -XDELETE 'https://api.testwyre.com/v2/wallet/{wallet-id}' \
 </tbody></table>
 
 <p><strong>Result Format</strong></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"account:XAV3CRAC94P"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-      </span><span class="s2">"srn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:WA-XM4L3JMUQGF"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1508433396000</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"callbackUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://shake.webscript.io/callback"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"depositAddresses"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"BTC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1Q9TqsVwuZf6bYqtxxjqdataXx81x3Q1h7"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"totalBalances"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-      </span><span class="s2">"availableBalances"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-      </span><span class="s2">"notes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nope"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Person A"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WA-XM4L3JMUQGF"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span></code></pre><h2 id='callbacks'>Callbacks</h2>
+
+<pre class="center-column">
+{
+  "data": {
+      "owner": "account:XAV3CRAC94P",
+      "balances": {},
+      "srn": "wallet:WA-XM4L3JMUQGF",
+      "createdAt": 1508433396000,
+      "callbackUrl": "https://shake.webscript.io/callback",
+      "depositAddresses": {
+        "BTC": "1Q9TqsVwuZf6bYqtxxjqdataXx81x3Q1h7"
+      },
+      "totalBalances": {},
+      "availableBalances": {},
+      "notes": "nope",
+      "name": "Person A",
+      "id": "WA-XM4L3JMUQGF"
+    }
+  }
+</pre>
+<h2 id='callbacks'>Callbacks</h2>
 <p>We provide a series of HTTP callbacks that allow you to notify users when funds have been deposited and when they become available.</p>
 
 <p><strong>When callbacks are sent</strong> <br>
@@ -2351,81 +2387,40 @@ Callbacks are sent whenever a transactional event occurs that will affect the wa
 Your system should respond to the callback request with a 200 response. If we do not receive a valid repsonse our system will continue to attempt to send the request.</p>
 
 <p><strong>Result Format</strong> <br></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"createdAt"</span><span class="p">:</span><span class="mi">1531445525097</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="s2">"TR-F3947W8C2C6"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"transfer:TF-HP4A42EC6DX"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dest"</span><span class="p">:</span><span class="s2">"wallet:WA-CF9RFZ7QU6W"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"currency"</span><span class="p">:</span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"amount"</span><span class="p">:</span><span class="mf">5005.00</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"CONFIRMED"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"confirmedAt"</span><span class="p">:</span><span class="mi">1531445525097</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cancelledAt"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"reversedAt"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"Deposit for transfer TF-HP4A42EC6DX"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"allowOverdraft"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"authorizer"</span><span class="p">:</span><span class="s2">"account:AC-XXXXXXXXX"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"senderProvidedId"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"reversedBy"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fees"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"feesDest"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"metadata"</span><span class="p">:{</span><span class="w">
-    </span><span class="s2">"Description"</span><span class="p">:</span><span class="s2">"Pending: Transfer of $5005.00 to wallet:WA-CF9RFZ7QU6W"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"transferId"</span><span class="p">:</span><span class="s2">"TF-HP4A42EC6DX"</span><span class="p">},</span><span class="w">
-    </span><span class="s2">"tags"</span><span class="p">:[],</span><span class="w">
-    </span><span class="s2">"sourceFees"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"destFees"</span><span class="p">:</span><span class="kc">null</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span></code></pre>
+
+<pre class="center-column">
+{
+  "createdAt":1531445525097,
+  "id":"TR-F3947W8C2C6",
+  "source":"transfer:TF-HP4A42EC6DX",
+  "dest":"wallet:WA-CF9RFZ7QU6W",
+  "currency":"USD",
+  "amount":5005.00,
+  "status":"CONFIRMED",
+  "confirmedAt":1531445525097,
+  "cancelledAt":null,
+  "reversedAt":null,
+  "message":"Deposit for transfer TF-HP4A42EC6DX",
+  "allowOverdraft":true,
+  "authorizer":"account:AC-XXXXXXXXX",
+  "senderProvidedId":null,
+  "reversedBy":null,
+  "fees":0,
+  "feesDest":null,
+  "metadata":{
+    "Description":"Pending: Transfer of $5005.00 to wallet:WA-CF9RFZ7QU6W",
+    "transferId":"TF-HP4A42EC6DX"},
+    "tags":[],
+    "sourceFees":null,
+    "destFees":null
+  }
+</pre>
+
 <p>The callback payload will be a JSON representation of the transaction that has caused the callback to trigger.</p>
 <h1 id='transfers'>Transfers</h1><h2 id='introduction'>Introduction</h2>
 <p>Transfers represent the building blocks of our API. Our Transfer API is an incredibly versatile way of moving funds not only externally but internally as well, whether it&#39;s through internal account management or internal exchanges.  Additionally, you can specify differing source and destination currencies and the funds will automatically exchanged into the appropriate currency in our backend. <br>
-Anytime you want to move funds around on the Wyre platform you will create a Transfer. The Transfer will go through a number of states as funds are moved to the destination of your choice.<BR></p>
-
-<p>Please refer <a href="http://testwyre.com/docs/#country-currency-requirements">here</a> for each country&#39;s individual requirements when conducting international transfers.</p>
-<h2 id='list-of-supported-banks'>List of Supported Banks</h2>
-<p>This list will return the latest set of supported banks for either <code>China</code> or <code>Brazil</code>.</p>
-
-<p><strong>Definition</strong> <br></p>
-
-<p><code>GET</code> https://api.testwyre.com/v2/bankinfo/:country <br></p>
-
-<p><strong>Parameters</strong></p>
-
-<table><thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>country</td>
-<td>string</td>
-<td>The country you want to get bank info from. Currently the only supported values are CN and BR</td>
-<td>yes</td>
-</tr>
-</tbody></table>
-<h2 id='quote-transfer'>Quote Transfer</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
-   </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"account:i6rgs8mjdmmu7cnf7a5bgl0r0vudsfe5"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"sourceCurrency"</span><span class="p">:</span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"sourceAmount"</span><span class="p">:</span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"dest"</span><span class="p">:</span><span class="s2">"email:sam@testwyre.com"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"destCurrency"</span><span class="p">:</span><span class="s2">"CNY"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"preview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"amountIncludesFees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="err">//optional</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Create a transfer to your client&#39;s bank account with all the required information. <br></p>
-
-<p>Set parameter <code>preview</code> to &quot;true&quot; and <code>amountIncludesFees</code> to &quot;true&quot; to not execute a real transfer and view the fee breakdown. <br></p>
-
-<p>If <code>amountIncludesFees</code> is &quot;true&quot;, the amount you consider in <code>sourceAmount</code> and <code>destAmount</code> will be inclusive of fees. <br></p>
-
-<p>The JSON response will return object <code>totalFees</code> which will include all Wyre fees and BTC miner fees (if applicable).</p>
-
+Anytime you want to move funds around on the platform you will create a Transfer. The Transfer will go through a number of states as funds are moved to the destination of your choice.<BR></p>
+<h2 id='transfers-2'>Transfers</h2>
 <p><strong>Definition</strong> <br>
 <code>POST</code> https://api.testwyre.com/v2/transfer/<br></p>
 
@@ -2458,7 +2453,7 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 <tr>
 <td>dest</td>
 <td>string</td>
-<td>An email address, cellphone number, digital currency address, payment method, wallet to send the digital currency to. For BTC address use &quot;bitcoin:[address]&quot; and for ETH, use &quot;ethereum:[address]&quot;. Note: cellphone numbers are assumed to be a US number, for international numbers include a &#39;+&#39; and the country code as the prefix.</td>
+<td>An email address, cellphone number, digital currency address, payment method, wallet to send the digital currency to. Note: cellphone numbers are assumed to be a US number, for international numbers include a &#39;+&#39; and the country code as the prefix.</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -2492,15 +2487,18 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 <td>no</td>
 </tr>
 </tbody></table>
-<h2 id='create-transfer'>Create Transfer</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
-   </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"account:i6rgs8mjdmmu7cnf7a5bgl0r0vudsfe5"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"sourceCurrency"</span><span class="p">:</span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"sourceAmount"</span><span class="p">:</span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"dest"</span><span class="p">:</span><span class="s2">"email:sam@testwyre.com"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"destCurrency"</span><span class="p">:</span><span class="s2">"CNY"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="err">//optional</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<h2 id='create-transfer'>Create Transfer</h2>
+<pre class="center-column">
+{  
+   "source":"account:AC-123123123",
+   "sourceCurrency":"USD",
+   "sourceAmount":"5",
+   "dest":"email:sam@testwyre.com",
+   "destCurrency":"CNY",
+   "message": ""
+}
+</pre>
+
 <p>This endpoint creates a new money transfer. <br></p>
 
 <p><strong>Definition</strong> <br>
@@ -2535,7 +2533,7 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 <tr>
 <td>dest</td>
 <td>string</td>
-<td>An email address, cellphone number, digital currency address, payment method, wallet to send the digital currency to. For BTC address use &quot;bitcoin:[address]&quot; and for ETH, use &quot;ethereum:[address]&quot;. Note: cellphone numbers are assumed to be a US number, for international numbers include a &#39;+&#39; and the country code as the prefix.</td>
+<td>An email address, cellphone number, digital currency address, payment method, wallet to send the digital currency to. Note: cellphone numbers are assumed to be a US number, for international numbers include a &#39;+&#39; and the country code as the prefix.</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -2588,7 +2586,7 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 </tr>
 </tbody></table>
 
-<p>Once you&#39;ve created the transfer it will be in an UNCONFIRMED state. You will have 30 seconds to review the transfer and <a href="http://testwyre.com/docs/#confirm-transfer">confirm it</a> before the quote expires. If the quote expires you&#39;ll have to reissue the transfer request and confirm the new transfer. However you can CONFIRM the transfer AUTOMATICALLY by setting <code>autoConfirm</code> to <code>true</code>. <br></p>
+<p>Once you&#39;ve created the transfer it will be in an UNCONFIRMED state. You will have 30 seconds to review the transfer and <a href="#confirm-transfer">confirm it</a> before the quote expires. If the quote expires you&#39;ll have to reissue the transfer request and confirm the new transfer. However you can CONFIRM the transfer AUTOMATICALLY by setting <code>autoConfirm</code> to <code>true</code>. <br></p>
 
 <p>When reviewing the transfer the main things you&#39;ll want to check out are the following: <br></p>
 
@@ -2648,7 +2646,7 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 }
 </pre>
 <h2 id='confirm-transfer'>Confirm Transfer</h2>
-<p>This endpoint confirms a money transfer. Once you&#39;ve created the transfer and receive a 200 response, you will have 30 seconds to confirm the transfer. Note the <code>transferId</code> after you create the transfer. If you want to automatically confirm the transfer without making an additional API call, set parameter <code>autoConfirm</code> to &quot;true&quot; in your <a href="http://testwyre.com/docs/#create-transfer">Create Transfer</a> request. <br></p>
+<p>This endpoint confirms a money transfer. Once you&#39;ve created the transfer and receive a 200 response, you will have 30 seconds to confirm the transfer. Note the <code>transferId</code> after you create the transfer. If you want to automatically confirm the transfer without making an additional API call, set parameter <code>autoConfirm</code> to &quot;true&quot; in your <a href="#create-transfer">Create Transfer</a> request. <br></p>
 
 <p><strong>Definition</strong> <br>
 <code>POST</code> https://api.testwyre.com/v2/transfer/transferId:/confirm <br></p>
@@ -2931,11 +2929,7 @@ Your system should respond to the callback request with a 200 response. We only 
 </pre>
 
 <p>The callback payload will be a JSON representation of the transaction that has caused the callback to trigger.</p>
-<h1 id='payment-methods'>Payment Methods</h1><h2 id='create-payment-method'>Create Payment Method</h2><pre class="highlight json tab-json"><code><span class="w">
-</span><span class="err">//</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">going</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">user's</span><span class="w"> </span><span class="err">bank</span><span class="w"> </span><span class="err">information.</span><span class="w">
-</span><span class="err">We</span><span class="w"> </span><span class="err">take</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">way</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">validate</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">they're</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">sender</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">payment.</span><span class="w">
-</span><span class="err">It</span><span class="w"> </span><span class="err">allows</span><span class="w"> </span><span class="err">us</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">know</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">expect</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">payment</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">coming</span><span class="w"> </span><span class="err">from.</span><span class="w">
-</span><span class="p">{</span><span class="w">
+<h1 id='payment-methods'>Payment Methods</h1><h2 id='create-payment-method'>Create Payment Method</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"paymentMethodType"</span><span class="p">:</span><span class="s2">"INTERNATIONAL_TRANSFER"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
@@ -2957,12 +2951,11 @@ Your system should respond to the callback request with a 200 response. We only 
     </span><span class="s2">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHECKING"</span><span class="p">,</span><span class="w"> </span><span class="err">//CHECKING</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">SAVINGS</span><span class="w">
     </span><span class="s2">"chargeablePM"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-
-</span><span class="err">//</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">going</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">corporation's</span><span class="w"> </span><span class="err">bank</span><span class="w"> </span><span class="err">information.</span><span class="w">
-</span><span class="err">We</span><span class="w"> </span><span class="err">take</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">way</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">validate</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">they're</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">sender</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">payment.</span><span class="w">
-</span><span class="err">It</span><span class="w"> </span><span class="err">allows</span><span class="w"> </span><span class="err">us</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">know</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">expect</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">payment</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">coming</span><span class="w"> </span><span class="err">from.</span><span class="w">
-
-</span><span class="p">{</span><span class="w">
+</span></code></pre>
+<p>This is going to be your corporation&#39;s bank information.
+We take this as a way to validate that they&#39;re the sender of the payment.
+It allows us to know where to expect the payment to be coming from.</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"paymentMethodType"</span><span class="p">:</span><span class="s2">"INTERNATIONAL_TRANSFER"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
@@ -2985,249 +2978,59 @@ Your system should respond to the callback request with a 200 response. We only 
     </span><span class="s2">"routingNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000000000"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"chargeablePM"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-
 </span></code></pre>
 <p>This endpoint creates a bank account. <br></p>
-
-<p><strong>Definition</strong><br>
-<code>POST</code> https://api.testwyre.com/v2/paymentMethods <br></p>
-
-<p><strong>Parameters</strong></p>
-
-<table><thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>owner</td>
-<td>string</td>
-<td>Wallet ID (e.g. wallet:12345)</td>
-<td>no</td>
-</tr>
-<tr>
-<td>paymentMethodType</td>
-<td>string</td>
-<td><code>INTERNATIONAL_TRANSFER</code></td>
-<td>yes</td>
-</tr>
-<tr>
-<td>paymentType</td>
-<td>string</td>
-<td><code>LOCAL_BANK_WIRE</code></td>
-<td>yes</td>
-</tr>
-<tr>
-<td>currency</td>
-<td>string</td>
-<td>3 letter currency code</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>country</td>
-<td>string</td>
-<td>Alpha-2 country code</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>beneficiaryType</td>
-<td>string</td>
-<td><code>INDIVIDUAL</code> or <code>CORPORATE</code></td>
-<td>yes</td>
-</tr>
-<tr>
-<td>nameOnAccount</td>
-<td>string</td>
-<td>Name of beneficiary on account</td>
-<td>no</td>
-</tr>
-<tr>
-<td>firstNameOnAccount</td>
-<td>string</td>
-<td>Required for individual</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>lastNameOnAccount</td>
-<td>string</td>
-<td>Required for individual</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>beneficiaryCompanyName</td>
-<td>string</td>
-<td>Required for business</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>beneficiaryEinTin</td>
-<td>string</td>
-<td>Required for business</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>beneficiaryAddress</td>
-<td>string</td>
-<td>Beneficiary&#39;s address</td>
-<td>no</td>
-</tr>
-<tr>
-<td>beneficiaryAddress2</td>
-<td>string</td>
-<td>Beneficiary&#39;s address</td>
-<td>no</td>
-</tr>
-<tr>
-<td>beneficiaryCity</td>
-<td>string</td>
-<td>Beneficiary&#39;s city</td>
-<td>no</td>
-</tr>
-<tr>
-<td>beneficiaryPostal</td>
-<td>string</td>
-<td>Beneficiary&#39;s zip code</td>
-<td>no</td>
-</tr>
-<tr>
-<td>beneficiaryPhoneNumber</td>
-<td>string</td>
-<td>Required for individual</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>beneficiaryLandlineNumber</td>
-<td>string</td>
-<td>Required for business</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>beneficiaryState</td>
-<td>string</td>
-<td>Beneficiary&#39;s state</td>
-<td>no</td>
-</tr>
-<tr>
-<td>beneficiaryEmailAddress</td>
-<td>string</td>
-<td>Required for business</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>beneficiaryDobDay</td>
-<td>integer</td>
-<td>Beneficiary&#39;s birth day</td>
-<td>no</td>
-</tr>
-<tr>
-<td>beneficiaryDobMonth</td>
-<td>integer</td>
-<td>Beneficiary&#39;s birth month</td>
-<td>no</td>
-</tr>
-<tr>
-<td>beneficiaryDobYear</td>
-<td>integer</td>
-<td>Beneficiary&#39;s birth year</td>
-<td>no</td>
-</tr>
-<tr>
-<td>accountNumber</td>
-<td>string</td>
-<td>Required</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>routingNumber</td>
-<td>string</td>
-<td>Required</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>accountType</td>
-<td>string</td>
-<td><code>CHECKING</code> or <code>SAVINGS</code></td>
-<td>no</td>
-</tr>
-<tr>
-<td>chargeablePM</td>
-<td>boolean</td>
-<td>Set to true</td>
-<td>yes</td>
-</tr>
-</tbody></table>
-
-<p><strong>Result Format</strong>
-<pre class="center-column">
-{
- id: //the id is also an SRN of the format paymentmethod,
- name:<name>,
- status:&quot;AWAITING_FOLLOWUP | AWAITING_DEPOSIT_VERIFICATION | ACTIVE | REJECTED |  DISABLED | PENDING&quot;,
- chargeableCurrencies:[&quot;USD&quot;],
- depositableCurrencies:[&quot;USD&quot;],
- chargeFeeSchedule:[...],
- depositFeeSchedule:[...],
- minCharge:0.0,
- maxCharge:0.0,
- minDeposit:0.0,
- maxDeposit:0.0
-}
- </pre></p>
 <h2 id='lookup-payment-method'>Lookup Payment Method</h2>
 <p>This endpoint looks up the bank details associated with a payment method you created.<br></p>
 
 <p><strong>Definition</strong> <br>
 <code>GET</code> https://api.testwyre.com/v2/paymentMethod/:paymentMethodId</p>
 
-<p><strong>Result Format</strong>
-<pre class="center-column"></p>
+<p><strong>Result Format</strong></p>
 
-<p>{
-    &quot;id&quot;: &quot;TestPaymentMethod&quot;,
-    &quot;owner&quot;: &quot;account:ABCDEFG&quot;,
-    &quot;createdAt&quot;: 1230940800000,
-    &quot;name&quot;: &quot;TEST PAYMENT METHOD&quot;,
-    &quot;defaultCurrency&quot;: &quot;USD&quot;,
-    &quot;status&quot;: &quot;ACTIVE&quot;,
-    &quot;statusMessage&quot;: null,
-    &quot;waitingPrompts&quot;: [],
-    &quot;linkType&quot;: &quot;TEST&quot;,
-    &quot;supportsDeposit&quot;: true,
-    &quot;nameOnMethod&quot;: null,
-    &quot;last4Digits&quot;: null,
-    &quot;brand&quot;: null,
-    &quot;expirationDisplay&quot;: null,
-    &quot;countryCode&quot;: null,
-    &quot;nickname&quot;: null,
-    &quot;rejectionMessage&quot;: null,
-    &quot;disabled&quot;: false,
-    &quot;supportsPayment&quot;: true,
-    &quot;chargeableCurrencies&quot;: [
-        &quot;GBP&quot;,
-        &quot;MXN&quot;,
-        &quot;HKD&quot;,
-        &quot;USD&quot;,
-        &quot;CNY&quot;,
-        &quot;BRL&quot;,
-        &quot;EUR&quot;,
+<pre class="center-column">
+{
+    "id": "TestPaymentMethod",
+    "owner": "account:ABCDEFG",
+    "createdAt": 1230940800000,
+    "name": "TEST PAYMENT METHOD",
+    "defaultCurrency": "USD",
+    "status": "ACTIVE",
+    "statusMessage": null,
+    "waitingPrompts": [],
+    "linkType": "TEST",
+    "supportsDeposit": true,
+    "nameOnMethod": null,
+    "last4Digits": null,
+    "brand": null,
+    "expirationDisplay": null,
+    "countryCode": null,
+    "nickname": null,
+    "rejectionMessage": null,
+    "disabled": false,
+    "supportsPayment": true,
+    "chargeableCurrencies": [
+        "GBP",
+        "MXN",
+        "HKD",
+        "USD",
+        "CNY",
+        "BRL",
+        "EUR",
     ],
-    &quot;depositableCurrencies&quot;: [
-        &quot;USD&quot;
+    "depositableCurrencies": [
+        "USD"
     ],
-    &quot;chargeFeeSchedule&quot;: null,
-    &quot;depositFeeSchedule&quot;: null,
-    &quot;minCharge&quot;: null,
-    &quot;maxCharge&quot;: null,
-    &quot;minDeposit&quot;: null,
-    &quot;maxDeposit&quot;: null,
-    &quot;documents&quot;: [],
-    &quot;srn&quot;: &quot;paymentmethod:TestPaymentMethod&quot;
-}</p>
-
-<p></pre></p>
+    "chargeFeeSchedule": null,
+    "depositFeeSchedule": null,
+    "minCharge": null,
+    "maxCharge": null,
+    "minDeposit": null,
+    "maxDeposit": null,
+    "documents": [],
+    "srn": "paymentmethod:TestPaymentMethod"
+}
+</pre>
 <h1 id='country-currency-requirements'>Country/Currency Requirements</h1>
 <p>Banks in different countries have a unique set of financial requirements that need to be passed to conduct a successful transfer.</p>
 <h2 id='china'>China</h2>
@@ -3344,7 +3147,7 @@ Your system should respond to the callback request with a 200 response. We only 
 <p><strong>Supported Banks</strong><br></p>
 
 <ul>
-<li>The list of supported banks are located <a href="https://support.testwyre.com/sending-money/send-money-to-china/list-of-supported-chinese-banks" target="_blank">here</a>.</li>
+<li>The list of supported banks are located <a href="https://support.testwyre.com/sending-money/send-money-to-china/list-of-supported-chinese-banks"</a>.</li>
 </ul>
 <h2 id='usa'>USA</h2>
 <p>USD payouts are initiated from one of our banks that corresponds to the country delivered. Please note that the minimum amount to transfer USD is $5.00.</p>
