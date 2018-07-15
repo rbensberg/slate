@@ -459,24 +459,24 @@ Once fully onboarded you are ready to go!</p>
 <pre class="highlight json tab-json"><code><span class="err">For</span><span class="w"> </span><span class="err">successful</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">calls</span><span class="p">:</span><span class="w">
 
 </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="err">&lt;br&gt;</span><span class="w">
-        </span><span class="s2">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABCDEF"</span><span class="w"> </span><span class="err">&lt;br&gt;</span><span class="w">
+        </span><span class="s2">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABCDEF"</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
 
 </span><span class="err">For</span><span class="w"> </span><span class="err">unsuccessful</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">calls</span><span class="p">:</span><span class="w">
 
 </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"language"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="err">&lt;br&gt;</span><span class="w">
-        </span><span class="s2">"exceptionId"</span><span class="p">:</span><span class="s2">"ABCDEF"</span><span class="p">,</span><span class="err">&lt;br&gt;</span><span class="w">
-        </span><span class="s2">"compositeType"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="err">&lt;br&gt;</span><span class="w">
-        </span><span class="s2">"subType"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="err">&lt;br&gt;</span><span class="w">
-        </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"Error Message"</span><span class="p">,</span><span class="err">&lt;br&gt;</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"ErrorTypeException"</span><span class="p">,</span><span class="err">&lt;br&gt;</span><span class="w">
-        </span><span class="s2">"transient"</span><span class="p">:</span><span class="kc">false</span><span class="w"> </span><span class="err">&lt;br&gt;</span><span class="w">
+        </span><span class="s2">"language"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"exceptionId"</span><span class="p">:</span><span class="s2">"ABCDEF"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"compositeType"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subType"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"Error Message"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"ErrorTypeException"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transient"</span><span class="p">:</span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h2 id='production-test-endpoints'>Production/Test Endpoints</h2>
-<p>We have two environments, <code>testwyre</code> for API integration testing and <code>testwyre</code>, our production environment.</p>
+<p>We have two environments, <code>testwyre</code> for API integration testing and <code>sendwyre</code>, our production environment.</p>
 
 <table><thead>
 <tr>
@@ -791,72 +791,69 @@ Once fully onboarded you are ready to go!</p>
     <span class="o">}</span>
   <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-<!-- ```php
-<?php
-    function make_authenticated_request($endpoint, $method, $body) {
-        $url = 'https://api.testwyre.com';
-        $api_key = "YOUR_API_KEY_HERE";
-        $secret_key = "YOUR_SECRET_KEY_HERE";
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+    <span class="k">function</span> <span class="nf">make_authenticated_request</span><span class="p">(</span><span class="nv">$endpoint</span><span class="p">,</span> <span class="nv">$method</span><span class="p">,</span> <span class="nv">$body</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$url</span> <span class="o">=</span> <span class="s1">'https://api.testwyre.com'</span><span class="p">;</span>
+        <span class="nv">$api_key</span> <span class="o">=</span> <span class="s2">"YOUR_API_KEY_HERE"</span><span class="p">;</span>
+        <span class="nv">$secret_key</span> <span class="o">=</span> <span class="s2">"YOUR_SECRET_KEY_HERE"</span><span class="p">;</span>
 
-        $timestamp = floor(microtime(true)*1000);
-        $request_url = $url . $endpoint;
+        <span class="nv">$timestamp</span> <span class="o">=</span> <span class="nb">floor</span><span class="p">(</span><span class="nb">microtime</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">);</span>
+        <span class="nv">$request_url</span> <span class="o">=</span> <span class="nv">$url</span> <span class="o">.</span> <span class="nv">$endpoint</span><span class="p">;</span>
 
-        if(strpos($request_url,"?"))
-            $request_url .= '&timestamp=' . $timestamp;
-        else
-            $request_url .= '?timestamp=' . $timestamp;
+        <span class="k">if</span><span class="p">(</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$request_url</span><span class="p">,</span><span class="s2">"?"</span><span class="p">))</span>
+            <span class="nv">$request_url</span> <span class="o">.=</span> <span class="s1">'&amp;timestamp='</span> <span class="o">.</span> <span class="nv">$timestamp</span><span class="p">;</span>
+        <span class="k">else</span>
+            <span class="nv">$request_url</span> <span class="o">.=</span> <span class="s1">'?timestamp='</span> <span class="o">.</span> <span class="nv">$timestamp</span><span class="p">;</span>
 
-        if(!empty($body))
-            $body = json_encode($body, JSON_FORCE_OBJECT);
-        else
-            $body = '';
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$body</span><span class="p">))</span>
+            <span class="nv">$body</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$body</span><span class="p">,</span> <span class="nx">JSON_FORCE_OBJECT</span><span class="p">);</span>
+        <span class="k">else</span>
+            <span class="nv">$body</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
 
-        $headers = array(
-            "Content-Type: application/json",
-            "X-Api-Key: ". $api_key,
-            "X-Api-Signature: ". calc_auth_sig_hash($secret_key, $request_url . $body),
-            "X-Api-Version: 2"
-        );
-        $curl = curl_init();
+        <span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s2">"Content-Type: application/json"</span><span class="p">,</span>
+            <span class="s2">"X-Api-Key: "</span><span class="o">.</span> <span class="nv">$api_key</span><span class="p">,</span>
+            <span class="s2">"X-Api-Signature: "</span><span class="o">.</span> <span class="nx">calc_auth_sig_hash</span><span class="p">(</span><span class="nv">$secret_key</span><span class="p">,</span> <span class="nv">$request_url</span> <span class="o">.</span> <span class="nv">$body</span><span class="p">),</span>
+            <span class="s2">"X-Api-Version: 2"</span>
+        <span class="p">);</span>
+        <span class="nv">$curl</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
 
-        if($method=="POST"){
-          $options = array(
-            CURLOPT_URL             => $request_url,
-            CURLOPT_POST            =>  true,
-            CURLOPT_POSTFIELDS      => $body,
-            CURLOPT_RETURNTRANSFER  => true);
-        }else {
-          $options = array(
-            CURLOPT_URL             => $request_url,
-            CURLOPT_RETURNTRANSFER  => true);
-        }
-        curl_setopt_array($curl, $options);
-        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-        $result = curl_exec($curl);
-        curl_close($curl);
-        var_dump($result);
-        return json_decode($result, true);
-    }
+        <span class="k">if</span><span class="p">(</span><span class="nv">$method</span><span class="o">==</span><span class="s2">"POST"</span><span class="p">){</span>
+          <span class="nv">$options</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+            <span class="nx">CURLOPT_URL</span>             <span class="o">=&gt;</span> <span class="nv">$request_url</span><span class="p">,</span>
+            <span class="nx">CURLOPT_POST</span>            <span class="o">=&gt;</span>  <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">CURLOPT_POSTFIELDS</span>      <span class="o">=&gt;</span> <span class="nv">$body</span><span class="p">,</span>
+            <span class="nx">CURLOPT_RETURNTRANSFER</span>  <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">);</span>
+        <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+          <span class="nv">$options</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+            <span class="nx">CURLOPT_URL</span>             <span class="o">=&gt;</span> <span class="nv">$request_url</span><span class="p">,</span>
+            <span class="nx">CURLOPT_RETURNTRANSFER</span>  <span class="o">=&gt;</span> <span class="kc">true</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nb">curl_setopt_array</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nv">$options</span><span class="p">);</span>
+        <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$curl</span><span class="p">,</span> <span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span> <span class="nv">$headers</span><span class="p">);</span>
+        <span class="nv">$result</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+        <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$curl</span><span class="p">);</span>
+        <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$result</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="p">}</span>
 
-    function calc_auth_sig_hash($seckey, $val) {
-        $hash = hash_hmac('sha256', $val, $seckey);
-        return $hash;
-    }
+    <span class="k">function</span> <span class="nf">calc_auth_sig_hash</span><span class="p">(</span><span class="nv">$seckey</span><span class="p">,</span> <span class="nv">$val</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$hash</span> <span class="o">=</span> <span class="nb">hash_hmac</span><span class="p">(</span><span class="s1">'sha256'</span><span class="p">,</span> <span class="nv">$val</span><span class="p">,</span> <span class="nv">$seckey</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nv">$hash</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    echo make_authenticated_request("/account", "GET", array());
-    $transfer = array(
-      "sourceCurrency"=>"USD",
-      "dest"=>"paymentmethod:PA-123123123",
-      "sourceAmount"=> 100.01,
-      "destCurrency"=>"USD",
-      "amountIncludesFees"=>True
-      "message"=> "Test"
-      );
-    echo make_authenticated_request("/transfers", "POST", $transfer);
-    ?>
-``` -->
-<pre class="highlight csharp tab-csharp"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="nx">make_authenticated_request</span><span class="p">(</span><span class="s2">"/account"</span><span class="p">,</span> <span class="s2">"GET"</span><span class="p">,</span> <span class="k">array</span><span class="p">());</span>
+    <span class="nv">$transfer</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+      <span class="s2">"sourceCurrency"</span><span class="o">=&gt;</span><span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"dest"</span><span class="o">=&gt;</span><span class="s2">"paymentmethod:PA-123123123"</span><span class="p">,</span>
+      <span class="s2">"sourceAmount"</span><span class="o">=&gt;</span> <span class="mf">100.01</span><span class="p">,</span>
+      <span class="s2">"destCurrency"</span><span class="o">=&gt;</span><span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"amountIncludesFees"</span><span class="o">=&gt;</span><span class="nx">True</span>
+      <span class="s2">"message"</span><span class="o">=&gt;</span> <span class="s2">"Test"</span>
+      <span class="p">);</span>
+    <span class="k">echo</span> <span class="nx">make_authenticated_request</span><span class="p">(</span><span class="s2">"/transfers"</span><span class="p">,</span> <span class="s2">"POST"</span><span class="p">,</span> <span class="nv">$transfer</span><span class="p">);</span>
+    <span class="cp">?&gt;</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">System.IO</span><span class="p">;</span>
 <span class="k">using</span> <span class="nn">System.Net</span><span class="p">;</span>
@@ -2499,7 +2496,8 @@ Anytime you want to move funds around on the platform you will create a Transfer
 }
 </pre>
 
-<p>This endpoint creates a new money transfer. <br></p>
+<p><br>
+This endpoint creates a new money transfer. <br></p>
 
 <p><strong>Definition</strong> <br>
 <code>POST</code> https://api.testwyre.com/v2/transfers <br></p>
@@ -2857,7 +2855,8 @@ Anytime you want to move funds around on the platform you will create a Transfer
 }
 </pre>
 
-<p>Once a Transfer enters the PENDING state we will start moving money to the destination account. At some point the Transfer will either move to a COMPLETED status or a FAILED status asynchronously from any API call.</p>
+<p><br>
+Once a Transfer enters the PENDING state we will start moving money to the destination account. At some point the Transfer will either move to a COMPLETED status or a FAILED status asynchronously from any API call.</p>
 <h2 id='callbacks-2'>Callbacks</h2>
 <p>We provide a series of HTTP callbacks that allow you to notify users when funds have been deposited and when they become available.</p>
 
@@ -2928,7 +2927,8 @@ Your system should respond to the callback request with a 200 response. We only 
 }
 </pre>
 
-<p>The callback payload will be a JSON representation of the transaction that has caused the callback to trigger.</p>
+<p><br>
+The callback payload will be a JSON representation of the transaction that has caused the callback to trigger.</p>
 <h1 id='payment-methods'>Payment Methods</h1><h2 id='create-payment-method'>Create Payment Method</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"paymentMethodType"</span><span class="p">:</span><span class="s2">"INTERNATIONAL_TRANSFER"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
