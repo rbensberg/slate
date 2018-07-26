@@ -433,7 +433,7 @@ Once fully onboarded you are ready to go!</p>
 - European Union (coming soon)
 - Australia (coming soon)</p>
 
-<p><p>We are adding more countries soon. We will send an email as and when we release new functionality ;)</p>
+<p>We are adding more countries soon. We will send an email as and when we release new functionality ;)</p>
 
 <p><strong>Currencies</strong>
 - USD
@@ -968,17 +968,17 @@ Once fully onboarded you are ready to go!</p>
 
 <p><strong>Calculating the request signature</strong></p>
 
-<p>If you are sending a <code>GET</code> request you would sign the following (example):  <em>https://api.testwyre.com/v2/rates?timestamp=1426252182534</em><br></p>
+<p>If you are sending a <code>GET</code> request you would sign the following (example):  <em>https://api.testwyre.com/v2/rates?timestamp=1426252182534</em></p>
 
-<p>If you are making a <code>POST</code> request you would sign the following (example): <em>https://api.testwyre.com/v2/transfers?timestamp=1426252182534</em><br></p>
+<p>If you are making a <code>POST</code> request you would sign the following (example): <em>https://api.testwyre.com/v2/transfers?timestamp=1426252182534</em></p>
 
-<p>Note for the <code>POST</code> request, you must append the request body to the string URL. Remember to send the request body exactly as you sign it, whitespace and all. The server calculates the signature based on exactly what&#39;s in the request body. <br></p>
+<p>Note for the <code>POST</code> request, you must append the request body to the string URL. Remember to send the request body exactly as you sign it, whitespace and all. The server calculates the signature based on exactly what&#39;s in the request body.</p>
 
-<p>Calculating the X-Api-Signature field is a two step process: <br></p>
+<p>Calculating the X-Api-Signature field is a two step process:</p>
 
 <ol>
-<li><p>Concatenate the request URL with the body of the HTTP request into a UTF-8 String. Use an empty string for the HTTP body in <code>GET</code> requests. <br></p></li>
-<li><p>Compute the signature using HMAC with SHA-256 and your API Secret Key. <br></p></li>
+<li><p>Concatenate the request URL with the body of the HTTP request into a UTF-8 String. Use an empty string for the HTTP body in <code>GET</code> requests.</p></li>
+<li><p>Compute the signature using HMAC with SHA-256 and your API Secret Key.</p></li>
 </ol>
 <h2 id='srns'>SRNs</h2>
 <p>An SRN is a System Resource Name. It is a typed identifier that may reference any object within our platform. Many of our API calls and data schemas leverage SRNs in order to add flexibility and decouple services. All SRNs follow the same format:</p>
@@ -1110,6 +1110,8 @@ PAYMENT_METHOD_UNSUPPORTED_DEPOSIT_CURRENCY</p>
 <h3 id='step-1-create-a-wallet-with-kyc-data'>Step 1. Create a Wallet with KYC Data</h3>
 <p>Wyre uses the concept of <code>wallets</code> to represent individual merchant accounts under your <code>account</code>. Upon creation, each of these wallets are assigned various fund receiving capabilities. You must set <code>type=VBA</code> in order to obtain a Virtual Bank Account (with a unique bank account and routing number).</p>
 
+<p><code>POST</code> https://api.testwyre.com/v2/wallets</p>
+
 <pre class="center-column">
 {   
   "name":"youruniquename",
@@ -1157,13 +1159,15 @@ PAYMENT_METHOD_UNSUPPORTED_DEPOSIT_CURRENCY</p>
       }
 }
 </pre>
-<pre class="highlight plaintext"><code>curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
-  -H "Content-Type: application/json" \
-  -H "X-Api-Key: {api-key}" \
-  -H "X-Api-Signature: {signature}" \
-  -d '{"type":"VBA","name":"{your-unique-identifier}"
-</code></pre>
-<p><code>POST</code> https://api.testwyre.com/v2/wallets</p>
+
+<p><br>
+<code>cURL
+curl -v -XPOST &#39;https://api.testwyre.com/v2/wallets&#39; \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;X-Api-Key: {api-key}&quot; \
+  -H &quot;X-Api-Signature: {signature}&quot; \
+  -d &#39;{&quot;type&quot;:&quot;VBA&quot;,&quot;name&quot;:&quot;{your-unique-identifier}&quot;
+</code></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"callbackUrl"</span><span class="p">:</span><span class="s2">"https://your.website.io/callback"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"12345678977897800"</span><span class="p">,</span><span class="w">
@@ -1330,6 +1334,8 @@ PAYMENT_METHOD_UNSUPPORTED_DEPOSIT_CURRENCY</p>
     }
 }
 </pre>
+
+<p><br></p>
 <h3 id='step-4-check-for-banking-data'>Step 4. Check for banking data</h3>
 <p>Banking data is added as an <code>object</code> to the <code>vbaData</code> setcion of the wallet object.</p>
 
@@ -1343,6 +1349,8 @@ PAYMENT_METHOD_UNSUPPORTED_DEPOSIT_CURRENCY</p>
     "routingNumber":"084106768"}
   }
 </pre>
+
+<p><br></p>
 
 <p>Query the wallet using <code>GET</code> https://api.testwyre.com/v2/wallet/[walletID]. Limit your queries to once per hour and once the data is added turn off the queries. In the future we will add a Callback for this event.</p>
 
@@ -1371,6 +1379,8 @@ PAYMENT_METHOD_UNSUPPORTED_DEPOSIT_CURRENCY</p>
 }
 </pre>
 
+<p><br></p>
+
 <p>Your account ID can be found <a href="https://www.testwyre.com/settings/basic-info">here</a>.
 Then transfer USD frm the Account to your pre-arranged Settlement Account (note: during setup - epiapi will create this Settlement Account as a Payment Method)</p>
 
@@ -1386,6 +1396,8 @@ Then transfer USD frm the Account to your pre-arranged Settlement Account (note:
 "message":"Merchant Test"
 }
 </pre>
+
+<p><br></p>
 
 <p>Set <code>autoConfirm</code> to &quot;true&quot; to automatically confirm the transfer.</p>
 <h1 id='account'>Account</h1><h2 id='account-details'>Account Details</h2>
@@ -2118,37 +2130,37 @@ curl -XPOST 'https://api.testwyre.com/v2/wallets/batch?pretty' \
 
     <span class="nd">@authenticate_request</span>
     <span class="k">def</span> <span class="nf">update_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">walletId</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">callbackUrl</span><span class="p">,</span> <span class="n">notes</span><span class="p">,</span> <span class="n">verificationData</span><span class="p">):</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">+</span> <span class="s">'/wallet/'</span> <span class="o">+</span> <span class="n">walletId</span> <span class="o">+</span> <span class="s">'/update</span><span class="err">
-</span><span class="s">        method = '</span><span class="n">POST</span><span class="s">'</span><span class="err">
-</span><span class="s">        body = {'</span><span class="n">name</span><span class="s">':name}</span><span class="err">
-</span><span class="s">        if callbackUrl:</span><span class="err">
-</span><span class="s">            body["callbackUrl"] = callbackUrl</span><span class="err">
-</span><span class="s">        if notes:</span><span class="err">
-</span><span class="s">            body['</span><span class="n">notes</span><span class="s">'] = notes</span><span class="err">
-</span><span class="s">        if verificationData:</span><span class="err">
-</span><span class="s">            body['</span><span class="n">verificationData</span><span class="s">'] = verificationData</span><span class="err">
-</span><span class="s">        return url, method, body</span><span class="err">
+        <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">+</span> <span class="s">'/wallet/'</span> <span class="o">+</span> <span class="n">walletId</span> <span class="o">+</span> <span class="s">'/update'</span>
+        <span class="n">method</span> <span class="o">=</span> <span class="s">'POST'</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span><span class="n">name</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">callbackUrl</span><span class="p">:</span>
+            <span class="n">body</span><span class="p">[</span><span class="s">"callbackUrl"</span><span class="p">]</span> <span class="o">=</span> <span class="n">callbackUrl</span>
+        <span class="k">if</span> <span class="n">notes</span><span class="p">:</span>
+            <span class="n">body</span><span class="p">[</span><span class="s">'notes'</span><span class="p">]</span> <span class="o">=</span> <span class="n">notes</span>
+        <span class="k">if</span> <span class="n">verificationData</span><span class="p">:</span>
+            <span class="n">body</span><span class="p">[</span><span class="s">'verificationData'</span><span class="p">]</span> <span class="o">=</span> <span class="n">verificationData</span>
+        <span class="k">return</span> <span class="n">url</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">body</span>
 
-</span><span class="s">#USAGE Example</span><span class="err">
-</span><span class="s">account_id = "YOUR_ACCOUNT_ID_HERE" #optional</span><span class="err">
-</span><span class="s">api_key = "YOUR_API_KEY_HERE"</span><span class="err">
-</span><span class="s">secret_key = "YOUR_SECRET_KEY_HERE"</span><span class="err">
-</span><span class="s">api_version = "2"</span><span class="err">
+<span class="c">#USAGE Example</span>
+<span class="n">account_id</span> <span class="o">=</span> <span class="s">"YOUR_ACCOUNT_ID_HERE"</span> <span class="c">#optional</span>
+<span class="n">api_key</span> <span class="o">=</span> <span class="s">"YOUR_API_KEY_HERE"</span>
+<span class="n">secret_key</span> <span class="o">=</span> <span class="s">"YOUR_SECRET_KEY_HERE"</span>
+<span class="n">api_version</span> <span class="o">=</span> <span class="s">"2"</span>
 
-</span><span class="s">#create Wyre MassPay API object</span><span class="err">
-</span><span class="s">Wyre = MassPay_API(account_id, api_version, api_key, secret_key)</span><span class="err">
+<span class="c">#create Wyre MassPay API object</span>
+<span class="n">Wyre</span> <span class="o">=</span> <span class="n">MassPay_API</span><span class="p">(</span><span class="n">account_id</span><span class="p">,</span> <span class="n">api_version</span><span class="p">,</span> <span class="n">api_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
 
-</span><span class="s">#create user and print result</span><span class="err">
-</span><span class="s">http_code, result = Wyre.update_user(</span><span class="err">
-</span><span class="s">                                "{wallet-id}",</span><span class="err">
-</span><span class="s">                                "{your-unique-identifier}",</span><span class="err">
-</span><span class="s">                                None, #callbackUrl</span><span class="err">
-</span><span class="s">                                "Updated notes for user",</span><span class="err">
-</span><span class="s">                                None #verification data</span><span class="err">
-</span><span class="s">                                )</span><span class="err">
-</span><span class="s">print(result)</span><span class="err">
-</span><span class="s">users_srn = result['</span><span class="n">srn</span><span class="s">'] #grab our srn identifier for the user</span><span class="err">
-</span></code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">javax.crypto.Mac</span><span class="o">;</span>
+<span class="c">#create user and print result</span>
+<span class="n">http_code</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">Wyre</span><span class="o">.</span><span class="n">update_user</span><span class="p">(</span>
+                                <span class="s">"{wallet-id}"</span><span class="p">,</span>
+                                <span class="s">"{your-unique-identifier}"</span><span class="p">,</span>
+                                <span class="bp">None</span><span class="p">,</span> <span class="c">#callbackUrl</span>
+                                <span class="s">"Updated notes for user"</span><span class="p">,</span>
+                                <span class="bp">None</span> <span class="c">#verification data</span>
+                                <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">users_srn</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">'srn'</span><span class="p">]</span> <span class="c">#grab our srn identifier for the user</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">javax.crypto.Mac</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">javax.crypto.spec.SecretKeySpec</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.DataOutputStream</span><span class="o">;</span>
@@ -2401,8 +2413,7 @@ Callbacks are sent whenever a transactional event occurs that will affect the wa
 <ul>
 <li>Incoming pending transaction</li>
 <li>Pending transaction confirmed</li>
-<li>Outgoing transaction
-<br></li>
+<li>Outgoing transaction</li>
 </ul>
 
 <p><strong>Callback Acceptance and Retries</strong>
