@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;cURL&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;java&quot;,&quot;php&quot;,&quot;json&quot;,&quot;csharp&quot;]">
+  <body class="index" data-languages="[&quot;java&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;php&quot;,&quot;csharp&quot;,&quot;cURL&quot;,&quot;json&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,13 +211,13 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="cURL">cURL</a>
+              <a href="#" data-language-name="java">java</a>
               <a href="#" data-language-name="ruby">ruby</a>
               <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="java">java</a>
               <a href="#" data-language-name="php">php</a>
-              <a href="#" data-language-name="json">json</a>
               <a href="#" data-language-name="csharp">csharp</a>
+              <a href="#" data-language-name="cURL">cURL</a>
+              <a href="#" data-language-name="json">json</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -263,7 +263,7 @@
             <a href="#step-by-step-guide" class="toc-h1 toc-link" data-title="Step-by-step Guide">Step-by-step Guide</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#vitual-banking" class="toc-h2 toc-link" data-title="Vitual Banking">Vitual Banking</a>
+                    <a href="#virtual-banking" class="toc-h2 toc-link" data-title="Virtual Banking">Virtual Banking</a>
                   </li>
               </ul>
           </li>
@@ -308,10 +308,7 @@
                     <a href="#introduction" class="toc-h2 toc-link" data-title="Introduction">Introduction</a>
                   </li>
                   <li>
-                    <a href="#list-of-supported-banks" class="toc-h2 toc-link" data-title="List of Supported Banks">List of Supported Banks</a>
-                  </li>
-                  <li>
-                    <a href="#quote-transfer" class="toc-h2 toc-link" data-title="Quote Transfer">Quote Transfer</a>
+                    <a href="#transfers-2" class="toc-h2 toc-link" data-title="Transfers">Transfers</a>
                   </li>
                   <li>
                     <a href="#create-transfer" class="toc-h2 toc-link" data-title="Create Transfer">Create Transfer</a>
@@ -339,16 +336,8 @@
                   <li>
                     <a href="#lookup-payment-method" class="toc-h2 toc-link" data-title="Lookup Payment Method">Lookup Payment Method</a>
                   </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#country-currency-requirements" class="toc-h1 toc-link" data-title="Country/Currency Requirements">Country/Currency Requirements</a>
-              <ul class="toc-list-h2">
                   <li>
-                    <a href="#china" class="toc-h2 toc-link" data-title="China">China</a>
-                  </li>
-                  <li>
-                    <a href="#usa" class="toc-h2 toc-link" data-title="USA">USA</a>
+                    <a href="#usd-payouts" class="toc-h2 toc-link" data-title="USD Payouts">USD Payouts</a>
                   </li>
               </ul>
           </li>
@@ -361,73 +350,71 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='overview'>Overview</h1>
-<p>epiapi is focused on enterprise tools that improve accessibility and usability of financial services across borders. We offer a powerful REST API that supports virtual banking services for enterprises, through our parent company Wyre. </p>
+<p>epiapi is focused on enterprise tools that improve accessibility and usability of financial services across borders. We offer a powerful REST API that supports virtual banking services for enterprises, through our parent company Wyre.</p>
 
 <p>Our API uses HTTPS response codes and returns all error responses in JSON. To explore the API as much as possible, we offer a test environment in addition to production. Any transfers made in the test environment will not be executed. Both sandbox and production rely on API keys for authentication.</p>
 <h1 id='getting-started'>Getting Started</h1>
-<p>This guide is written as a standard implementation of our virtual banking service for setting up an environment to create US bank accounts for merchants selling on Amazon. Through this implementaiton you will be able to pass the necessary KYC information in order to open a virtual bank account, receive the bank account number, monitor for receivables, and manage funds for delivery to a designated bank account. All integrations will require a signed agreement with epiapi - please reach out to us at: contact@epiapi.com if you do not have an agreement in place of for any other questions.</p>
+<p>This guide is written as a standard implementation of our virtual banking service for setting up an environment to create US bank accounts for merchants selling on Amazon. Through this implementation you will be able to pass the necessary KYC information in order to open a virtual bank account, receive the bank account number, monitor for receivables, and manage funds for delivery to a designated bank account. All integrations will require a signed agreement with epiapi - please reach out to us at: contact@epiapi.com if you do not have an agreement in place or for any other questions.</p>
 
 <p><strong>How to get Started</strong></p>
 
-<p><strong>Step 1. Read the documentation</strong> <br>
-You are already doing this. Congratulations! <br></p>
+<p><strong>Step 1. Read the documentation</strong>
+You are already doing this. Congratulations!</p>
 
-<p><strong>Step 2. Register a test account</strong> <br>
-Sign up <a href="https://www.testwyre.com">here</a> to interact with our test environment. No need to upload any documents for the test envornment (though this will be required on production) - jump straight to Step 3. <br></p>
+<p><strong>Step 2. Register a test account</strong>
+Sign up <a href="https://www.testwyre.com">here</a> to interact with our test environment. No need to upload any documents for the test envornment (though this will be required on production) - jump straight to Step 3.</p>
 
-<p><strong>Step 3. Verify your test account</strong> <br>
-Contact our support team at support@sendwyre.com so we can verify your test account and add test funds that you can start using. The test API does not execute real transactions so feel free to go crazy. <br></p>
+<p><strong>Step 3. Verify your test account</strong>
+Contact our support team at <a href="mailto:support@epiapi.com">support@epiapi.com</a> so we can verify your test account and add test funds that you can start using. The test API does not execute real transactions so feel free to go crazy.</p>
 
-<p><strong>Step 4. Get Support</strong><br>
-We will send you links to join us on Slack or other chat apps (DingTalk, QQ etc) - any questions just ask! <br></p>
+<p><strong>Step 4. Get Support</strong>
+We will send you links to join us on Slack or other chat apps (DingTalk, QQ etc) - any questions just ask!</p>
 
-<p><strong>Step 5. Register a production account</strong> <br>
-Once testing has completed, you can register a live account <a href="https://sendwyre.com">here</a>. You must go through the entire onboarding and verification process before you are allowed to interact with the account. <br></p>
+<p><strong>Step 5. Register a production account</strong>
+Once testing has completed, you can register a live account <a href="https://testwyre.com">here</a>. You must go through the entire onboarding and verification process before you are allowed to interact with the account.</p>
 
-<p><strong>Step 6. Go live!</strong><br>
+<p><strong>Step 6. Go live!</strong>
 Once fully onboarded you are ready to go!</p>
 <h1 id='general'>General</h1><h2 id='supported-countries'>Supported Countries</h2>
-<p>Our Virtual banking product currenctly accepts USD via ACH to a domestic US bank account. <br></p>
+<p>Our Virtual banking product currently accepts USD via ACH to a domestic US bank account.</p>
 
-<p><strong>Countries</strong> <br>
+<p><strong>Countries</strong>
 - United States
 - European Union (coming soon)
 - Australia (coming soon)</p>
 
-<p><p>We are adding more countries soon. We will send an email as and when we release new funcionality ;)</p>
+<p>We are adding more countries soon. We will send an email as and when we release new functionality ;)</p>
 
-<p><strong>Currencies</strong> <br>
+<p><strong>Currencies</strong>
 - USD
 - EUR (coming soon)
 - GBP (coming soon)
 - AUD (coming soon)</p>
 <h2 id='transport-method'>Transport Method</h2>
-<p>We provide a REST API that will always return a JSON Object as the response.<br></p>
+<p>We provide a REST API that will always return a JSON Object as the response.</p>
 
-<p>During troubleshooting, please note that if your error response does not follow the previously mentioned format, the error is most likely due to a different endpoint. </p>
-<pre class="highlight json tab-json"><code><span class="w">
-</span><span class="err">For</span><span class="w"> </span><span class="err">successful</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">calls</span><span class="p">:</span><span class="err">&lt;br&gt;</span><span class="w">
+<p>During troubleshooting, please note that if your error response does not follow the previously mentioned format, the error is most likely due to a different endpoint.</p>
+<pre class="highlight json tab-json"><code><span class="err">For</span><span class="w"> </span><span class="err">successful</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">calls</span><span class="p">:</span><span class="w">
 
 </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="err">&lt;br&gt;</span><span class="w">
-        </span><span class="s2">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABCDEF"</span><span class="w"> </span><span class="err">&lt;br&gt;</span><span class="w">
+        </span><span class="s2">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABCDEF"</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
 
-</span><span class="err">For</span><span class="w"> </span><span class="err">unsuccessful</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">calls</span><span class="p">:</span><span class="err">&lt;br&gt;</span><span class="w">
+</span><span class="err">For</span><span class="w"> </span><span class="err">unsuccessful</span><span class="w"> </span><span class="err">API</span><span class="w"> </span><span class="err">calls</span><span class="p">:</span><span class="w">
 
 </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"language"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="err">&lt;br&gt;</span><span class="w">
-        </span><span class="s2">"exceptionId"</span><span class="p">:</span><span class="s2">"ABCDEF"</span><span class="p">,</span><span class="err">&lt;br&gt;</span><span class="w">
-        </span><span class="s2">"compositeType"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="err">&lt;br&gt;</span><span class="w">
-        </span><span class="s2">"subType"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="err">&lt;br&gt;</span><span class="w">
-        </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"Error Message"</span><span class="p">,</span><span class="err">&lt;br&gt;</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"ErrorTypeException"</span><span class="p">,</span><span class="err">&lt;br&gt;</span><span class="w">
-        </span><span class="s2">"transient"</span><span class="p">:</span><span class="kc">false</span><span class="w"> </span><span class="err">&lt;br&gt;</span><span class="w">
+        </span><span class="s2">"language"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"exceptionId"</span><span class="p">:</span><span class="s2">"ABCDEF"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"compositeType"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subType"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"Error Message"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"ErrorTypeException"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"transient"</span><span class="p">:</span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
-
 </span></code></pre><h2 id='production-test-endpoints'>Production/Test Endpoints</h2>
-<p>We have two environments, <code>testwyre</code> for API integration testing and <code>sendwyre</code>, our production environment. </p>
+<p>We have two environments, <code>testwyre</code> for API integration testing and <code>sendwyre</code>, our production environment.</p>
 
 <table><thead>
 <tr>
@@ -437,15 +424,15 @@ Once fully onboarded you are ready to go!</p>
 </thead><tbody>
 <tr>
 <td>Test</td>
-<td><a href="https://www.testwyre.com" target="_blank">https://www.testwyre.com </a></td>
+<td><a href="https://api.testwyre.com"> https://api.testwyre.com </a></td>
 </tr>
 <tr>
 <td>Production</td>
-<td><a href="https://sendwyre.com" target="_blank">https://sendwyre.com </a></td>
+<td><a href="https://api.sendwyre.com"> https://api.sendwyre.com </a></td>
 </tr>
 </tbody></table>
 <h2 id='pagination'>Pagination</h2>
-<p>We split our tabular data into pages of 25 items. You can apply the parameters below to any request for tabular to adjust the pagination.</p>
+<p>We split our tabular data into pages of 25 items. You can apply the parameters below to any request to adjust the pagination.</p>
 
 <table><thead>
 <tr>
@@ -479,7 +466,7 @@ Once fully onboarded you are ready to go!</p>
   <span class="nc">ACCOUNT_ID</span> <span class="o">=</span> <span class="s1">'YOUR_ACCOUNT_ID_HERE'</span>
   <span class="no">API_KEY</span> <span class="o">=</span> <span class="s1">'YOUR_API_KEY_HERE'</span>
   <span class="no">SEC_KEY</span> <span class="o">=</span> <span class="s1">'YOUR_SECRET_KEY_HERE'</span>
-  <span class="no">API_URL</span> <span class="o">=</span> <span class="s1">'https://api.sendwyre.com'</span>
+  <span class="no">API_URL</span> <span class="o">=</span> <span class="s1">'https://api.testwyre.com'</span>
 
   <span class="k">def</span> <span class="nf">create_transfer</span> <span class="n">options</span>
     <span class="n">api_post</span> <span class="s1">'/transfers'</span><span class="p">,</span> <span class="n">options</span>
@@ -516,7 +503,7 @@ Once fully onboarded you are ready to go!</p>
 <span class="k">end</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="no">WyreApi</span><span class="p">.</span><span class="nf">new</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">create_transfer</span><span class="p">({</span><span class="s1">'sourceAmount'</span><span class="o">=&gt;</span><span class="mi">50</span><span class="p">,</span><span class="s1">'sourceCurrency'</span><span class="o">=&gt;</span><span class="s1">'USD'</span><span class="p">,</span><span class="s1">'dest'</span><span class="o">=&gt;</span><span class="s1">'richard@epiapi.com'</span><span class="p">,</span> <span class="s1">'destCurrency'</span><span class="o">=&gt;</span><span class="s1">'CNY'</span><span class="p">,</span> <span class="s1">'message'</span><span class="o">=&gt;</span><span class="s1">'buy Richard pizza'</span><span class="p">)</span>
+<span class="n">api</span><span class="p">.</span><span class="nf">create_transfer</span><span class="p">({</span><span class="s1">'sourceAmount'</span><span class="o">=&gt;</span><span class="mi">50</span><span class="p">,</span><span class="s1">'sourceCurrency'</span><span class="o">=&gt;</span><span class="s1">'USD'</span><span class="p">,</span><span class="s1">'dest'</span><span class="o">=&gt;</span><span class="s1">'richard@epiapi.com'</span><span class="p">,</span> <span class="s1">'destCurrency'</span><span class="o">=&gt;</span><span class="s1">'USD'</span><span class="p">,</span> <span class="s1">'message'</span><span class="o">=&gt;</span><span class="s1">'buy Richard pizza'</span><span class="p">)</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="c">#dependencies:</span>
 <span class="c">#python3</span>
 <span class="c">#pip3 install requests</span>
@@ -529,7 +516,7 @@ Once fully onboarded you are ready to go!</p>
 <span class="k">class</span> <span class="nc">MassPay_API</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">account_id</span><span class="p">,</span> <span class="n">api_version</span><span class="p">,</span> <span class="n">api_key</span><span class="p">,</span> <span class="n">api_secret</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">account_id</span> <span class="o">=</span> <span class="n">account_id</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">=</span> <span class="s">'https://api.sendwyre.com/{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">api_version</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">=</span> <span class="s">'https://api.testwyre.com/{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">api_version</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_version</span> <span class="o">=</span> <span class="n">api_version</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_secret</span> <span class="o">=</span> <span class="n">api_secret</span>
@@ -583,7 +570,7 @@ Once fully onboarded you are ready to go!</p>
             <span class="n">body</span><span class="p">[</span><span class="s">"destAmount"</span><span class="p">]</span> <span class="o">=</span> <span class="n">destAmount</span>
         <span class="k">if</span> <span class="n">autoConfirm</span><span class="p">:</span>
             <span class="n">body</span><span class="p">[</span><span class="s">'autoConfirm'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
-        <span class="k">return</span> <span class="n">url</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">body</span> 
+        <span class="k">return</span> <span class="n">url</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">body</span>
 
     <span class="nd">@authenticate_request</span>
     <span class="k">def</span> <span class="nf">confirm_transfer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">transfer_id</span><span class="p">):</span>
@@ -628,21 +615,21 @@ Once fully onboarded you are ready to go!</p>
     <span class="n">String</span> <span class="n">apiKey</span> <span class="o">=</span> <span class="s">"YOUR_API_KEY_HERE"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">secretKey</span> <span class="o">=</span> <span class="s">"YOUR_SECRET_KEY_HERE"</span><span class="o">;</span>
 
-    <span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.sendwyre.com/account"</span><span class="o">;</span>
+    <span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.testwyre.com/account"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">method</span> <span class="o">=</span> <span class="s">"GET"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">data</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
 
     <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">executeWyreRequest</span><span class="o">(</span><span class="n">url</span><span class="o">,</span> <span class="s">""</span><span class="o">,</span> <span class="n">method</span><span class="o">,</span> <span class="n">apiKey</span><span class="o">,</span> <span class="n">secretKey</span><span class="o">);</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
 
-    <span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.sendwyre.com/transfers"</span><span class="o">;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.testwyre.com/transfers"</span><span class="o">;</span>
     <span class="n">method</span> <span class="o">=</span> <span class="s">"POST"</span><span class="o">;</span>
     <span class="n">data</span> <span class="o">=</span> <span class="s">"{"</span> <span class="o">+</span>
-        <span class="s">"  \"dest\": \"sam@sendwyre.com\","</span> <span class="o">+</span>
+        <span class="s">"  \"dest\": \"richard@epiaapi.com\","</span> <span class="o">+</span>
         <span class="s">"  \"destCurrency\": \"USD\","</span> <span class="o">+</span>
-        <span class="s">"  \"sourceCurrency\" : \"BTC\","</span> <span class="o">+</span>
-        <span class="s">"  \"sourceAmount\" : \"1\","</span> <span class="o">+</span>
-        <span class="s">"  \"message\": \"$1 worth of bitcoin!\""</span> <span class="o">+</span>
+        <span class="s">"  \"sourceCurrency\" : \"USD\","</span> <span class="o">+</span>
+        <span class="s">"  \"sourceAmount\" : \"50\","</span> <span class="o">+</span>
+        <span class="s">"  \"message\": \"buy Richard pizza\""</span> <span class="o">+</span>
         <span class="s">"}"</span><span class="o">;</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">executeWyreRequest</span><span class="o">(</span><span class="n">url</span><span class="o">,</span> <span class="n">data</span><span class="o">,</span> <span class="n">method</span><span class="o">,</span> <span class="n">apiKey</span><span class="o">,</span> <span class="n">secretKey</span><span class="o">);</span>
 
@@ -744,7 +731,7 @@ Once fully onboarded you are ready to go!</p>
 <span class="o">}</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
     <span class="k">function</span> <span class="nf">make_authenticated_request</span><span class="p">(</span><span class="nv">$endpoint</span><span class="p">,</span> <span class="nv">$method</span><span class="p">,</span> <span class="nv">$body</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$url</span> <span class="o">=</span> <span class="s1">'https://api.sendwyre.com'</span><span class="p">;</span>
+        <span class="nv">$url</span> <span class="o">=</span> <span class="s1">'https://api.testwyre.com'</span><span class="p">;</span>
         <span class="nv">$api_key</span> <span class="o">=</span> <span class="s2">"YOUR_API_KEY_HERE"</span><span class="p">;</span>
         <span class="nv">$secret_key</span> <span class="o">=</span> <span class="s2">"YOUR_SECRET_KEY_HERE"</span><span class="p">;</span>
 
@@ -796,116 +783,116 @@ Once fully onboarded you are ready to go!</p>
     <span class="k">echo</span> <span class="nx">make_authenticated_request</span><span class="p">(</span><span class="s2">"/account"</span><span class="p">,</span> <span class="s2">"GET"</span><span class="p">,</span> <span class="k">array</span><span class="p">());</span>
     <span class="nv">$transfer</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
       <span class="s2">"sourceCurrency"</span><span class="o">=&gt;</span><span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"dest"</span><span class="o">=&gt;</span><span class="s2">"paymentmethod:PA-123123123"</span><span class="p">,</span>
-      <span class="s2">"sourceAmount"</span><span class="o">=&gt;</span> <span class="mf">100.01</span><span class="p">,</span>
+      <span class="s2">"dest"</span><span class="o">=&gt;</span><span class="s2">"richard@epiapi.com"</span><span class="p">,</span>
+      <span class="s2">"sourceAmount"</span><span class="o">=&gt;</span> <span class="mi">50</span><span class="p">,</span>
       <span class="s2">"destCurrency"</span><span class="o">=&gt;</span><span class="s2">"USD"</span><span class="p">,</span>
       <span class="s2">"amountIncludesFees"</span><span class="o">=&gt;</span><span class="nx">True</span>
-      <span class="s2">"message"</span><span class="o">=&gt;</span> <span class="s2">"Test"</span>
+      <span class="s2">"message"</span><span class="o">=&gt;</span> <span class="s2">"buy Richard pizza"</span>
       <span class="p">);</span>
     <span class="k">echo</span> <span class="nx">make_authenticated_request</span><span class="p">(</span><span class="s2">"/transfers"</span><span class="p">,</span> <span class="s2">"POST"</span><span class="p">,</span> <span class="nv">$transfer</span><span class="p">);</span>
-<span class="cp">?&gt;</span>
-</code></pre><pre class="highlight plaintext"><code>using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Security.Cryptography;
-using System.Text;
-using System.Linq;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
-namespace testauthwyre
-{
-    class MainClass
-    {
-        public static void Main(string[] args)
-        {
-            WyreApi wyre = new WyreApi();
-            Console.WriteLine(DateTimeOffset.UtcNow.ToUnixTimeMilliseconds());
-            Console.WriteLine((long)(DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds);
-            HttpWebResponse accountResponse = wyre.Get("/account");
-            Console.WriteLine(GetResponseBody(accountResponse));
-            Dictionary&lt;string, object&gt; body = new Dictionary&lt;string, object&gt;();
-            body.Add("sourceCurrency", "USD");
-            body.Add("sourceAmount", "10");
-            body.Add("dest", "test@sendwyre.com");
-            HttpWebResponse transferResponse = wyre.Post("/transfers", body);
-            Console.WriteLine(GetResponseBody(transferResponse));
-        }
-        private static string GetResponseBody(HttpWebResponse response)
-        {
-            return JObject.Parse(new StreamReader(response.GetResponseStream()).ReadToEnd()).ToString(Formatting.Indented);
-        }
-    }
-    public class WyreApi
-    {
-        private const String domain = "https://api.sendwyre.com";
-        private const String apiKey = "YOUR_API_KEY_HERE";
-        private const String secKey = "YOUR_SECRET_KEY_HERE";
-        public HttpWebResponse Get(string path)
-        {
-            return Get(path, new Dictionary&lt;string, object&gt;());
-        }
-        public HttpWebResponse Get(string path, Dictionary&lt;string, object&gt; queryParams)
-        {
-            return Request("GET", path, queryParams);
-        }
-        public HttpWebResponse Post(string path, Dictionary&lt;string, object&gt; body)
-        {
-            return Request("POST", path, body);
-        }
-        private HttpWebResponse Request(string method, string path, Dictionary&lt;string, object&gt; body)
-        {
-            Dictionary&lt;string, object&gt; queryParams = new Dictionary&lt;string, object&gt;();
-            if (method.Equals("GET"))
-                queryParams = body;
-            queryParams.Add("timestamp", GetTimestamp());
-            string queryString = queryParams.Aggregate("", (previous, current) =&gt; previous + "&amp;" + current.Key + "=" + current.Value).Remove(0, 1);
-            string url = domain + path + "?" + queryString;
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = method;
-            request.ContentType = "application/json";
-            request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
-            if (!method.Equals("GET"))
-            {
-                url += JsonConvert.SerializeObject(body);
-                using (StreamWriter writer = new StreamWriter(request.GetRequestStream()))
-                    writer.Write(JsonConvert.SerializeObject(body));
-            }
-            request.Headers["X-Api-Key"] = apiKey;
-            request.Headers["X-Api-Signature"] = CalcAuthSigHash(secKey, url);
-            request.Headers["X-Api-Version"] = "2";
-            try 
-            {
-                return (HttpWebResponse)request.GetResponse();
-            }
-            catch(WebException e) 
-            {
-                string msg = new StreamReader(e.Response.GetResponseStream()).ReadToEnd();
-                Console.WriteLine(msg);
-                throw new SystemException(msg);
-            }
-        }
-        private byte[] GetBytes(string str)
-        {
-            return Encoding.UTF8.GetBytes(str);
-        }
-        private string GetString(byte[] bytes)
-        {
-            return BitConverter.ToString(bytes);
-        }
-        private long GetTimestamp()
-        {
-            // return DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() // .NET 4.6
-            return (long)(DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds;
-        }
-        private String CalcAuthSigHash(string key, string value)
-        {
-            HMACSHA256 hmac = new HMACSHA256(GetBytes(key));
-            string hash = GetString(hmac.ComputeHash(GetBytes(value))).Replace("-", "");
-            return hash;
-        }
-    }
-}
+    <span class="cp">?&gt;</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.IO</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Net</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Security.Cryptography</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Newtonsoft.Json.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Newtonsoft.Json</span><span class="p">;</span>
+<span class="k">namespace</span> <span class="nn">testauthwyre</span>
+<span class="p">{</span>
+    <span class="k">class</span> <span class="nc">MainClass</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">WyreApi</span> <span class="n">wyre</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">WyreApi</span><span class="p">();</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">DateTimeOffset</span><span class="p">.</span><span class="n">UtcNow</span><span class="p">.</span><span class="nf">ToUnixTimeMilliseconds</span><span class="p">());</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">((</span><span class="kt">long</span><span class="p">)(</span><span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span> <span class="p">-</span> <span class="k">new</span> <span class="nf">DateTime</span><span class="p">(</span><span class="m">1970</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">DateTimeKind</span><span class="p">.</span><span class="n">Utc</span><span class="p">)).</span><span class="n">TotalMilliseconds</span><span class="p">);</span>
+            <span class="n">HttpWebResponse</span> <span class="n">accountResponse</span> <span class="p">=</span> <span class="n">wyre</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="s">"/account"</span><span class="p">);</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="nf">GetResponseBody</span><span class="p">(</span><span class="n">accountResponse</span><span class="p">));</span>
+            <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">body</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;();</span>
+            <span class="n">body</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"sourceCurrency"</span><span class="p">,</span> <span class="s">"USD"</span><span class="p">);</span>
+            <span class="n">body</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"sourceAmount"</span><span class="p">,</span> <span class="s">"50"</span><span class="p">);</span>
+            <span class="n">body</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"dest"</span><span class="p">,</span> <span class="s">"richard@epiapi.com"</span><span class="p">);</span>
+            <span class="n">HttpWebResponse</span> <span class="n">transferResponse</span> <span class="p">=</span> <span class="n">wyre</span><span class="p">.</span><span class="nf">Post</span><span class="p">(</span><span class="s">"/transfers"</span><span class="p">,</span> <span class="n">body</span><span class="p">);</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="nf">GetResponseBody</span><span class="p">(</span><span class="n">transferResponse</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="k">private</span> <span class="k">static</span> <span class="kt">string</span> <span class="nf">GetResponseBody</span><span class="p">(</span><span class="n">HttpWebResponse</span> <span class="n">response</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">JObject</span><span class="p">.</span><span class="nf">Parse</span><span class="p">(</span><span class="k">new</span> <span class="nf">StreamReader</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">GetResponseStream</span><span class="p">()).</span><span class="nf">ReadToEnd</span><span class="p">()).</span><span class="nf">ToString</span><span class="p">(</span><span class="n">Formatting</span><span class="p">.</span><span class="n">Indented</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">WyreApi</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="k">const</span> <span class="n">String</span> <span class="n">domain</span> <span class="p">=</span> <span class="s">"https://api.testwyre.com"</span><span class="p">;</span>
+        <span class="k">private</span> <span class="k">const</span> <span class="n">String</span> <span class="n">apiKey</span> <span class="p">=</span> <span class="s">"YOUR_API_KEY_HERE"</span><span class="p">;</span>
+        <span class="k">private</span> <span class="k">const</span> <span class="n">String</span> <span class="n">secKey</span> <span class="p">=</span> <span class="s">"YOUR_SECRET_KEY_HERE"</span><span class="p">;</span>
+        <span class="k">public</span> <span class="n">HttpWebResponse</span> <span class="nf">Get</span><span class="p">(</span><span class="kt">string</span> <span class="n">path</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">Get</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;());</span>
+        <span class="p">}</span>
+        <span class="k">public</span> <span class="n">HttpWebResponse</span> <span class="nf">Get</span><span class="p">(</span><span class="kt">string</span> <span class="n">path</span><span class="p">,</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">queryParams</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">Request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">queryParams</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">public</span> <span class="n">HttpWebResponse</span> <span class="nf">Post</span><span class="p">(</span><span class="kt">string</span> <span class="n">path</span><span class="p">,</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">body</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">Request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">body</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">private</span> <span class="n">HttpWebResponse</span> <span class="nf">Request</span><span class="p">(</span><span class="kt">string</span> <span class="n">method</span><span class="p">,</span> <span class="kt">string</span> <span class="n">path</span><span class="p">,</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">body</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;</span> <span class="n">queryParams</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">method</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="s">"GET"</span><span class="p">))</span>
+                <span class="n">queryParams</span> <span class="p">=</span> <span class="n">body</span><span class="p">;</span>
+            <span class="n">queryParams</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="s">"timestamp"</span><span class="p">,</span> <span class="nf">GetTimestamp</span><span class="p">());</span>
+            <span class="kt">string</span> <span class="n">queryString</span> <span class="p">=</span> <span class="n">queryParams</span><span class="p">.</span><span class="nf">Aggregate</span><span class="p">(</span><span class="s">""</span><span class="p">,</span> <span class="p">(</span><span class="n">previous</span><span class="p">,</span> <span class="n">current</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">previous</span> <span class="p">+</span> <span class="s">"&amp;"</span> <span class="p">+</span> <span class="n">current</span><span class="p">.</span><span class="n">Key</span> <span class="p">+</span> <span class="s">"="</span> <span class="p">+</span> <span class="n">current</span><span class="p">.</span><span class="n">Value</span><span class="p">).</span><span class="nf">Remove</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
+            <span class="kt">string</span> <span class="n">url</span> <span class="p">=</span> <span class="n">domain</span> <span class="p">+</span> <span class="n">path</span> <span class="p">+</span> <span class="s">"?"</span> <span class="p">+</span> <span class="n">queryString</span><span class="p">;</span>
+            <span class="n">HttpWebRequest</span> <span class="n">request</span> <span class="p">=</span> <span class="p">(</span><span class="n">HttpWebRequest</span><span class="p">)</span><span class="n">WebRequest</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">Method</span> <span class="p">=</span> <span class="n">method</span><span class="p">;</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="s">"application/json"</span><span class="p">;</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">AutomaticDecompression</span> <span class="p">=</span> <span class="n">DecompressionMethods</span><span class="p">.</span><span class="n">GZip</span> <span class="p">|</span> <span class="n">DecompressionMethods</span><span class="p">.</span><span class="n">Deflate</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(!</span><span class="n">method</span><span class="p">.</span><span class="nf">Equals</span><span class="p">(</span><span class="s">"GET"</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="n">url</span> <span class="p">+=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="nf">SerializeObject</span><span class="p">(</span><span class="n">body</span><span class="p">);</span>
+                <span class="k">using</span> <span class="p">(</span><span class="n">StreamWriter</span> <span class="n">writer</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StreamWriter</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="nf">GetRequestStream</span><span class="p">()))</span>
+                    <span class="n">writer</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="n">JsonConvert</span><span class="p">.</span><span class="nf">SerializeObject</span><span class="p">(</span><span class="n">body</span><span class="p">));</span>
+            <span class="p">}</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">Headers</span><span class="p">[</span><span class="s">"X-Api-Key"</span><span class="p">]</span> <span class="p">=</span> <span class="n">apiKey</span><span class="p">;</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">Headers</span><span class="p">[</span><span class="s">"X-Api-Signature"</span><span class="p">]</span> <span class="p">=</span> <span class="nf">CalcAuthSigHash</span><span class="p">(</span><span class="n">secKey</span><span class="p">,</span> <span class="n">url</span><span class="p">);</span>
+            <span class="n">request</span><span class="p">.</span><span class="n">Headers</span><span class="p">[</span><span class="s">"X-Api-Version"</span><span class="p">]</span> <span class="p">=</span> <span class="s">"2"</span><span class="p">;</span>
+            <span class="k">try</span>
+            <span class="p">{</span>
+                <span class="k">return</span> <span class="p">(</span><span class="n">HttpWebResponse</span><span class="p">)</span><span class="n">request</span><span class="p">.</span><span class="nf">GetResponse</span><span class="p">();</span>
+            <span class="p">}</span>
+            <span class="k">catch</span><span class="p">(</span><span class="n">WebException</span> <span class="n">e</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="kt">string</span> <span class="n">msg</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StreamReader</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="nf">GetResponseStream</span><span class="p">()).</span><span class="nf">ReadToEnd</span><span class="p">();</span>
+                <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nf">SystemException</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">private</span> <span class="kt">byte</span><span class="p">[]</span> <span class="nf">GetBytes</span><span class="p">(</span><span class="kt">string</span> <span class="n">str</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="nf">GetBytes</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">private</span> <span class="kt">string</span> <span class="nf">GetString</span><span class="p">(</span><span class="kt">byte</span><span class="p">[]</span> <span class="n">bytes</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">BitConverter</span><span class="p">.</span><span class="nf">ToString</span><span class="p">(</span><span class="n">bytes</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">private</span> <span class="kt">long</span> <span class="nf">GetTimestamp</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="c1">// return DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() // .NET 4.6</span>
+            <span class="k">return</span> <span class="p">(</span><span class="kt">long</span><span class="p">)(</span><span class="n">DateTime</span><span class="p">.</span><span class="n">UtcNow</span> <span class="p">-</span> <span class="k">new</span> <span class="nf">DateTime</span><span class="p">(</span><span class="m">1970</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">DateTimeKind</span><span class="p">.</span><span class="n">Utc</span><span class="p">)).</span><span class="n">TotalMilliseconds</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">private</span> <span class="n">String</span> <span class="nf">CalcAuthSigHash</span><span class="p">(</span><span class="kt">string</span> <span class="n">key</span><span class="p">,</span> <span class="kt">string</span> <span class="k">value</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">HMACSHA256</span> <span class="n">hmac</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">HMACSHA256</span><span class="p">(</span><span class="nf">GetBytes</span><span class="p">(</span><span class="n">key</span><span class="p">));</span>
+            <span class="kt">string</span> <span class="n">hash</span> <span class="p">=</span> <span class="nf">GetString</span><span class="p">(</span><span class="n">hmac</span><span class="p">.</span><span class="nf">ComputeHash</span><span class="p">(</span><span class="nf">GetBytes</span><span class="p">(</span><span class="k">value</span><span class="p">))).</span><span class="nf">Replace</span><span class="p">(</span><span class="s">"-"</span><span class="p">,</span> <span class="s">""</span><span class="p">);</span>
+            <span class="k">return</span> <span class="n">hash</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
 <p>We use a handful of security mechanisms to ensure that your requests are secure. You can find information on how to make a secure authenticated request below.</p>
 
@@ -919,7 +906,7 @@ namespace testauthwyre
 </thead><tbody>
 <tr>
 <td>X-Api-Key</td>
-<td>Your API key. Your key can be found <a href="https://dash.sendwyre.com/settings/api-keys" target="_blank">here</a></td>
+<td>Your API key. Your key can be found <a href="https://support.sendwyre.com/%E4%B8%AD%E6%96%87%E5%B8%AE%E5%8A%A9%E5%8C%BA/api/api-key-%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97">here</a></td>
 </tr>
 <tr>
 <td>X-Api-Signature</td>
@@ -931,20 +918,20 @@ namespace testauthwyre
 
 <p><strong>Calculating the request signature</strong></p>
 
-<p>If you are sending a <code>GET</code> request you would sign the following (example):  <em>https://api.sendwyre.com/v2/rates?timestamp=1426252182534</em><br></p>
+<p>If you are sending a <code>GET</code> request you would sign the following (example):  <em>https://api.testwyre.com/v2/rates?timestamp=1426252182534</em></p>
 
-<p>If you are making a <code>POST</code> request you would sign the following (example): <em>https://api.sendwyre.com/v2/transfers?timestamp=1426252182534</em><br></p>
+<p>If you are making a <code>POST</code> request you would sign the following (example): <em>https://api.testwyre.com/v2/transfers?timestamp=1426252182534</em></p>
 
-<p>Note for the <code>POST</code> request, you must append the request body to the string URL. Remember to send the request body exactly as you sign it, whitespace and all. The server calculates the signature based on exactly what&#39;s in the request body. <br></p>
+<p>Note for the <code>POST</code> request, you must append the request body to the string URL. Remember to send the request body exactly as you sign it, whitespace and all. The server calculates the signature based on exactly what&#39;s in the request body.</p>
 
-<p>Calculating the X-Api-Signature field is a two step process: <br></p>
+<p>Calculating the X-Api-Signature field is a two step process:</p>
 
 <ol>
-<li><p>Concatenate the request URL with the body of the HTTP request into a UTF-8 String. Use an empty string for the HTTP body in <code>GET</code> requests. <br></p></li>
-<li><p>Compute the signature using HMAC with SHA-256 and your API Secret Key. <br></p></li>
+<li><p>Concatenate the request URL with the body of the HTTP request into a UTF-8 String. Use an empty string for the HTTP body in <code>GET</code> requests.</p></li>
+<li><p>Compute the signature using HMAC with SHA-256 and your API Secret Key.</p></li>
 </ol>
 <h2 id='srns'>SRNs</h2>
-<p>An SRN is a System Resource Name. It is a typed identifier that may reference any object within our platform. Many of our API calls and data schemas leverage SRNs in order to add flexibility and decouple services. All SRNs follow the same format: </p>
+<p>An SRN is a System Resource Name. It is a typed identifier that may reference any object within our platform. Many of our API calls and data schemas leverage SRNs in order to add flexibility and decouple services. All SRNs follow the same format:</p>
 
 <table><thead>
 <tr>
@@ -970,7 +957,7 @@ namespace testauthwyre
 </tr>
 <tr>
 <td>account</td>
-<td>A plafrom account (account:AC-123123123)</td>
+<td>A plaform account (account:AC-123123123)</td>
 </tr>
 <tr>
 <td>wallet</td>
@@ -982,11 +969,11 @@ namespace testauthwyre
 </tr>
 </tbody></table>
 <h2 id='fees'>Fees</h2>
-<p>To understand how are fees are calculated and charged, please refer <a href="XXXXXXXXXXXXXX" target="_blank">here</a>.</p>
+<p>Fees are caluculated by our system based on the contract signed by both parties. Our standard fee for VBA + daily settlement is 0.25%.</p>
 <h2 id='error-table'>Error Table</h2>
-<p>Successful requests will be a HTTP 200 response after any successful call. The body of successful requests depend on the endpoint. <br></p>
+<p>Successful requests will be a HTTP 200 response after any successful call. The body of successful requests depend on the endpoint.</p>
 
-<p>Whenever a problem occurs, we will respond to the client using a 4xx or 5xx status code. In this case, the body of the response will be an exception object which describes the problem. <br></p>
+<p>Whenever a problem occurs, we will respond to the client using a 4xx or 5xx status code. In this case, the body of the response will be an exception object which describes the problem.</p>
 
 <table><thead>
 <tr>
@@ -1037,7 +1024,7 @@ namespace testauthwyre
 </tr>
 <tr>
 <td>CustomerSupportException</td>
-<td>Please contact us at support@sendwyre.com to resolve this!</td>
+<td>Please contact us at support@epiapi.com to resolve this!</td>
 <td>400</td>
 </tr>
 <tr>
@@ -1047,72 +1034,328 @@ namespace testauthwyre
 </tr>
 </tbody></table>
 
-<p><br>
-All exceptions will carry a subType parameter which exposes more information about the problem. Additionally, some ValidationException errors will carry with them two fields, problematicField and problematicValue, denoting the field which caused the failure.</p>
+<p>All exceptions will carry a subType parameter which exposes more information about the problem. Additionally, some ValidationException errors will carry with them two fields, problematicField and problematicValue, denoting the field which caused the failure.</p>
 
-<p>A few typical ValidationException subtypes:
+<p>A few typical ValidationException subtypes:</p>
+
+<p>FIELD_REQUIRED
+INVALID_VALUE
+TRANSACTION_AMOUNT_TOO_SMALL
+UNSUPPORTED_SOURCE_CURRENCY
+SENDER_PROVIDED_ID_IN_USE
+CANNOT_SEND_SELF_FUNDS
+INVALID_PAYMENT_METHOD
+PAYMENT_METHOD_INACTIVE
+PAYMENT_METHOD_UNSUPPORTED_CHARGE_CURRENCY
+PAYMENT_METHOD_UNCHARGEABLE
+PAYMENT_METHOD_UNSUPPORTED_DEPOSIT_CURRENCY</p>
+<h1 id='step-by-step-guide'>Step-by-step Guide</h1>
+<p>This guide will take you through all steps required to build a funds receivables product based on our API.</p>
+<h2 id='virtual-banking'>Virtual Banking</h2>
+<p><strong>Building a USD receivables business on epiapi</strong></p>
+
+<p>There are many different ways to integrate with our API to provide different types of payments receivables services. To help developers understand how it may be used, we’ve described a typical use-case below.</p>
+
+<p>We will show you an example of how an online platform may create USD virtual bank accounts with unique account numbers for its users, and receive funds for delivery into a dedicated settlement account.</p>
+<h3 id='step-1-create-a-wallet-with-kyc-data'>Step 1. Create a Wallet with KYC Data</h3>
+<p>Wyre uses the concept of <code>wallets</code> to represent individual merchant accounts under your <code>account</code>. Upon creation, each of these wallets are assigned various fund receiving capabilities. You must set <code>type=VBA</code> in order to obtain a Virtual Bank Account (with a unique bank account and routing number).</p>
+
+<p><code>POST</code> https://api.testwyre.com/v2/wallets</p>
+
+<pre class="center-column">
+{   
+  "name":"youruniquename",
+  "type":"VBA",
+  "callbackUrl":"https://your.website.io/callback",
+  "vbaVerificationData":{
+    "entityType":"CORP",
+    "entityScope":"Shopping/Retail",
+    "email":"test+merchant@epiapi.com",
+    "phoneNumber":"13111111111",
+    "ip": "127.0.0.1",
+    "nameCn":"法人姓名",
+    "nameEn":"Legal Rep",
+    "dateOfBirth":1514736000,
+    "address":{
+      "city":"北京",
+      "country":"CN",
+      "postalCode":"210000",
+      "street1":"东四北大街107号",
+      "street2":"克林大厦107室"},
+    "idNumber":"432524199902287897",
+    "idDoc":null,
+    "merchantIds":[{
+    "merchantId":"AAAAAAAAAAA",
+    "merchantType":"Amazon"}],
+    "expectedMonthlySales":40000,
+    "shopName":"MyBrand",
+    "website":"https://merchant.website.com",
+    "repAaddress":{
+      "city":"北京",
+      "country":"CN",
+      "postalCode":"210000",
+      "street1":"东四北大街107号",
+      "street2":"克林大厦107室"},
+    "companyNameCn":"ABC有限责任公司",
+    "companyNameEn":"ABC Company Limited",
+    "registrationNumber":"123456789",
+    "coiDoc":null,
+    "salesDoc":null,
+    "dateOfEstablishment":1514736000,
+    "beneficialOwners":[{
+      "fullName":"Richard",
+      "idNumber":"1231321312",
+      "idDoc":null}]
+      }
+}
+</pre>
+
+<p><br>
+<br>
 <br></p>
 
-<p>FIELD_REQUIRED <br>
-INVALID_VALUE <br>
-TRANSACTION_AMOUNT_TOO_SMALL <br>
-UNSUPPORTED_SOURCE_CURRENCY <br>
-SENDER_PROVIDED_ID_IN_USE <br>
-CANNOT_SEND_SELF_FUNDS <br>
-INVALID_PAYMENT_METHOD <br>
-PAYMENT_METHOD_INACTIVE <br>
-PAYMENT_METHOD_UNSUPPORTED_CHARGE_CURRENCY <br>
-PAYMENT_METHOD_UNCHARGEABLE <br>
-PAYMENT_METHOD_UNSUPPORTED_DEPOSIT_CURRENCY <br>
-PAYMENT_METHOD_UNDEPOSITABLE <br>
-PAYMENT_METHOD_DOESNT_SUPPORT_FOLLOWUPS <br>
-PAYMENT_METHOD_DOESNT_SUPPORT_MICRODEPOSIT_VERIFICATION <br></p>
-<h1 id='step-by-step-guide'>Step-by-step Guide</h1>
-<p>This guide will take you through all steps required to build a funds receivables product based on our API. </p>
-<h2 id='vitual-banking'>Vitual Banking</h2>
-<p><strong>Building a USD receivables business on epiapi</strong> </p>
-
-<p>There are many different ways to integrate with our API to provide different types of payments receivables services. To help developers understand how it may be used, we’ve described a typical use-case below. <br></p>
-
-<p>We will show you an example of how an online platform may create USD virtual bank accounts with unique account numbers for its users, and receive funds for delivery into a dedicated settlement account. <br></p>
-<h3 id='step-1-create-a-wallet-with-kyc-data'>Step 1. Create a Wallet with KYC Data</h3>
-<p>Wyre uses the concept of <code>wallets</code> to represent individual merchant accounts under your <code>account</code>. Upon creation, each of these wallets are assigned various fund receiving capabilities, for <code>TYPE=VBA</code> wallets a Virtual Bank Account (with a unique bank account and routing number) will be created. <br></p>
-<pre class="highlight plaintext"><code>
-curl -v -XPOST 'https://api.sendwyre.com/v2/wallets' \
+<table><thead>
+<tr>
+<th>Fields(* means mandatory)</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>&quot;entityType&quot; *</td>
+<td>&quot;CORP&quot;、“M”、“F” available</td>
+</tr>
+<tr>
+<td>&quot;entityScope&quot; *</td>
+<td>&quot;Shopping/Retail&quot;</td>
+</tr>
+<tr>
+<td>&quot;email&quot; *</td>
+<td>&quot;test+merchant@epiapi.com&quot;</td>
+</tr>
+<tr>
+<td>&quot;phoneNumber&quot; *</td>
+<td>&quot;13111111111&quot;</td>
+</tr>
+<tr>
+<td>&quot;ip&quot; *</td>
+<td>The IP address of the user when opening the acount</td>
+</tr>
+<tr>
+<td>&quot;nameCn&quot; *</td>
+<td>&quot;法人姓名&quot;</td>
+</tr>
+<tr>
+<td>&quot;nameEn&quot; *</td>
+<td>&quot;Legal Rep&quot;</td>
+</tr>
+<tr>
+<td>&quot;dateOfBirth&quot; *</td>
+<td>UNIX (milliseconds)</td>
+</tr>
+<tr>
+<td>&quot;address&quot; *</td>
+<td>(street 2 can be bland if not needed)</td>
+</tr>
+<tr>
+<td>&quot;street1&quot;</td>
+<td>&quot;东四北大街107号&quot;</td>
+</tr>
+<tr>
+<td>&quot;street2&quot;</td>
+<td>&quot;克林大厦107室&quot;</td>
+</tr>
+<tr>
+<td>&quot;city&quot;</td>
+<td>&quot;beijing&quot;</td>
+</tr>
+<tr>
+<td>&quot;state&quot;</td>
+<td>&quot;beijing&quot;</td>
+</tr>
+<tr>
+<td>&quot;country&quot;</td>
+<td>&quot;CN&quot;</td>
+</tr>
+<tr>
+<td>&quot;postalCode&quot;</td>
+<td>&quot;100007&quot;</td>
+</tr>
+<tr>
+<td>&quot;idNumber&quot; *</td>
+<td>&quot;432524199902287897&quot;</td>
+</tr>
+<tr>
+<td>&quot;idDoc&quot; *</td>
+<td>null</td>
+</tr>
+<tr>
+<td>&quot;merchantId&quot;</td>
+<td>&quot;A00000&quot;</td>
+</tr>
+<tr>
+<td>&quot;merchantType&quot;</td>
+<td>&quot;Amazon&quot;</td>
+</tr>
+<tr>
+<td>&quot;expectedMonthlySales&quot;</td>
+<td>40000</td>
+</tr>
+<tr>
+<td>&quot;shopName&quot;</td>
+<td>&quot;MyBrand&quot;</td>
+</tr>
+<tr>
+<td>&quot;website&quot;</td>
+<td>&quot;https://merchant.website.com&quot;</td>
+</tr>
+<tr>
+<td>&quot;repAaddress&quot;(* CORP only)</td>
+<td>(street 2 can be bland if not needed)</td>
+</tr>
+<tr>
+<td>&quot;street1&quot;</td>
+<td>&quot;东四北大街107号&quot;</td>
+</tr>
+<tr>
+<td>&quot;street2&quot;</td>
+<td>&quot;克林大厦107室&quot;</td>
+</tr>
+<tr>
+<td>&quot;city&quot;</td>
+<td>&quot;beijing&quot;</td>
+</tr>
+<tr>
+<td>&quot;state&quot;</td>
+<td>&quot;beijing&quot;</td>
+</tr>
+<tr>
+<td>&quot;country&quot;</td>
+<td>&quot;CN&quot;</td>
+</tr>
+<tr>
+<td>&quot;postalCode&quot;</td>
+<td>&quot;100007&quot;</td>
+</tr>
+<tr>
+<td>&quot;companyNameCn&quot;(* CORP only)</td>
+<td>&quot;ABC有限责任公司&quot;</td>
+</tr>
+<tr>
+<td>&quot;companyNameEn&quot;( * CORP only)</td>
+<td>&quot;ABC Company Limited&quot;</td>
+</tr>
+<tr>
+<td>&quot;registrationNumber&quot;(* CORP only)</td>
+<td>&quot;123456789&quot;</td>
+</tr>
+<tr>
+<td>&quot;coiDoc&quot;(* CORP only)</td>
+<td>null</td>
+</tr>
+<tr>
+<td>&quot;salesDoc&quot;(may be required for high volume clients)</td>
+<td>null</td>
+</tr>
+<tr>
+<td>&quot;dateOfEstablishment&quot; *</td>
+<td>UNIX (milliseconds)</td>
+</tr>
+<tr>
+<td>&quot;beneficialOwners&quot;(HK CORP only)</td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;fullName&quot;</td>
+<td>&quot;Richard&quot;</td>
+</tr>
+<tr>
+<td>&quot;idNumber&quot;</td>
+<td>&quot;1231321312&quot;</td>
+</tr>
+<tr>
+<td>&quot;idDoc&quot;</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<pre class="highlight plaintext"><code>curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
   -H "Content-Type: application/json" \
   -H "X-Api-Key: {api-key}" \
   -H "X-Api-Signature: {signature}" \
-  -d '{"type":"VBA","name":"{your-unique-identifier}",
-  "callbackUrl":"https://your.website.io/callback",
-  "vbaVerificationData":"XXXXXXXXXXXXXXXX"}'
-</code></pre>
-<p><code>POST</code> https://api.sendwyre.com/v2/wallets <br></p>
+  -d '{"type":"VBA","name":"{your-unique-identifier}"
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"callbackUrl"</span><span class="p">:</span><span class="s2">"https://your.website.io/callback"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"12345678977897800"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"VBA"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"vbaVerificationData"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"entityType"</span><span class="p">:</span><span class="s2">"CORP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"entityScope"</span><span class="p">:</span><span class="s2">"Shopping/Retail"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"test+merchant@epiapi.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phoneNumber"</span><span class="p">:</span><span class="s2">"13111111111"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ip"</span><span class="p">:</span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nameCn"</span><span class="p">:</span><span class="s2">"法人姓名"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nameEn"</span><span class="p">:</span><span class="s2">"Legal Rep"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dateOfBirth"</span><span class="p">:</span><span class="mi">1514736000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"city"</span><span class="p">:</span><span class="s2">"北京"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="s2">"CN"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"postalCode"</span><span class="p">:</span><span class="s2">"210000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"street1"</span><span class="p">:</span><span class="s2">"东四北大街107号"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"street2"</span><span class="p">:</span><span class="s2">"克林大厦107室"</span><span class="p">},</span><span class="w">
+    </span><span class="s2">"idNumber"</span><span class="p">:</span><span class="s2">"432524199902287897"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"idDoc"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"merchantIds"</span><span class="p">:[{</span><span class="w">
+    </span><span class="s2">"merchantId"</span><span class="p">:</span><span class="s2">"AAAAAAAAAAA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"merchantType"</span><span class="p">:</span><span class="s2">"Amazon"</span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"expectedMonthlySales"</span><span class="p">:</span><span class="mi">40000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"shopName"</span><span class="p">:</span><span class="s2">"MyBrand"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"website"</span><span class="p">:</span><span class="s2">"https://merchant.website.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"repAaddress"</span><span class="p">:{</span><span class="w">
+      </span><span class="s2">"city"</span><span class="p">:</span><span class="s2">"北京"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="s2">"CN"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"postalCode"</span><span class="p">:</span><span class="s2">"210000"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"street1"</span><span class="p">:</span><span class="s2">"东四北大街107号"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"street2"</span><span class="p">:</span><span class="s2">"克林大厦107室"</span><span class="p">},</span><span class="w">
+    </span><span class="s2">"companyNameCn"</span><span class="p">:</span><span class="s2">"ABC有限责任公司"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"companyNameEn"</span><span class="p">:</span><span class="s2">"ABC Company Limited"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"registrationNumber"</span><span class="p">:</span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"coiDoc"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"salesDoc"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dateOfEstablishment"</span><span class="p">:</span><span class="mi">1514736000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"beneficialOwners"</span><span class="p">:[{</span><span class="w">
+      </span><span class="s2">"fullName"</span><span class="p">:</span><span class="s2">"Richard"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"idNumber"</span><span class="p">:</span><span class="s2">"1231321312"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"idDoc"</span><span class="p">:</span><span class="kc">null</span><span class="p">}]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Once a new user requests a VBA via your platform, <a href="/#wallets">create a wallet</a> for that user.</p>
 
-<p>Once a new user requests a VBA via your platform, <a href="http://sendwyre.com/docs/#create-wallet">create a wallet</a> on Wyre for that user. <br></p>
-
-<p>Note: You should collect the required documentation and pass through to Wyre through this endpoint. The data is used for KYC purposes and is necessary in order to open the virtual banking facilities. The wallet will be opened immediately, and the banking information will be appended to the account once approved.</p>
+<p>Note: You should collect the required documentation and pass through to us through this endpoint. The data is used for KYC purposes and is necessary in order to open the virtual banking facilities. The wallet will be opened immediately, and the banking information will be appended to the account once approved (after step 3)</p>
 
 <p>Each wallet will automatically be assigned a walletId.</p>
 
 <p>Take note of the <code>walletId</code> that gets generated in the response as this will be used later to manage the VBA.</p>
 <h3 id='step-2-upload-kyc-documents'>Step 2. Upload KYC documents</h3>
-<p><code>POST</code> https://api.sendwyre.com/v2/documents <br></p>
+<p><code>POST</code> https://api.testwyre.com/v2/documents</p>
 
-<p>VBA Wallets require the below docuemntation in order to be issued with a Virtual Bank <code>accountNumber</code>. When you upload a document using this endpoint you will recieve a <code>documentId</code> which you will need for Step 3. <br></p>
+<p>VBA Wallets require the below documentation in order to be issued with a Virtual Bank <code>accountNumber</code>. When you upload a document using this endpoint you will receive a <code>documentId</code> which you will need for Step 3.</p>
 
-<p>When updating pass the following parameters along with the URL: </p>
+<p>When updating pass the following parameters along with the URL:</p>
 
 <table><thead>
 <tr>
 <th>Field</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>ownerSrn: &quot;wallet:[WALLET_ID]&quot;</td>
+</tr>
+<tr>
+<td>filename (optional): &quot;coiDoc.pdf&quot;</td>
+</tr>
 </tbody></table>
 
-<p>ownerSrn: &quot;wallet:[WALLET_ID]&quot;
-filename (optional): “coiDoc.pdf”</p>
-
-<p>E.g. <code>POST</code> https://api.sendwyre.com/v2/documents?ownerSrn=wallet:WA-123123123&amp;filename=coiDoc.pdf</p>
+<p>E.g. <code>POST</code> https://api.testwyre.com/v2/documents?ownerSrn=wallet:WA-123123123&amp;filename=coiDoc.pdf</p>
 
 <p>In the body of the request simply include the raw bytes of file to be uploaded.</p>
 <pre class="highlight java tab-java"><code><span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">computeSignature2</span><span class="o">(</span><span class="n">String</span> <span class="n">secretKey</span><span class="o">,</span><span class="n">String</span> <span class="n">url</span><span class="o">,</span> <span class="kt">byte</span><span class="o">[]</span> <span class="n">reqData</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">UnsupportedEncodingException</span> <span class="o">{</span>
@@ -1150,15 +1393,27 @@ filename (optional): “coiDoc.pdf”</p>
 <th>Content Type</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>&quot;application/msword&quot;</td>
+</tr>
+<tr>
+<td>&quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document&quot;</td>
+</tr>
+<tr>
+<td>&quot;application/pdf&quot;</td>
+</tr>
+<tr>
+<td>&quot;image/jpg&quot;</td>
+</tr>
+<tr>
+<td>&quot;image/jpeg&quot;</td>
+</tr>
+<tr>
+<td>&quot;image/png&quot;</td>
+</tr>
 </tbody></table>
 
-<p>&quot;application/msword&quot;
-&quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document&quot;
-&quot;application/pdf&quot;
-&quot;image/jpg&quot;
-&quot;image/jpeg&quot;
-&quot;image/png&quot;
-Once the file is uploaded the user will receive a &quot;document&quot; object as the response. Take the ID from this (e.g. DO-123123123) and provide it in the coiDoc, idDoc or salesDoc fields.</p>
+<p>Once the file is uploaded the user will receive a &quot;document&quot; object as the response. Take the ID from this (e.g. DO-123123123) and provide it in the coiDoc, idDoc or salesDoc fields.</p>
 
 <table><thead>
 <tr>
@@ -1168,7 +1423,7 @@ Once the file is uploaded the user will receive a &quot;document&quot; object as
 </thead><tbody>
 <tr>
 <td>idDoc</td>
-<td>A government-issued indentity docuement such as a passport or natioanl ID card.</td>
+<td>A government-issued identity document such as a passport or national ID card.</td>
 </tr>
 <tr>
 <td>coiDoc</td>
@@ -1180,101 +1435,91 @@ Once the file is uploaded the user will receive a &quot;document&quot; object as
 </tr>
 </tbody></table>
 
-<p>*For Amazon - please use the ListFinancialEventsGroup query for the last 90 days to upload a xml file</p>
+<p>For Amazon - please use the ListFinancialEventsGroup query for the last 90 days to upload a xml file</p>
 <h3 id='step-3-update-kyc-data-to-include-documents'>Step 3. Update KYC Data to include documents</h3>
 <p>When documents are uploaded they are associated to the wallet according to the ownerSrn. In order to determine the type and the latest documents, please update the following fields in the <code>vbaVerificationData</code>:</p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"vbaVerificationData"</span><span class="p">:{</span><span class="w">
-        </span><span class="s2">"coiDoc"</span><span class="p">:</span><span class="s2">"DO-123123123"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"idDoc"</span><span class="p">:</span><span class="s2">"DO-123123124"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"salesDoc"</span><span class="p">:</span><span class="s2">"DO-123123125"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='step-4-check-for-banking-data'>Step 4. Check for banking data</h3>
-<p>Banking data is added as an <code>object</code> to the <code>vbaData</code> setcion of the wallet object. </p>
-<h3 id='step-2-user-makes-a-deposit-on-client-39-s-platform'>Step 2. User makes a deposit on client&#39;s platform</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
-   </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"account:accoundId"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"sourceCurrency"</span><span class="p">:</span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"sourceAmount"</span><span class="p">:</span><span class="s2">"10000"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"dest"</span><span class="p">:</span><span class="s2">"wallet:walletId"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"destCurrency"</span><span class="p">:</span><span class="s2">"USD"</span><span class="p">,</span><span class="w"> 
-   </span><span class="s2">"autoConfirm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w"> 
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p><code>POST</code> https://api.sendwyre.com/v2/transfers <br></p>
 
-<p>Once the user deposits USD on the client&#39;s platform, <a href="http://sendwyre.com/docs/#create-transfer">create a transfer</a> on Wyre by sending USD from the master account to that user&#39;s wallet from Step 1 and automatically Confirm Transfer. <br></p>
+<pre class="center-column">
+{
+  "vbaVerificationData":{
+    "coiDoc":"DO-123123123",
+    "idDoc":"DO-123123124",
+    "salesDoc":"DO-123123125"
+  }
+}
+</pre>
 
-<p>For <code>source</code>, put your Wyre account ID which can be found <a href="https://www.sendwyre.com/settings/basic-info">here</a>. </p>
-<h3 id='step-3-check-live-exchange-rates'>Step 3. Check live exchange rates</h3>
-<p><code>GET</code> https://api.sendwyre.com/v2/rates <br></p>
+<p><br></p>
+<h3 id='step-4-check-for-banking-data'>Step 4. Check for banking data</h3>
+<p>Banking data is added as an <code>object</code> to the <code>vbaData</code> setcion of the wallet object.</p>
 
-<p>You can ping the <a href="http://sendwyre.com/docs/#live-exchange-rates">rates API</a> to check the buy and sell rates for BTC which refreshes every 30 seconds. <br></p>
+<pre class="center-column">
+{   
+  "vbaData": {
+    "bankName":"Evolve Bank & Trust",
+    "bankAddress": "6070 Poplar Ave #100, Memphis TN 38119",
+    "beneficiaryName":"Zhang San",
+    "bankAccountNumber":"123123123",
+    "routingNumber":"084106768"}
+  }
+</pre>
 
-<p>The mid market rate is calculated as MMR = (Buy rate + Sell Rate)/2. This rate is obtained from <a href="https://openexchangerates.org">openexchangerates.org</a></p>
-<h3 id='step-4-transfer-usd-from-account-to-btc-to-wallet'>Step 4. Transfer USD from account to BTC to wallet</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
-</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:walletId"</span><span class="w"> 
-</span><span class="s2">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:walletId"</span><span class="p">,</span><span class="w"> 
-</span><span class="s2">"sourceCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w"> 
-</span><span class="s2">"destCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w"> 
-</span><span class="s2">"destAmount"</span><span class="p">:</span><span class="w"> </span><span class="err">n</span><span class="mi">1000</span><span class="p">,</span><span class="w"> 
-</span><span class="s2">"autoConfirm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w"> 
-</span><span class="s2">"message"</span><span class="p">:</span><span class="s2">"USD Personal example"</span><span class="w"> 
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p><code>POST</code> https://api.sendwyre.com/v2/transfers <br></p>
+<p><br></p>
 
-<p>The user decides to buy BTC with a portion of their USD. <br></p>
+<p>Query the wallet using <code>GET</code> https://api.testwyre.com/v2/wallet/[walletID]. Limit your queries to once per hour and once the data is added turn off the queries. In the future we will add a Callback for this event.</p>
 
-<p>Create a transfer, initiating a buy of BTC with the USD from that user&#39;s wallet to his/her wallet. </p>
-<h3 id='step-5-confirm-the-transfer'>Step 5. Confirm the transfer</h3>
-<p><code>POST</code> https://api.sendwyre.com/v2/transfer/transferId:/confirm <br></p>
+<p>Once received you can now pass this information to your user to update their settlement information with their merchant platform.</p>
+<h3 id='step-5-receiving-funds-and-callbacks'>Step 5. Receiving Funds and Callbacks</h3>
+<p>Whenever we receive a payment to the <code>accountNumber</code>, once approved (note: payments from unapproved platforms will be rejected) a callback will be sent if you have set up a <code>callbackUrl</code>.</p>
 
-<p>Confirm the transfer using <code>transferId</code> retrieved from Step 4. <br></p>
+<p>See <a href="#callbacks-2">Callbacks</a></p>
 
-<p><code>GET</code> https://api.sendwyre.com/v2/wallet/{walletId} <br></p>
+<p>If you wish to validate the callback you can use the <code>id</code> to <code>GET</code> the necessary information. For transfers within our system the id will belong to a transfer (e.g. TF-123123123) and you can query:
+<em>https://api.testwyre.com/v2/transfer/[id]</em></p>
 
-<p>The next step is to <a href="http://sendwyre.com/docs/#lookup-wallet">check the bitcoin balance</a> of your wallet. </p>
-<h3 id='step-6-user-withdraws-some-btc'>Step 6. User withdraws some BTC</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
-</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:walletId"</span><span class="w"> 
-</span><span class="s2">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bitcoin: bitcoin address"</span><span class="p">,</span><span class="w"> 
-</span><span class="s2">"sourceCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w"> 
-</span><span class="s2">"destCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w"> 
-</span><span class="s2">"destAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> 
-</span><span class="s2">"autoConfirm"</span><span class="p">:</span><span class="s2">"true"</span><span class="w"> 
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p><code>POST</code> https://api.sendwyre.com/v2/transfers <br></p>
+<p>For the initial funding transation from outside our system (such as Amazon) the id will belong to a transaction (e.g. TR-123123123) and you can query: <em>https://api.testwyre.com/v2//transaction/[id]</em></p>
+<h3 id='step-6-transfer-usd-from-wallet-to-account'>Step 6. Transfer USD from wallet to Account</h3>
+<p><code>POST</code> https://api.testwyre.com/v2/transfers</p>
 
-<p>Let&#39;s say the user wants to withdraw BTC from the client&#39;s platform. <br></p>
+<pre class="center-column">
+{
+"source": "wallet:walletId",
+"dest": "account:accountId",
+"sourceCurrency": "USD",
+"destCurrency": "USD",
+"destAmount": 1000,
+"autoConfirm": "true",
+"message":"Merchant Test"
+}
+</pre>
 
-<p>On Wyre, you can create a third transfer to send BTC from the user&#39;s wallet to their external bitcoin address. <br></p>
+<p><br></p>
 
-<p>Set <code>autoConfirm</code> to &quot;true&quot; to automatically confirm the transfer. </p>
-<h3 id='step-7-the-user-wants-to-cash-out-their-remaining-usd'>Step 7. The user wants to cash out their remaining USD</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w"> 
-</span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet:walletId"</span><span class="w"> 
-</span><span class="s2">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"account:accountId"</span><span class="p">,</span><span class="w"> 
-</span><span class="s2">"sourceCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w"> 
-</span><span class="s2">"destCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w"> 
-</span><span class="s2">"destAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> 
-</span><span class="s2">"autoConfirm"</span><span class="p">:</span><span class="s2">"true"</span><span class="w"> </span><span class="err">//automatically</span><span class="w"> </span><span class="err">confirms</span><span class="w"> </span><span class="err">transfer</span><span class="w"> 
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Let&#39;s say the user wants to withdraw their remaining USD balance from the client&#39;s platform. <br></p>
+<p>Your account ID can be found <a href="https://www.testwyre.com/settings/basic-info">here</a>.
+Then transfer USD frm the Account to your pre-arranged Settlement Account (note: during setup - epiapi will create this Settlement Account as a Payment Method)</p>
 
-<p>Create a transfer to send the remaining USD balance from the user&#39;s wallet to the master account.<br></p>
+<pre class="center-column">
+{
+"source": "account:accountId",
+"dest": "paymentMethod:paymentMethodId",
+"sourceCurrency": "USD",
+"destCurrency": "USD",
+"sourceAmount": 1000,
+"amountIncludesFees": "true",
+"autoConfirm": "true",
+"message":"Merchant Test"
+}
+</pre>
 
-<p>Automatically confirm transfer by setting <code>autoConfirm</code> to &quot;true&quot;. <br></p>
+<p><br></p>
 
-<p>Afterwards, the client&#39;s platform should deliver payout to the user from the client&#39;s bank account. </p>
-<h3 id='step-8-your-platform-wants-to-withdraw-usd-back-to-own-account'>Step 8. Your platform wants to withdraw USD back to own account.</h3>
-<p>You can send a request to our payment operations team at <code>payops@sendwyre.com</code>.</p>
+<p>Set <code>autoConfirm</code> to &quot;true&quot; to automatically confirm the transfer.</p>
 <h1 id='account'>Account</h1><h2 id='account-details'>Account Details</h2>
-<p>This endpoint retrieves all the information related to your account. <br></p>
+<p>This endpoint retrieves all the information related to your account.</p>
 
-<p><strong>Definition</strong> <br></p>
+<p><strong>Definition</strong></p>
 
-<p><code>GET</code> https://api.sendwyre.com/v2/account <br></p>
+<p><code>GET</code> https://api.testwyre.com/v2/account</p>
 
 <p>When checking your balance you should refer to the <code>availableBalance</code> object to see how much of a given currency you have available to transfer.</p>
 
@@ -1338,7 +1583,7 @@ Once the file is uploaded the user will receive a &quot;document&quot; object as
 </tr>
 </tbody></table>
 
-<p><strong>Result Format</strong> <br></p>
+<p><strong>Result Format</strong></p>
 
 <pre class="center-column">
 {
@@ -1394,17 +1639,15 @@ Once the file is uploaded the user will receive a &quot;document&quot; object as
 }
 </pre>
 <h1 id='wallets'>Wallets</h1>
-<p>If you need to manage your account&#39;s balances into individual buckets, you may choose to use the Wallets API. You can send Bitcoin or Ethereum to the wallet which will be automatically assigned a unique bitcoin or ethereum deposit address. </p>
-<h2 id='create-wallet'>Create Wallet</h2><pre class="highlight plaintext"><code>
-curl -v -XPOST 'https://api.sendwyre.com/v2/wallets' \
+<p>If you need to manage your account&#39;s balances into individual buckets, you may choose to use the Wallets API. You can send Bitcoin or Ethereum to the wallet which will be automatically assigned a unique bitcoin or ethereum deposit address.</p>
+<h2 id='create-wallet'>Create Wallet</h2><pre class="highlight plaintext"><code>curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
   -H "Content-Type: application/json" \
   -H "X-Api-Key: {api-key}" \
   -H "X-Api-Signature: {signature}" \
   -d '{"type":"ENTERPRISE","name":"{your-unique-identifier}",
   "callbackUrl":"https://your.website.io/callback",
   "notes":"Notes about the sub account"}'
-
-</code></pre><pre class="highlight java tab-java"><code> <span class="kn">import</span> <span class="nn">javax.crypto.Mac</span><span class="o">;</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">javax.crypto.Mac</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">javax.crypto.spec.SecretKeySpec</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.DataOutputStream</span><span class="o">;</span>
@@ -1422,7 +1665,7 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallets' \
     <span class="n">String</span> <span class="n">apiKey</span> <span class="o">=</span> <span class="s">"fll36l3t35udalcqlh4ng6bm4qpbgher"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">secretKey</span> <span class="o">=</span> <span class="s">"tr3epinbk3maist0n3ijk18bm6dikrq6"</span><span class="o">;</span>
 
-    <span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.sendwyre.com/v2/wallets"</span><span class="o">;</span>
+    <span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.testwyre.com/v2/wallets"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">method</span> <span class="o">=</span> <span class="s">"POST"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">data</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
 
@@ -1557,7 +1800,7 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallets' \
 <span class="k">class</span> <span class="nc">MassPay_API</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">account_id</span><span class="p">,</span> <span class="n">api_version</span><span class="p">,</span> <span class="n">api_key</span><span class="p">,</span> <span class="n">api_secret</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">account_id</span> <span class="o">=</span> <span class="n">account_id</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">=</span> <span class="s">'https://api.sendwyre.com/{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">api_version</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">=</span> <span class="s">'https://api.testwyre.com/{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">api_version</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_version</span> <span class="o">=</span> <span class="n">api_version</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_secret</span> <span class="o">=</span> <span class="n">api_secret</span>
@@ -1593,7 +1836,7 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallets' \
             <span class="n">body</span><span class="p">[</span><span class="s">"callbackUrl"</span><span class="p">]</span> <span class="o">=</span> <span class="n">callbackUrl</span>
         <span class="k">if</span> <span class="n">notes</span><span class="p">:</span>
             <span class="n">body</span><span class="p">[</span><span class="s">'notes'</span><span class="p">]</span> <span class="o">=</span> <span class="n">notes</span>
-        <span class="k">return</span> <span class="n">url</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">body</span> 
+        <span class="k">return</span> <span class="n">url</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">body</span>
 
 <span class="c">#USAGE Example</span>
 <span class="n">account_id</span> <span class="o">=</span> <span class="s">"YOUR_ACCOUNT_ID_HERE"</span> <span class="c">#optional</span>
@@ -1606,8 +1849,8 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallets' \
 
 <span class="c">#create user and print result</span>
 <span class="n">http_code</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">Wyre</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span>
-                                <span class="s">"{your-unique-identifier}"</span><span class="p">,</span> 
-                                <span class="s">"https://your.website.io/callback"</span><span class="p">,</span> 
+                                <span class="s">"{your-unique-identifier}"</span><span class="p">,</span>
+                                <span class="s">"https://your.website.io/callback"</span><span class="p">,</span>
                                 <span class="bp">None</span><span class="p">,</span> <span class="c">#notes</span>
                                 <span class="p">{</span>
                                   <span class="s">"firstName"</span><span class="p">:</span> <span class="s">"{users-first-name}"</span><span class="p">,</span>
@@ -1635,7 +1878,7 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallets' \
 '''</span><span class="n">php</span>
 <span class="o">&lt;</span><span class="err">?</span><span class="n">php</span>
     <span class="n">function</span> <span class="n">make_authenticated_request</span><span class="p">(</span><span class="err">$</span><span class="n">endpoint</span><span class="p">,</span> <span class="err">$</span><span class="n">method</span><span class="p">,</span> <span class="err">$</span><span class="n">body</span><span class="p">)</span> <span class="p">{</span>
-        <span class="err">$</span><span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.sendwyre.com'</span><span class="p">;</span>
+        <span class="err">$</span><span class="n">url</span> <span class="o">=</span> <span class="s">'https://api.testwyre.com'</span><span class="p">;</span>
         <span class="err">$</span><span class="n">api_key</span> <span class="o">=</span> <span class="s">"bh405n7stsuo5ut30iftrsl71b4iqjnv"</span><span class="p">;</span>
         <span class="err">$</span><span class="n">secret_key</span> <span class="o">=</span> <span class="s">"a19cvrchgja82urvn47kirrlrrb7stgg"</span><span class="p">;</span>
 
@@ -1712,11 +1955,9 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallets' \
     <span class="n">echo</span> <span class="n">make_authenticated_request</span><span class="p">(</span><span class="s">"/wallets"</span><span class="p">,</span> <span class="s">"POST"</span><span class="p">,</span> <span class="err">$</span><span class="n">userData</span><span class="p">);</span>
 <span class="err">?</span><span class="o">&gt;</span>
 </code></pre>
-<p>This endpoint creates a child wallet for a user and assigns a unique Bitcoin or Ethereum address to that child wallet. <br></p>
+<p><strong>Definition</strong></p>
 
-<p><strong>Definition</strong> <br></p>
-
-<p><code>POST</code> https://api.sendwyre.com/v2/wallets <br></p>
+<p><code>POST</code> https://api.testwyre.com/v2/wallets</p>
 
 <p><strong>Parameters</strong></p>
 
@@ -1778,7 +2019,7 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallets' \
 }
 </pre>
 <h2 id='create-mulitple-wallets'>Create Mulitple Wallets</h2><pre class="highlight plaintext"><code>
-curl -XPOST 'https://api.sendwyre.com/v2/wallets/batch?pretty' \
+curl -XPOST 'https://api.testwyre.com/v2/wallets/batch?pretty' \
 -H 'Content-Type:application/json' \
 -d '{
   "wallets":[
@@ -1788,11 +2029,11 @@ curl -XPOST 'https://api.sendwyre.com/v2/wallets/batch?pretty' \
   ]
 }'
 </code></pre>
-<p>This endpoint allows you to creates a batch of child wallets (1 child wallet/user) in one request. <br></p>
+<p>This endpoint allows you to creates a batch of child wallets (1 child wallet/user) in one request.</p>
 
-<p><strong>Definition</strong> <br></p>
+<p><strong>Definition</strong></p>
 
-<p><code>POST</code> https://api.sendwyre.com/v2/wallets/batch <br></p>
+<p><code>POST</code> https://api.testwyre.com/v2/wallets/batch</p>
 
 <p><strong>Parameters</strong></p>
 
@@ -1873,32 +2114,27 @@ curl -XPOST 'https://api.sendwyre.com/v2/wallets/batch?pretty' \
   "balances" : {
     "BTC" : 0
   }
-} 
-
+}
 </pre>
-<h2 id='lookup-wallet'>Lookup Wallet</h2><pre class="highlight plaintext"><code>
-Lookup by user ID:
-
-curl -v -XGET 'https://api.sendwyre.com/v2/wallet/{wallet-id}' \
+<h2 id='lookup-wallet'>Lookup Wallet</h2>
+<p>Lookup by user ID:</p>
+<pre class="highlight plaintext"><code>curl -v -XGET 'https://api.testwyre.com/v2/wallet/{wallet-id}' \
   -H "X-Api-Key: {api-key}" \
   -H "X-Api-Signature: {signature}" \
-
-
-
-Lookup by user name: 
-curl -v -XGET 'https://api.sendwyre.com/v2/wallet' \
+</code></pre>
+<p>Lookup by user name:</p>
+<pre class="highlight plaintext"><code>curl -v -XGET 'https://api.testwyre.com/v2/wallet' \
   -H "X-Api-Key: {api-key}" \
   -H "X-Api-Signature: {signature}" \
   -d name={your-identifier}
-
 </code></pre>
-<p>This endpoint allows you to look up the balance of a child wallet by ID or name. <br></p>
+<p>This endpoint allows you to look up the balance of a child wallet by ID or name.</p>
 
-<p><strong>Definition</strong> <br></p>
+<p><strong>Definition</strong></p>
 
-<p><code>GET</code> https://api.sendwyre.com/v2/wallet/{walletId} <br></p>
+<p><code>GET</code> https://api.testwyre.com/v2/wallet/{walletId}</p>
 
-<p><strong>Parameters</strong> <br></p>
+<p><strong>Parameters</strong></p>
 
 <table><thead>
 <tr>
@@ -1916,11 +2152,11 @@ curl -v -XGET 'https://api.sendwyre.com/v2/wallet' \
 </tr>
 </tbody></table>
 
-<p><strong>Definition</strong> <br></p>
+<p><strong>Definition</strong></p>
 
-<p><code>GET</code> https://api.sendwyre.com/v2/wallet/ <br></p>
+<p><code>GET</code> https://api.testwyre.com/v2/wallet/</p>
 
-<p><strong>Parameters</strong> <br></p>
+<p><strong>Parameters</strong></p>
 
 <table><thead>
 <tr>
@@ -1938,39 +2174,38 @@ curl -v -XGET 'https://api.sendwyre.com/v2/wallet' \
 </tr>
 </tbody></table>
 
-<p><strong>Results Format</strong><br>
+<p><strong>Results Format</strong></p>
+
 <pre class="center-column">
 {
-   “owner”: “account:[account-ID]“,
-   “callbackUrl”: null,
-   “depositAddresses”: {
-       “BTC”: “1FNAkNVt3gXdS3PZ1tDvetbcafKPsJPQTG”
+   "owner": "account:[account-ID]",
+   "callbackUrl": null,
+   "depositAddresses": {
+       "BTC": "1FNAkNVt3gXdS3PZ1tDvetbcafKPsJPQTG"
    },
-   “totalBalances”: {
-       “USD”: 4.96
+   "totalBalances": {
+       "USD": 4.96
    },
-   “availableBalances”: {
-       “USD”: 4.96
+   "availableBalances": {
+       "USD": 4.96
    },
-   “verificationData”: null,
-   “balances”: {
-       “USD”: 4.96
+   "verificationData": null,
+   "balances": {
+       "USD": 4.96
    },
-   “srn”: “wallet:[Wallet-ID]“,
-   “createdAt”: 1497861843000,
-   “notes”: “test1”,
-   “name”: “richard”,
-   “id”: “[Wallet-ID]”
+   "srn": "wallet:[Wallet-ID]",
+   "createdAt": 1497861843000,
+   "notes": "test1",
+   "name": "richard",
+   "id": "[Wallet-ID]"
 }
-</pre></p>
-<h2 id='edit-wallet'>Edit Wallet</h2><pre class="highlight plaintext"><code>
-curl -v -XPOST 'https://api.sendwyre.com/v2/wallet/{wallet-id}/update' \
+</pre>
+<h2 id='edit-wallet'>Edit Wallet</h2><pre class="highlight plaintext"><code>curl -v -XPOST 'https://api.testwyre.com/v2/wallet/{wallet-id}/update' \
   -H "Content-Type: application/json" \
   -H "X-Api-Key: {api-key}" \
   -H "X-Api-Signature: {signature}" \
   -d '{"name":"{your-unique-identifier}","notes":"Updated notes about the sub account"}'
-</code></pre><pre class="highlight python tab-python"><code>
-<span class="c">#dependencies:</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c">#dependencies:</span>
 <span class="c">#python3</span>
 <span class="c">#pip3 install requests</span>
 
@@ -1982,7 +2217,7 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallet/{wallet-id}/update' \
 <span class="k">class</span> <span class="nc">MassPay_API</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">account_id</span><span class="p">,</span> <span class="n">api_version</span><span class="p">,</span> <span class="n">api_key</span><span class="p">,</span> <span class="n">api_secret</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">account_id</span> <span class="o">=</span> <span class="n">account_id</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">=</span> <span class="s">'https://api.sendwyre.com/{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">api_version</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">=</span> <span class="s">'https://api.testwyre.com/{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">api_version</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_version</span> <span class="o">=</span> <span class="n">api_version</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">api_secret</span> <span class="o">=</span> <span class="n">api_secret</span>
@@ -2009,40 +2244,37 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallet/{wallet-id}/update' \
 
     <span class="nd">@authenticate_request</span>
     <span class="k">def</span> <span class="nf">update_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">walletId</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">callbackUrl</span><span class="p">,</span> <span class="n">notes</span><span class="p">,</span> <span class="n">verificationData</span><span class="p">):</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">+</span> <span class="s">'/wallet/'</span> <span class="o">+</span> <span class="n">walletId</span> <span class="o">+</span> <span class="s">'/update</span><span class="err">
-</span><span class="s">        method = '</span><span class="n">POST</span><span class="s">'</span><span class="err">
-</span><span class="s">        body = {'</span><span class="n">name</span><span class="s">':name}</span><span class="err">
-</span><span class="s">        if callbackUrl:</span><span class="err">
-</span><span class="s">            body["callbackUrl"] = callbackUrl</span><span class="err">
-</span><span class="s">        if notes:</span><span class="err">
-</span><span class="s">            body['</span><span class="n">notes</span><span class="s">'] = notes</span><span class="err">
-</span><span class="s">        if verificationData:</span><span class="err">
-</span><span class="s">            body['</span><span class="n">verificationData</span><span class="s">'] = verificationData</span><span class="err">
-</span><span class="s">        return url, method, body </span><span class="err">
+        <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_url</span> <span class="o">+</span> <span class="s">'/wallet/'</span> <span class="o">+</span> <span class="n">walletId</span> <span class="o">+</span> <span class="s">'/update'</span>
+        <span class="n">method</span> <span class="o">=</span> <span class="s">'POST'</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="p">{</span><span class="s">'name'</span><span class="p">:</span><span class="n">name</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">callbackUrl</span><span class="p">:</span>
+            <span class="n">body</span><span class="p">[</span><span class="s">"callbackUrl"</span><span class="p">]</span> <span class="o">=</span> <span class="n">callbackUrl</span>
+        <span class="k">if</span> <span class="n">notes</span><span class="p">:</span>
+            <span class="n">body</span><span class="p">[</span><span class="s">'notes'</span><span class="p">]</span> <span class="o">=</span> <span class="n">notes</span>
+        <span class="k">if</span> <span class="n">verificationData</span><span class="p">:</span>
+            <span class="n">body</span><span class="p">[</span><span class="s">'verificationData'</span><span class="p">]</span> <span class="o">=</span> <span class="n">verificationData</span>
+        <span class="k">return</span> <span class="n">url</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">body</span>
 
-</span><span class="s">#USAGE Example</span><span class="err">
-</span><span class="s">account_id = "YOUR_ACCOUNT_ID_HERE" #optional</span><span class="err">
-</span><span class="s">api_key = "YOUR_API_KEY_HERE"</span><span class="err">
-</span><span class="s">secret_key = "YOUR_SECRET_KEY_HERE"</span><span class="err">
-</span><span class="s">api_version = "2"</span><span class="err">
+<span class="c">#USAGE Example</span>
+<span class="n">account_id</span> <span class="o">=</span> <span class="s">"YOUR_ACCOUNT_ID_HERE"</span> <span class="c">#optional</span>
+<span class="n">api_key</span> <span class="o">=</span> <span class="s">"YOUR_API_KEY_HERE"</span>
+<span class="n">secret_key</span> <span class="o">=</span> <span class="s">"YOUR_SECRET_KEY_HERE"</span>
+<span class="n">api_version</span> <span class="o">=</span> <span class="s">"2"</span>
 
-</span><span class="s">#create Wyre MassPay API object</span><span class="err">
-</span><span class="s">Wyre = MassPay_API(account_id, api_version, api_key, secret_key)</span><span class="err">
+<span class="c">#create Wyre MassPay API object</span>
+<span class="n">Wyre</span> <span class="o">=</span> <span class="n">MassPay_API</span><span class="p">(</span><span class="n">account_id</span><span class="p">,</span> <span class="n">api_version</span><span class="p">,</span> <span class="n">api_key</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span>
 
-</span><span class="s">#create user and print result</span><span class="err">
-</span><span class="s">http_code, result = Wyre.update_user(</span><span class="err">
-</span><span class="s">                                "{wallet-id}",</span><span class="err">
-</span><span class="s">                                "{your-unique-identifier}", </span><span class="err">
-</span><span class="s">                                None, #callbackUrl</span><span class="err">
-</span><span class="s">                                "Updated notes for user",</span><span class="err">
-</span><span class="s">                                None #verification data</span><span class="err">
-</span><span class="s">                                )</span><span class="err">
-</span><span class="s">print(result)</span><span class="err">
-</span><span class="s">users_srn = result['</span><span class="n">srn</span><span class="s">'] #grab our srn identifier for the user</span><span class="err">
-
-
-</span></code></pre><pre class="highlight java tab-java"><code>
-<span class="kn">import</span> <span class="nn">javax.crypto.Mac</span><span class="o">;</span>
+<span class="c">#create user and print result</span>
+<span class="n">http_code</span><span class="p">,</span> <span class="n">result</span> <span class="o">=</span> <span class="n">Wyre</span><span class="o">.</span><span class="n">update_user</span><span class="p">(</span>
+                                <span class="s">"{wallet-id}"</span><span class="p">,</span>
+                                <span class="s">"{your-unique-identifier}"</span><span class="p">,</span>
+                                <span class="bp">None</span><span class="p">,</span> <span class="c">#callbackUrl</span>
+                                <span class="s">"Updated notes for user"</span><span class="p">,</span>
+                                <span class="bp">None</span> <span class="c">#verification data</span>
+                                <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">users_srn</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">'srn'</span><span class="p">]</span> <span class="c">#grab our srn identifier for the user</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">javax.crypto.Mac</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">javax.crypto.spec.SecretKeySpec</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.io.DataOutputStream</span><span class="o">;</span>
@@ -2062,7 +2294,7 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallet/{wallet-id}/update' \
 
     <span class="n">String</span> <span class="n">walletId</span> <span class="o">=</span> <span class="s">"{wallet-id}"</span><span class="o">;</span>
 
-    <span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.sendwyre.com/v2/wallet/"</span><span class="o">+</span> <span class="n">walletId</span> <span class="o">+</span><span class="s">"/update"</span><span class="o">;</span>
+    <span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">"https://api.testwyre.com/v2/wallet/"</span><span class="o">+</span> <span class="n">walletId</span> <span class="o">+</span><span class="s">"/update"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">method</span> <span class="o">=</span> <span class="s">"POST"</span><span class="o">;</span>
     <span class="n">String</span> <span class="n">data</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
 
@@ -2164,13 +2396,12 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallet/{wallet-id}/update' \
     <span class="o">}</span>
   <span class="o">}</span>
 <span class="o">}</span>
-
 </code></pre>
-<p>This endpoint updates the information for a accounts child wallet. <br></p>
+<p>This endpoint updates the information for a accounts child wallet.</p>
 
-<p><strong>Definition</strong> <br></p>
+<p><strong>Definition</strong></p>
 
-<p><code>UPDATE</code> https://api.sendwyre.com/v2/wallet/{walletId} <br></p>
+<p><code>UPDATE</code> https://api.testwyre.com/v2/wallet/{walletId}</p>
 
 <p><strong>Parameters</strong></p>
 
@@ -2208,15 +2439,15 @@ curl -v -XPOST 'https://api.sendwyre.com/v2/wallet/{wallet-id}/update' \
 </tr>
 </tbody></table>
 <h2 id='delete-wallet'>Delete Wallet</h2><pre class="highlight plaintext"><code>
-curl -v -XDELETE 'https://api.sendwyre.com/v2/wallet/{wallet-id}' \
+curl -v -XDELETE 'https://api.testwyre.com/v2/wallet/{wallet-id}' \
   -H "X-Api-Key: {api-key}" \
   -H "X-Api-Signature: {signature}"
 </code></pre>
 <p>This endpoint removes the wallet from your account. Note that the wallet data is retained in our system for compliance purposes. Once an account is deleted the Virtual Bank Account associated with the wallet will be closed and no longer availabel for receiving funds. <br></p>
 
-<p><strong>Definition</strong> <br></p>
+<p><strong>Definition</strong></p>
 
-<p><code>DELETE</code> https://api.sendwyre.com/v2/wallet/{walletId} <br></p>
+<p><code>DELETE</code> https://api.testwyre.com/v2/wallet/{walletId}</p>
 
 <p><strong>Parameters</strong></p>
 
@@ -2236,11 +2467,11 @@ curl -v -XDELETE 'https://api.sendwyre.com/v2/wallet/{wallet-id}' \
 </tr>
 </tbody></table>
 <h2 id='list-wallets'>List Wallets</h2>
-<p>This endpoint will return all the child wallets you have created. <br></p>
+<p>This endpoint will return all the child wallets you have created.</p>
 
 <p><strong>Definition</strong> <BR></p>
 
-<p><code>GET</code> https://api.sendwyre.com/v2/wallets <BR></p>
+<p><code>GET</code> https://api.testwyre.com/v2/wallets <BR></p>
 
 <p><strong>Parameters</strong></p>
 
@@ -2269,7 +2500,6 @@ curl -v -XDELETE 'https://api.sendwyre.com/v2/wallet/{wallet-id}' \
 <p><strong>Result Format</strong></p>
 
 <pre class="center-column">
-
 {
   "data": {
       "owner": "account:XAV3CRAC94P",
@@ -2285,129 +2515,61 @@ curl -v -XDELETE 'https://api.sendwyre.com/v2/wallet/{wallet-id}' \
       "notes": "nope",
       "name": "Person A",
       "id": "WA-XM4L3JMUQGF"
-    },
-    {
-      "owner": "account:XAV3CRAC94P",
-      "balances": {},
-      "srn": "wallet:WA-VXRYUHW6JPX",
-      "createdAt": 1508203688000,
-      "callbackUrl": null,
-      "depositAddresses": {
-        "BTC": "13UtPuSaHCTsqRkwYjMbypSnPGkcyrni3r"
-      },
-      "totalBalances": {},
-      "availableBalances": {},
-      "notes": null,
-      "name": "123456",
-      "id": "WA-VXRYUHW6JPX"
     }
-}
+  }
 </pre>
 <h2 id='callbacks'>Callbacks</h2>
 <p>We provide a series of HTTP callbacks that allow you to notify users when funds have been deposited and when they become available.</p>
 
-<p><strong>When callbacks are sent</strong> <br>
+<p><strong>When callbacks are sent</strong>
 Callbacks are sent whenever a transactional event occurs that will affect the wallet&#39;s balance. Examples include:</p>
 
 <ul>
 <li>Incoming pending transaction</li>
 <li>Pending transaction confirmed</li>
-<li>Outgoing transaction 
-<br></li>
+<li>Outgoing transaction</li>
 </ul>
 
-<p><strong>Callback Acceptance and Retries</strong> <br>
+<p><strong>Callback Acceptance and Retries</strong>
 Your system should respond to the callback request with a 200 response. If we do not receive a valid repsonse our system will continue to attempt to send the request.</p>
 
-<p><strong>Result Format</strong> <br></p>
+<p><strong>Result Format</strong></p>
 
 <pre class="center-column">
 {
-     "id": "4vofvbjjvo4g5cn03ibcosja5mks3o22opskgmicdh",
-     "source": "bitcoin:EXTERNAL",
-     "dest": "wallet:2ef8mls9v9ovvqimiv2jmn0d33nf30dt",
-     "currency": "BTC",
-     "amount": 0.0001,
-     "status": "CONFIRMED",
-     "createdAt": 1436996049910,
-     "confirmedAt": 1436996049910,
-     "invalidatedAt": null,
-     "message": "One Banana nut muffin please!",
-     "equivalencies": {
-     "EUR": 0.03,
-     "BRL": 0.1,
-     "AUD": 0.04,
-     "USD": 0.03,
-     "GBP": 0.02
-},
-     "senderId": null,
-     "senderProvidedId": null,
-     "reversedBy": null,
-     "relatedTx": null,
-     "blockchainTx": null,
-      "rates": null,
-      "sourceName": "EXTERNAL",
-      "sourceIcon": null,
-      "destName": "muffinTop@sendwyre.com",
-      "destIcon": null
+  "createdAt":1531445525097,
+  "id":"TR-F3947W8C2C6",
+  "source":"transfer:TF-HP4A42EC6DX",
+  "dest":"wallet:WA-CF9RFZ7QU6W",
+  "currency":"USD",
+  "amount":5005.00,
+  "status":"CONFIRMED",
+  "confirmedAt":1531445525097,
+  "cancelledAt":null,
+  "reversedAt":null,
+  "message":"Deposit for transfer TF-HP4A42EC6DX",
+  "allowOverdraft":true,
+  "authorizer":"account:AC-XXXXXXXXX",
+  "senderProvidedId":null,
+  "reversedBy":null,
+  "fees":0,
+  "feesDest":null,
+  "metadata":{
+    "Description":"Pending: Transfer of $5005.00 to wallet:WA-CF9RFZ7QU6W",
+    "transferId":"TF-HP4A42EC6DX"},
+    "tags":[],
+    "sourceFees":null,
+    "destFees":null
+  }
 </pre>
 
-<p>The callback payload will be a JSON representation of the transaction that has caused the callback to trigger. </p>
+<p>The callback payload will be a JSON representation of the transaction that has caused the callback to trigger.</p>
 <h1 id='transfers'>Transfers</h1><h2 id='introduction'>Introduction</h2>
-<p>Transfers represent the building blocks of our API. Our Transfer API is an incredibly versatile way of moving funds not only externally but internally as well, whether it&#39;s through internal account management or internal exchanges.  Additionally, you can specify differing source and destination currencies and the funds will automatically exchanged into the appropriate currency in our backend. <br>
-Anytime you want to move funds around on the Wyre platform you will create a Transfer. The Transfer will go through a number of states as funds are moved to the destination of your choice.<BR></p>
-
-<p>Please refer <a href="http://sendwyre.com/docs/#country-currency-requirements">here</a> for each country&#39;s individual requirements when conducting international transfers. </p>
-<h2 id='list-of-supported-banks'>List of Supported Banks</h2>
-<p>This list will return the latest set of supported banks for either <code>China</code> or <code>Brazil</code>.</p>
-
-<p><strong>Definition</strong> <br></p>
-
-<p><code>GET</code> https://api.sendwyre.com/v2/bankinfo/:country <br></p>
-
-<p><strong>Parameters</strong></p>
-
-<table><thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>country</td>
-<td>string</td>
-<td>The country you want to get bank info from. Currently the only supported values are CN and BR</td>
-<td>yes</td>
-</tr>
-</tbody></table>
-
-<ul>
-<li>List of supported banks in Brazil also located <a href="https://support.sendwyre.com/sending-money/send-money-to-brazil/supported-banks-in-brazil" target="_blank">here</a>.</li>
-<li>List of supported banks in China also located <a href="https://support.sendwyre.com/sending-money/send-money-to-china/list-of-supported-chinese-banks" target="_blank">here</a>.</li>
-</ul>
-<h2 id='quote-transfer'>Quote Transfer</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
-   </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"account:i6rgs8mjdmmu7cnf7a5bgl0r0vudsfe5"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"sourceCurrency"</span><span class="p">:</span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"sourceAmount"</span><span class="p">:</span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"dest"</span><span class="p">:</span><span class="s2">"email:sam@sendwyre.com"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"destCurrency"</span><span class="p">:</span><span class="s2">"CNY"</span><span class="p">,</span><span class="w"> 
-   </span><span class="s2">"preview"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"amountIncludesFees"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="err">//optional</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Create a transfer to your client&#39;s bank account with all the required information. <br></p>
-
-<p>Set parameter <code>preview</code> to &quot;true&quot; and <code>amountIncludesFees</code> to &quot;true&quot; to not execute a real transfer and view the fee breakdown. <br></p>
-
-<p>If <code>amountIncludesFees</code> is &quot;true&quot;, the amount you consider in <code>sourceAmount</code> and <code>destAmount</code> will be inclusive of fees. <br> </p>
-
-<p>The JSON response will return object <code>totalFees</code> which will include all Wyre fees and BTC miner fees (if applicable). </p>
-
-<p><strong>Definition</strong> <br>
-<code>POST</code> https://api.sendwyre.com/v2/transfer/<br></p>
+<p>Transfers represent the building blocks of our API. Our Transfer API is an incredibly versatile way of moving funds not only externally but internally as well, whether it&#39;s through internal account management or internal exchanges.  Additionally, you can specify differing source and destination currencies and the funds will automatically exchanged into the appropriate currency in our backend.
+Anytime you want to move funds around on the platform you will create a Transfer. The Transfer will go through a number of states as funds are moved to the destination of your choice.<BR></p>
+<h2 id='transfers-2'>Transfers</h2>
+<p><strong>Definition</strong>
+<code>POST</code> https://api.testwyre.com/v2/transfer/</p>
 
 <table><thead>
 <tr>
@@ -2438,7 +2600,7 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 <tr>
 <td>dest</td>
 <td>string</td>
-<td>An email address, cellphone number, digital currency address, payment method, wallet to send the digital currency to. For BTC address use &quot;bitcoin:[address]&quot; and for ETH, use &quot;ethereum:[address]&quot;. Note: cellphone numbers are assumed to be a US number, for international numbers include a &#39;+&#39; and the country code as the prefix.</td>
+<td>An email address, cellphone number, digital currency address, payment method, wallet to send the digital currency to. Note: cellphone numbers are assumed to be a US number, for international numbers include a &#39;+&#39; and the country code as the prefix.</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -2472,19 +2634,23 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 <td>no</td>
 </tr>
 </tbody></table>
-<h2 id='create-transfer'>Create Transfer</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
-   </span><span class="s2">"source"</span><span class="p">:</span><span class="s2">"account:i6rgs8mjdmmu7cnf7a5bgl0r0vudsfe5"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"sourceCurrency"</span><span class="p">:</span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"sourceAmount"</span><span class="p">:</span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"dest"</span><span class="p">:</span><span class="s2">"email:sam@sendwyre.com"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"destCurrency"</span><span class="p">:</span><span class="s2">"CNY"</span><span class="p">,</span><span class="w"> 
-   </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="err">//optional</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint creates a new money transfer. <br></p>
+<h2 id='create-transfer'>Create Transfer</h2>
+<pre class="center-column">
+{  
+   "source":"account:AC-123123123",
+   "sourceCurrency":"USD",
+   "sourceAmount":"5",
+   "dest":"email:sam@testwyre.com",
+   "destCurrency":"CNY",
+   "message": ""
+}
+</pre>
 
-<p><strong>Definition</strong> <br>
-<code>POST</code> https://api.sendwyre.com/v2/transfers <br></p>
+<p><br>
+This endpoint creates a new money transfer.</p>
+
+<p><strong>Definition</strong>
+<code>POST</code> https://api.testwyre.com/v2/transfers</p>
 
 <table><thead>
 <tr>
@@ -2515,7 +2681,7 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 <tr>
 <td>dest</td>
 <td>string</td>
-<td>An email address, cellphone number, digital currency address, payment method, wallet to send the digital currency to. For BTC address use &quot;bitcoin:[address]&quot; and for ETH, use &quot;ethereum:[address]&quot;. Note: cellphone numbers are assumed to be a US number, for international numbers include a &#39;+&#39; and the country code as the prefix.</td>
+<td>An email address, cellphone number, digital currency address, payment method, wallet to send the digital currency to. Note: cellphone numbers are assumed to be a US number, for international numbers include a &#39;+&#39; and the country code as the prefix.</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -2568,13 +2734,13 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 </tr>
 </tbody></table>
 
-<p>Once you&#39;ve created the transfer it will be in an UNCONFIRMED state. You will have 30 seconds to review the transfer and <a href="http://sendwyre.com/docs/#confirm-transfer">confirm it</a> before the quote expires. If the quote expires you&#39;ll have to reissue the transfer request and confirm the new transfer. However you can CONFIRM the transfer AUTOMATICALLY by setting <code>autoConfirm</code> to <code>true</code>. <br></p>
+<p>Once you&#39;ve created the transfer it will be in an UNCONFIRMED state. You will have 30 seconds to review the transfer and <a href="#confirm-transfer">confirm it</a> before the quote expires. If the quote expires you&#39;ll have to reissue the transfer request and confirm the new transfer. However you can CONFIRM the transfer AUTOMATICALLY by setting <code>autoConfirm</code> to <code>true</code>.</p>
 
-<p>When reviewing the transfer the main things you&#39;ll want to check out are the following: <br></p>
+<p>When reviewing the transfer the main things you&#39;ll want to check out are the following:</p>
 
-<p><code>exchangeRate</code> - The quoted exchange rate for the transfer <br>
-<code>totalFees</code> - The total fees will always be represented in the source currency. To convert totalFees to the destination currency, multiply totalFees by the exchange rate. Note that this object includes all Wyre fees and miner fees if applicable.<br>
-<code>sourceAmount/destAmount</code> - Depending on the request you made, you&#39;ll want to double check these fields at this stage and make sure that you&#39;re either sending or receiving the amount you expected. Note the values for these fields depend on the <code>amountIncludesFees</code> parameter. </p>
+<p><code>exchangeRate</code> - The quoted exchange rate for the transfer
+<code>totalFees</code> - The total fees will always be represented in the source currency. To convert totalFees to the destination currency, multiply totalFees by the exchange rate. Note that this object includes all Wyre fees and miner fees if applicable.
+<code>sourceAmount/destAmount</code> - Depending on the request you made, you&#39;ll want to double check these fields at this stage and make sure that you&#39;re either sending or receiving the amount you expected. Note the values for these fields depend on the <code>amountIncludesFees</code> parameter.</p>
 
 <p><strong>Result Format</strong></p>
 
@@ -2628,10 +2794,10 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 }
 </pre>
 <h2 id='confirm-transfer'>Confirm Transfer</h2>
-<p>This endpoint confirms a money transfer. Once you&#39;ve created the transfer and receive a 200 response, you will have 30 seconds to confirm the transfer. Note the <code>transferId</code> after you create the transfer. If you want to automatically confirm the transfer without making an additional API call, set parameter <code>autoConfirm</code> to &quot;true&quot; in your <a href="http://sendwyre.com/docs/#create-transfer">Create Transfer</a> request. <br></p>
+<p>This endpoint confirms a money transfer. Once you&#39;ve created the transfer and receive a 200 response, you will have 30 seconds to confirm the transfer. Note the <code>transferId</code> after you create the transfer. If you want to automatically confirm the transfer without making an additional API call, set parameter <code>autoConfirm</code> to &quot;true&quot; in your <a href="#create-transfer">Create Transfer</a> request.</p>
 
-<p><strong>Definition</strong> <br>
-<code>POST</code> https://api.sendwyre.com/v2/transfer/transferId:/confirm <br></p>
+<p><strong>Definition</strong>
+<code>POST</code> https://api.testwyre.com/v2/transfer/transferId:/confirm</p>
 
 <table><thead>
 <tr>
@@ -2647,7 +2813,7 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 </tr>
 </tbody></table>
 
-<p><strong>Result Format</strong> <br></p>
+<p><strong>Result Format</strong></p>
 
 <pre class="center-column">
 {
@@ -2699,10 +2865,10 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 }
 </pre>
 <h2 id='lookup-transfer'>Lookup Transfer</h2>
-<p>This endpoint allows you to look up information related to a transfer you already created. </p>
+<p>This endpoint allows you to look up information related to a transfer you already created.</p>
 
-<p><strong>Definition</strong> <br>
-<code>GET</code> https://api.sendwyre.com/v2/transfer?customId=</p>
+<p><strong>Definition</strong>
+<code>GET</code> https://api.testwyre.com/v2/transfer?customId=</p>
 
 <table><thead>
 <tr>
@@ -2718,7 +2884,7 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 </tr>
 </tbody></table>
 
-<p><strong>Result Format</strong> <br></p>
+<p><strong>Result Format</strong></p>
 
 <pre class="center-column">
 {
@@ -2770,8 +2936,8 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 }
 </pre>
 <h2 id='transfer-status'>Transfer Status</h2>
-<p><strong>Definition</strong> <br>
-<code>GET</code> https://api.sendwyre.com/v2/transfer/:transferId</p>
+<p><strong>Definition</strong>
+<code>GET</code> https://api.testwyre.com/v2/transfer/:transferId</p>
 
 <table><thead>
 <tr>
@@ -2787,7 +2953,7 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 </tr>
 </tbody></table>
 
-<p><strong>Result Format</strong> <br></p>
+<p><strong>Result Format</strong></p>
 
 <pre class="center-column">
 {
@@ -2839,26 +3005,26 @@ Anytime you want to move funds around on the Wyre platform you will create a Tra
 }
 </pre>
 
-<p>Once a Transfer enters the PENDING state we will start moving money to the destination account. At some point the Transfer will either move to a COMPLETED status or a FAILED status asynchronously from any API call.</p>
+<p><br>
+Once a Transfer enters the PENDING state we will start moving money to the destination account. At some point the Transfer will either move to a COMPLETED status or a FAILED status asynchronously from any API call.</p>
 <h2 id='callbacks-2'>Callbacks</h2>
 <p>We provide a series of HTTP callbacks that allow you to notify users when funds have been deposited and when they become available.</p>
 
-<p><strong>When callbacks are sent</strong> <br>
+<p><strong>When callbacks are sent</strong>
 Callbacks are sent whenever a transactional event occurs that will affect the account&#39;s balance. Examples include:</p>
 
 <ul>
 <li>Incoming pending transaction</li>
 <li>Pending transaction confirmed</li>
-<li>Outgoing transaction 
-<br></li>
+<li>Outgoing transaction</li>
 </ul>
 
 <p>You may receive two callbacks for a single transaction. This is especially true for transactions on the blockchain. In these cases, you would receive one callback when the transaction is first observed and one callback once the transaction is confirmed.</p>
 
-<p><strong>Callback Acceptance and Retries</strong> <br>
+<p><strong>Callback Acceptance and Retries</strong>
 Your system should respond to the callback request with a 200 response. We only attempt to send the request once, but we may introduce automatic retries in the future. We can manually resend callbacks upon request.</p>
 
-<p><strong>Result Format</strong> <br></p>
+<p><strong>Result Format</strong></p>
 
 <pre class="center-column">
 {
@@ -2910,12 +3076,9 @@ Your system should respond to the callback request with a 200 response. We only 
 }
 </pre>
 
-<p>The callback payload will be a JSON representation of the transaction that has caused the callback to trigger. </p>
-<h1 id='payment-methods'>Payment Methods</h1><h2 id='create-payment-method'>Create Payment Method</h2><pre class="highlight json tab-json"><code><span class="w">
-</span><span class="err">//</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">going</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">user's</span><span class="w"> </span><span class="err">bank</span><span class="w"> </span><span class="err">information.</span><span class="w">
-</span><span class="err">We</span><span class="w"> </span><span class="err">take</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">way</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">validate</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">they're</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">sender</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">payment.</span><span class="w"> 
-</span><span class="err">It</span><span class="w"> </span><span class="err">allows</span><span class="w"> </span><span class="err">us</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">know</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">expect</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">payment</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">coming</span><span class="w"> </span><span class="err">from.</span><span class="w">
-</span><span class="p">{</span><span class="w">
+<p><br>
+The callback payload will be a JSON representation of the transaction that has caused the callback to trigger.</p>
+<h1 id='payment-methods'>Payment Methods</h1><h2 id='create-payment-method'>Create Payment Method</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"paymentMethodType"</span><span class="p">:</span><span class="s2">"INTERNATIONAL_TRANSFER"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
@@ -2937,12 +3100,11 @@ Your system should respond to the callback request with a 200 response. We only 
     </span><span class="s2">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CHECKING"</span><span class="p">,</span><span class="w"> </span><span class="err">//CHECKING</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="err">SAVINGS</span><span class="w">
     </span><span class="s2">"chargeablePM"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-
-</span><span class="err">//</span><span class="w"> </span><span class="err">This</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">going</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">your</span><span class="w"> </span><span class="err">corporation's</span><span class="w"> </span><span class="err">bank</span><span class="w"> </span><span class="err">information.</span><span class="w"> 
-</span><span class="err">We</span><span class="w"> </span><span class="err">take</span><span class="w"> </span><span class="err">this</span><span class="w"> </span><span class="err">as</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">way</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">validate</span><span class="w"> </span><span class="err">that</span><span class="w"> </span><span class="err">they're</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">sender</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">payment.</span><span class="w"> 
-</span><span class="err">It</span><span class="w"> </span><span class="err">allows</span><span class="w"> </span><span class="err">us</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">know</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">expect</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">payment</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">be</span><span class="w"> </span><span class="err">coming</span><span class="w"> </span><span class="err">from.</span><span class="w">
-
-</span><span class="p">{</span><span class="w">
+</span></code></pre>
+<p>This is going to be your corporation&#39;s bank information.
+We take this as a way to validate that they&#39;re the sender of the payment.
+It allows us to know where to expect the payment to be coming from.</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"paymentMethodType"</span><span class="p">:</span><span class="s2">"INTERNATIONAL_TRANSFER"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
@@ -2954,7 +3116,7 @@ Your system should respond to the callback request with a 200 response. We only 
     </span><span class="s2">"beneficiaryState"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"beneficiaryPostal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"94108"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"beneficiaryLandlineNumber"</span><span class="p">:</span><span class="s2">"+123464542947"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"beneficiaryEmailAddress"</span><span class="p">:</span><span class="s2">"tes@sendwyre.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"beneficiaryEmailAddress"</span><span class="p">:</span><span class="s2">"tes@testwyre.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"beneficiaryEinTin"</span><span class="p">:</span><span class="s2">"00000000"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"beneficiaryDobDay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15"</span><span class="p">,</span><span class="w"> </span><span class="err">//Date</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Incorporation</span><span class="w">
     </span><span class="s2">"beneficiaryDobMonth"</span><span class="p">:</span><span class="s2">"12"</span><span class="p">,</span><span class="w"> </span><span class="err">//Date</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Incorporation</span><span class="w">
@@ -2965,372 +3127,64 @@ Your system should respond to the callback request with a 200 response. We only 
     </span><span class="s2">"routingNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000000000"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"chargeablePM"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-
 </span></code></pre>
-<p>This endpoint creates a bank account. <br></p>
+<p>This endpoint creates a bank account.</p>
+<h2 id='lookup-payment-method'>Lookup Payment Method</h2>
+<p>This endpoint looks up the bank details associated with a payment method you created.</p>
 
-<p><strong>Definition</strong><br>
-<code>POST</code> https://api.sendwyre.com/v2/paymentMethods <br></p>
+<p><strong>Definition</strong>
+<code>GET</code> https://api.testwyre.com/v2/paymentMethod/:paymentMethodId</p>
 
-<p><strong>Parameters</strong></p>
+<p><strong>Result Format</strong></p>
 
-<table><thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-<th>Required</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>owner</td>
-<td>string</td>
-<td>Wallet ID (e.g. wallet:12345)</td>
-<td>no</td>
-</tr>
-<tr>
-<td>paymentMethodType</td>
-<td>string</td>
-<td><code>INTERNATIONAL_TRANSFER</code></td>
-<td>yes</td>
-</tr>
-<tr>
-<td>paymentType</td>
-<td>string</td>
-<td><code>LOCAL_BANK_WIRE</code></td>
-<td>yes</td>
-</tr>
-<tr>
-<td>currency</td>
-<td>string</td>
-<td>3 letter currency code</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>country</td>
-<td>string</td>
-<td>Alpha-2 country code</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>beneficiaryType</td>
-<td>string</td>
-<td><code>INDIVIDUAL</code> or <code>CORPORATE</code></td>
-<td>yes</td>
-</tr>
-<tr>
-<td>nameOnAccount</td>
-<td>string</td>
-<td>Name of beneficiary on account</td>
-<td>no</td>
-</tr>
-<tr>
-<td>firstNameOnAccount</td>
-<td>string</td>
-<td>Required for individual</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>lastNameOnAccount</td>
-<td>string</td>
-<td>Required for individual</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>beneficiaryCompanyName</td>
-<td>string</td>
-<td>Required for business</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>beneficiaryEinTin</td>
-<td>string</td>
-<td>Required for business</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>beneficiaryAddress</td>
-<td>string</td>
-<td>Beneficiary&#39;s address</td>
-<td>no</td>
-</tr>
-<tr>
-<td>beneficiaryAddress2</td>
-<td>string</td>
-<td>Beneficiary&#39;s address</td>
-<td>no</td>
-</tr>
-<tr>
-<td>beneficiaryCity</td>
-<td>string</td>
-<td>Beneficiary&#39;s city</td>
-<td>no</td>
-</tr>
-<tr>
-<td>beneficiaryPostal</td>
-<td>string</td>
-<td>Beneficiary&#39;s zip code</td>
-<td>no</td>
-</tr>
-<tr>
-<td>beneficiaryPhoneNumber</td>
-<td>string</td>
-<td>Required for individual</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>beneficiaryLandlineNumber</td>
-<td>string</td>
-<td>Required for business</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>beneficiaryState</td>
-<td>string</td>
-<td>Beneficiary&#39;s state</td>
-<td>no</td>
-</tr>
-<tr>
-<td>beneficiaryEmailAddress</td>
-<td>string</td>
-<td>Required for business</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>beneficiaryDobDay</td>
-<td>integer</td>
-<td>Beneficiary&#39;s birth day</td>
-<td>no</td>
-</tr>
-<tr>
-<td>beneficiaryDobMonth</td>
-<td>integer</td>
-<td>Beneficiary&#39;s birth month</td>
-<td>no</td>
-</tr>
-<tr>
-<td>beneficiaryDobYear</td>
-<td>integer</td>
-<td>Beneficiary&#39;s birth year</td>
-<td>no</td>
-</tr>
-<tr>
-<td>accountNumber</td>
-<td>string</td>
-<td>Required</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>routingNumber</td>
-<td>string</td>
-<td>Required</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>accountType</td>
-<td>string</td>
-<td><code>CHECKING</code> or <code>SAVINGS</code></td>
-<td>no</td>
-</tr>
-<tr>
-<td>chargeablePM</td>
-<td>boolean</td>
-<td>Set to true</td>
-<td>yes</td>
-</tr>
-</tbody></table>
-
-<p><strong>Result Format</strong>
 <pre class="center-column">
 {
- id: //the id is also an SRN of the format paymentmethod,
- name:<name>,
- status:&quot;AWAITING_FOLLOWUP | AWAITING_DEPOSIT_VERIFICATION | ACTIVE | REJECTED |  DISABLED | PENDING&quot;,
- chargeableCurrencies:[&quot;USD&quot;],
- depositableCurrencies:[&quot;USD&quot;],
- chargeFeeSchedule:[...],
- depositFeeSchedule:[...],
- minCharge:0.0,
- maxCharge:0.0,
- minDeposit:0.0,
- maxDeposit:0.0
+    "id": "TestPaymentMethod",
+    "owner": "account:ABCDEFG",
+    "createdAt": 1230940800000,
+    "name": "TEST PAYMENT METHOD",
+    "defaultCurrency": "USD",
+    "status": "ACTIVE",
+    "statusMessage": null,
+    "waitingPrompts": [],
+    "linkType": "TEST",
+    "supportsDeposit": true,
+    "nameOnMethod": null,
+    "last4Digits": null,
+    "brand": null,
+    "expirationDisplay": null,
+    "countryCode": null,
+    "nickname": null,
+    "rejectionMessage": null,
+    "disabled": false,
+    "supportsPayment": true,
+    "chargeableCurrencies": [
+        "GBP",
+        "MXN",
+        "HKD",
+        "USD",
+        "CNY",
+        "BRL",
+        "EUR",
+    ],
+    "depositableCurrencies": [
+        "USD"
+    ],
+    "chargeFeeSchedule": null,
+    "depositFeeSchedule": null,
+    "minCharge": null,
+    "maxCharge": null,
+    "minDeposit": null,
+    "maxDeposit": null,
+    "documents": [],
+    "srn": "paymentmethod:TestPaymentMethod"
 }
- </pre></p>
-<h2 id='lookup-payment-method'>Lookup Payment Method</h2>
-<p>This endpoint looks up the bank details associated with a payment method you created.<br></p>
+</pre>
+<h2 id='usd-payouts'>USD Payouts</h2>
+<p>USD payouts are initiated from one of our banks that corresponds to the country delivered. Please note that the minimum amount to transfer USD is $5.00.</p>
 
-<p><strong>Definition</strong> <br>
-<code>GET</code> https://api.sendwyre.com/v2/paymentMethod/:paymentMethodId</p>
-
-<p><strong>Result Format</strong>
-<pre class="center-column"></p>
-
-<p>{
-    &quot;id&quot;: &quot;TestPaymentMethod&quot;,
-    &quot;owner&quot;: &quot;account:ABCDEFG&quot;,
-    &quot;createdAt&quot;: 1230940800000,
-    &quot;name&quot;: &quot;TEST PAYMENT METHOD&quot;,
-    &quot;defaultCurrency&quot;: &quot;USD&quot;,
-    &quot;status&quot;: &quot;ACTIVE&quot;,
-    &quot;statusMessage&quot;: null,
-    &quot;waitingPrompts&quot;: [],
-    &quot;linkType&quot;: &quot;TEST&quot;,
-    &quot;supportsDeposit&quot;: true,
-    &quot;nameOnMethod&quot;: null,
-    &quot;last4Digits&quot;: null,
-    &quot;brand&quot;: null,
-    &quot;expirationDisplay&quot;: null,
-    &quot;countryCode&quot;: null,
-    &quot;nickname&quot;: null,
-    &quot;rejectionMessage&quot;: null,
-    &quot;disabled&quot;: false,
-    &quot;supportsPayment&quot;: true,
-    &quot;chargeableCurrencies&quot;: [
-        &quot;GBP&quot;,
-        &quot;MXN&quot;,
-        &quot;HKD&quot;,
-        &quot;USD&quot;,
-        &quot;CNY&quot;,
-        &quot;BRL&quot;,
-        &quot;EUR&quot;,
-    ],
-    &quot;depositableCurrencies&quot;: [
-        &quot;USD&quot;
-    ],
-    &quot;chargeFeeSchedule&quot;: null,
-    &quot;depositFeeSchedule&quot;: null,
-    &quot;minCharge&quot;: null,
-    &quot;maxCharge&quot;: null,
-    &quot;minDeposit&quot;: null,
-    &quot;maxDeposit&quot;: null,
-    &quot;documents&quot;: [],
-    &quot;srn&quot;: &quot;paymentmethod:TestPaymentMethod&quot;
-}</p>
-
-<p></pre></p>
-<h1 id='country-currency-requirements'>Country/Currency Requirements</h1>
-<p>Banks in different countries have a unique set of financial requirements that need to be passed to conduct a successful transfer. </p>
-<h2 id='china'>China</h2>
-<p>Please note that the minimum amount to transfer CNY is 100 CNY. <br></p>
-
-<p><strong>Definition</strong><br>
-<code>POST</code> https://api.sendwyre.com/v2/transfers <br><br></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"dest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"paymentMethodType"</span><span class="p">:</span><span class="s2">"INTERNATIONAL_TRANSFER"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CN"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CNY"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"beneficiaryType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INDIVIDUAL"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"paymentType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"LOCAL_BANK_TRANSFER"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">LOCAL_BANK_TRANSFER</span><span class="w"> </span><span class="err">only</span><span class="w">
-    </span><span class="s2">"nameOnAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"张三"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accountNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0000000000000000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"bankName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"中国工商银行"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"branchName"</span><span class="p">:</span><span class="s2">"上海分行田林支行"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"bankCity"</span><span class="p">:</span><span class="s2">"上海"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"bankProvince"</span><span class="p">:</span><span class="w"> </span><span class="s2">"上海"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"sourceCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"destCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CNY"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"destAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CNY example"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">optional</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">note</span><span class="w">
-  </span><span class="s2">"referenceNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">optional</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">reference</span><span class="w"> </span><span class="err">number</span><span class="w">
-  </span><span class="s2">"autoConfirm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">optional</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">automatically</span><span class="w"> </span><span class="err">confirms</span><span class="w"> </span><span class="err">transfer</span><span class="w">
-  </span><span class="s2">"callbackUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">optional</span><span class="w"> </span><span class="err">-</span><span class="w"> </span><span class="err">location</span><span class="w"> </span><span class="err">where</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">receive</span><span class="w"> </span><span class="err">callbacks</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p><strong>Transfer Requirements</strong> <br></p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>dest</td>
-<td>object</td>
-</tr>
-<tr>
-<td>dest.paymentMethodType</td>
-<td><code>INTERNATIONAL_TRANSFER</code></td>
-</tr>
-<tr>
-<td>dest.country</td>
-<td>CN</td>
-</tr>
-<tr>
-<td>dest.currency</td>
-<td>CNY</td>
-</tr>
-<tr>
-<td>dest.beneficiaryType</td>
-<td><code>INDIVIDUAL</code> or <code>CORPORATE</code></td>
-</tr>
-<tr>
-<td>dest.paymentType</td>
-<td><code>LOCAL_BANK_TRANSFER</code></td>
-</tr>
-<tr>
-<td>dest.nameOnAccount</td>
-<td>As it appears on bank account - Chinese characters for Chinese nationals</td>
-</tr>
-<tr>
-<td>dest.accountNumber</td>
-<td>Same as bank card number</td>
-</tr>
-<tr>
-<td>dest.bankName</td>
-<td>Beneficiary bank name in Chinese characters</td>
-</tr>
-<tr>
-<td>dest.branchName</td>
-<td>Beneficiary branch name in Chinese characters</td>
-</tr>
-<tr>
-<td>dest.bankCity</td>
-<td>Beneficiary bank city in Chinese characters</td>
-</tr>
-<tr>
-<td>dest.bankProvince</td>
-<td>Beneficiary bank province in Chinese characters</td>
-</tr>
-<tr>
-<td>sourceCurrency</td>
-<td>Currency to be debited from your account</td>
-</tr>
-<tr>
-<td>destCurrency</td>
-<td>Currency to be deposited to the dest. If destCurrency doesn&#39;t match the sourceCurrency an exchange will be performed</td>
-</tr>
-<tr>
-<td>destAmount</td>
-<td>Amount to be deposited to the dest - the amount debited from your account will be calculated automatically from the exchange rate/fees.</td>
-</tr>
-</tbody></table>
-
-<p><strong>INDIVIDUALS</strong><br></p>
-
-<ul>
-<li>Payments to individuals take a maximum of 6 hours, 24/7.</li>
-<li>Payments over CNY 50,000 will be split into smaller payments to ensure no clearing delays.<br></li>
-</ul>
-
-<p><strong>CORPORATES</strong><br></p>
-
-<ul>
-<li>Payments to corporates take a maximum of 6 hours, during normal business banking hours (9:00 - 17:00, Monday - Friday).</li>
-</ul>
-
-<p><strong>Supported Banks</strong><br></p>
-
-<ul>
-<li>The list of supported banks are located <a href="https://support.sendwyre.com/sending-money/send-money-to-china/list-of-supported-chinese-banks" target="_blank">here</a>.</li>
-</ul>
-<h2 id='usa'>USA</h2>
-<p>USD payouts are initiated from one of our banks that corresponds to the country delivered. Please note that the minimum amount to transfer USD is $5.00. </p>
-
-<p><strong>Definition</strong><br>
-<code>POST</code> https://api.sendwyre.com/v2/transfers <br> <br></p>
+<p><strong>Definition</strong>&lt;
+<code>POST</code> https://api.testwyre.com/v2/transfers</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"dest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"paymentMethodType"</span><span class="p">:</span><span class="s2">"INTERNATIONAL_TRANSFER"</span><span class="p">,</span><span class="w">
@@ -3442,20 +3296,20 @@ Your system should respond to the callback request with a 200 response. We only 
 </tr>
 </tbody></table>
 
-<p><strong>Delivery Times</strong> <br>
-Bank cut-off time is 4PM CT<br>
-If we receive the payment instruction on the day before 4PM CT, the payment will be sent out that same day.-If we receive the payment instruction after 4PM CT, it will be credited to beneficiary next business day +1.<br></p>
+<p><strong>Delivery Times</strong>
+Bank cut-off time is 4PM CT
+If we receive the payment instruction on the day before 4PM CT, the payment will be sent out that same day.-If we receive the payment instruction after 4PM CT, it will be credited to beneficiary next business day +1.</p>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="cURL">cURL</a>
+                <a href="#" data-language-name="java">java</a>
                 <a href="#" data-language-name="ruby">ruby</a>
                 <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="java">java</a>
                 <a href="#" data-language-name="php">php</a>
-                <a href="#" data-language-name="json">json</a>
                 <a href="#" data-language-name="csharp">csharp</a>
+                <a href="#" data-language-name="cURL">cURL</a>
+                <a href="#" data-language-name="json">json</a>
           </div>
       </div>
     </div>
