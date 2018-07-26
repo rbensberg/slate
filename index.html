@@ -296,9 +296,6 @@
       <li>
         <a href="#step-6-transfer-usd-from-wallet-to-account" class="toc-h3 toc-link" data-title="Step-by-step Guide">Step 6. Transfer USD from wallet to Account</a>
       </li>
-      <li>
-        <a href="#step-7-the-user-wants-to-cash-out-their-remaining-usd" class="toc-h3 toc-link" data-title="Step-by-step Guide">Step 7. The user wants to cash out their remaining USD</a>
-      </li>
   </ul>
               </ul>
           </li>
@@ -1010,7 +1007,7 @@ Once fully onboarded you are ready to go!</p>
 </tr>
 <tr>
 <td>account</td>
-<td>A plafrom account (account:AC-123123123)</td>
+<td>A plaform account (account:AC-123123123)</td>
 </tr>
 <tr>
 <td>wallet</td>
@@ -1111,7 +1108,55 @@ PAYMENT_METHOD_UNSUPPORTED_DEPOSIT_CURRENCY</p>
 
 <p>We will show you an example of how an online platform may create USD virtual bank accounts with unique account numbers for its users, and receive funds for delivery into a dedicated settlement account.</p>
 <h3 id='step-1-create-a-wallet-with-kyc-data'>Step 1. Create a Wallet with KYC Data</h3>
-<p>Wyre uses the concept of <code>wallets</code> to represent individual merchant accounts under your <code>account</code>. Upon creation, each of these wallets are assigned various fund receiving capabilities, for <code>TYPE=VBA</code> wallets a Virtual Bank Account (with a unique bank account and routing number) will be created. <br></p>
+<p>Wyre uses the concept of <code>wallets</code> to represent individual merchant accounts under your <code>account</code>. Upon creation, each of these wallets are assigned various fund receiving capabilities. You must set <code>type=VBA</code> in order to obtain a Virtual Bank Account (with a unique bank account and routing number).</p>
+
+<pre class="center-column">
+{   
+  "name":"youruniquename",
+  "type":"VBA",
+  "callbackUrl":"https://your.website.io/callback",
+  "vbaVerificationData":{
+    "entityType":"CORP",
+    "entityScope":"Shopping/Retail",
+    "email":"test+merchant@epiapi.com",
+    "phoneNumber":"13111111111",
+    "ip":"127.0.0.1",
+    "nameCn":"法人姓名",
+    "nameEn":"Legal Rep",
+    "dateOfBirth":1514736000,
+    "address":{
+      "city":"北京",
+      "country":"CN",
+      "postalCode":"210000",
+      "street1":"东四北大街107号",
+      "street2":"克林大厦107室"},
+    "idNumber":"432524199902287897",
+    "idDoc":null,
+    "merchantIds":[{
+    "merchantId":"AAAAAAAAAAA",
+    "merchantType":"Amazon"}],
+    "expectedMonthlySales":40000,
+    "shopName":"MyBrand",
+    "website":"https://merchant.website.com",
+    "repAaddress":{
+      "city":"北京",
+      "country":"CN",
+      "postalCode":"210000",
+      "street1":"东四北大街107号",
+      "street2":"克林大厦107室"},
+    "companyNameCn":"ABC有限责任公司",
+    "companyNameEn":"ABC Company Limited",
+    "registrationNumber":"123456789",
+    "coiDoc":null,
+    "salesDoc":null,
+    "dateOfEstablishment":1514736000,
+    "beneficialOwners":[{
+      "fullName":"Richard",
+      "idNumber":"1231321312",
+      "idDoc":null}]
+      }
+}
+</pre>
 <pre class="highlight plaintext"><code>curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
   -H "Content-Type: application/json" \
   -H "X-Api-Key: {api-key}" \
@@ -1312,43 +1357,8 @@ PAYMENT_METHOD_UNSUPPORTED_DEPOSIT_CURRENCY</p>
 
 <p>For the initial funding transation from outside our system (such as Amazon) the id will belong to a transaction (e.g. TR-123123123) and you can query: <em>https://api.testwyre.com/v2//transaction/[id]</em></p>
 <h3 id='step-6-transfer-usd-from-wallet-to-account'>Step 6. Transfer USD from wallet to Account</h3>
-<pre class="center-column">
-{
-"source": "wallet:walletId",
-"dest": "wallet:walletId",
-"sourceCurrency": "USD",
-"destCurrency": "BTC",
-"destAmount": 1000,
-"autoConfirm": "true",
-"message":"USD Personal example"
-}
-</pre>
-
 <p><code>POST</code> https://api.testwyre.com/v2/transfers</p>
 
-<p>The user decides to buy BTC with a portion of their USD.</p>
-
-<p>Create a transfer, initiating a buy of BTC with the USD from that user&#39;s wallet to his/her wallet.</p>
-
-<pre class="center-column">
-{  
-   "source":"account:accoundId",
-   "sourceCurrency":"USD",
-   "sourceAmount":"10000",
-   "dest":"wallet:walletId",
-   "destCurrency":"USD",
-   "autoConfirm": "true"
-}
-</pre>
-
-<p><code>POST</code> https://api.testwyre.com/v2/transfers</p>
-
-<p>Once the user deposits USD on the client&#39;s platform, <a href="http://testwyre.com/docs/#create-transfer">create a transfer</a> on Wyre by sending USD from the master account to that user&#39;s wallet from Step 1 and automatically Confirm Transfer.</p>
-
-<p>For <code>source</code>, put your Wyre account ID which can be found <a href="https://www.testwyre.com/settings/basic-info">here</a>.</p>
-
-<p>Set <code>autoConfirm</code> to &quot;true&quot; to automatically confirm the transfer.</p>
-<h3 id='step-7-the-user-wants-to-cash-out-their-remaining-usd'>Step 7. The user wants to cash out their remaining USD</h3>
 <pre class="center-column">
 {
 "source": "wallet:walletId",
@@ -1356,17 +1366,28 @@ PAYMENT_METHOD_UNSUPPORTED_DEPOSIT_CURRENCY</p>
 "sourceCurrency": "USD",
 "destCurrency": "USD",
 "destAmount": 1000,
-"autoConfirm":"true"
+"autoConfirm": "true",
+"message":"Merchant Test"
 }
 </pre>
 
-<p>Let&#39;s say the user wants to withdraw their remaining USD balance from the client&#39;s platform.</p>
+<p>Your account ID can be found <a href="https://www.testwyre.com/settings/basic-info">here</a>.
+Then transfer USD frm the Account to your pre-arranged Settlement Account (note: during setup - epiapi will create this Settlement Account as a Payment Method)</p>
 
-<p>Create a transfer to send the remaining USD balance from the user&#39;s wallet to the master account.</p>
+<pre class="center-column">
+{
+"source": "account:accountId",
+"dest": "paymentMethod:paymentMethodId",
+"sourceCurrency": "USD",
+"destCurrency": "USD",
+"sourceAmount": 1000,
+"amountIncludesFees": "true",
+"autoConfirm": "true",
+"message":"Merchant Test"
+}
+</pre>
 
-<p>Automatically confirm transfer by setting <code>autoConfirm</code> to &quot;true&quot;.</p>
-
-<p>Afterwards, the client&#39;s platform should deliver payout to the user from the client&#39;s bank account.</p>
+<p>Set <code>autoConfirm</code> to &quot;true&quot; to automatically confirm the transfer.</p>
 <h1 id='account'>Account</h1><h2 id='account-details'>Account Details</h2>
 <p>This endpoint retrieves all the information related to your account.</p>
 
