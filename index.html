@@ -956,7 +956,7 @@ Once fully onboarded you are ready to go!</p>
 </thead><tbody>
 <tr>
 <td>X-Api-Key</td>
-<td>Your API key. Your key can be found <a href="https://dash.testwyre.com/settings/api-keys">here</a></td>
+<td>Your API key. Your key can be found <a href="https://support.sendwyre.com/%E4%B8%AD%E6%96%87%E5%B8%AE%E5%8A%A9%E5%8C%BA/api/api-key-%E8%AE%BE%E7%BD%AE%E6%8C%87%E5%8D%97">here</a></td>
 </tr>
 <tr>
 <td>X-Api-Signature</td>
@@ -1122,7 +1122,7 @@ PAYMENT_METHOD_UNSUPPORTED_DEPOSIT_CURRENCY</p>
     "entityScope":"Shopping/Retail",
     "email":"test+merchant@epiapi.com",
     "phoneNumber":"13111111111",
-    "ip":"127.0.0.1",
+    "ip": "127.0.0.1",
     "nameCn":"法人姓名",
     "nameEn":"Legal Rep",
     "dateOfBirth":1514736000,
@@ -1160,15 +1160,177 @@ PAYMENT_METHOD_UNSUPPORTED_DEPOSIT_CURRENCY</p>
 }
 </pre>
 
-<p><br>
-<code>cURL
-curl -v -XPOST &#39;https://api.testwyre.com/v2/wallets&#39; \
-  -H &quot;Content-Type: application/json&quot; \
-  -H &quot;X-Api-Key: {api-key}&quot; \
-  -H &quot;X-Api-Signature: {signature}&quot; \
-  -d &#39;{&quot;type&quot;:&quot;VBA&quot;,&quot;name&quot;:&quot;{your-unique-identifier}&quot;
-</code></p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<p><br></p>
+
+<table><thead>
+<tr>
+<th>Fields</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>*&quot;entityType&quot;</td>
+<td>&quot;CORP&quot;、“M”、“F” available</td>
+</tr>
+<tr>
+<td>*&quot;entityScope&quot;</td>
+<td>&quot;Shopping/Retail&quot;</td>
+</tr>
+<tr>
+<td>*&quot;email&quot;</td>
+<td>&quot;test+merchant@epiapi.com&quot;</td>
+</tr>
+<tr>
+<td>*&quot;phoneNumber&quot;</td>
+<td>&quot;13111111111&quot;</td>
+</tr>
+<tr>
+<td>*&quot;ip&quot;</td>
+<td>The IP address of the user when opening the acount</td>
+</tr>
+<tr>
+<td>*&quot;nameCn&quot;</td>
+<td>&quot;法人姓名&quot;</td>
+</tr>
+<tr>
+<td>*&quot;nameEn&quot;</td>
+<td>&quot;Legal Rep&quot;</td>
+</tr>
+<tr>
+<td>*&quot;dateOfBirth&quot;</td>
+<td>UNIX (milliseconds)</td>
+</tr>
+<tr>
+<td>*&quot;address&quot;</td>
+<td>(street 2 can be bland if not needed)</td>
+</tr>
+<tr>
+<td>&quot;street1&quot;</td>
+<td>&quot;东四北大街107号&quot;</td>
+</tr>
+<tr>
+<td>&quot;street2&quot;</td>
+<td>&quot;克林大厦107室&quot;</td>
+</tr>
+<tr>
+<td>&quot;city&quot;</td>
+<td>&quot;beijing&quot;</td>
+</tr>
+<tr>
+<td>&quot;state&quot;</td>
+<td>&quot;beijing&quot;</td>
+</tr>
+<tr>
+<td>&quot;country&quot;</td>
+<td>&quot;CN&quot;</td>
+</tr>
+<tr>
+<td>&quot;postalCode&quot;</td>
+<td>&quot;100007&quot;</td>
+</tr>
+<tr>
+<td>*&quot;idNumber&quot;</td>
+<td>&quot;432524199902287897&quot;</td>
+</tr>
+<tr>
+<td>*&quot;idDoc&quot;</td>
+<td>null</td>
+</tr>
+<tr>
+<td>&quot;merchantId&quot;</td>
+<td>&quot;A00000&quot;</td>
+</tr>
+<tr>
+<td>&quot;merchantType&quot;</td>
+<td>&quot;Amazon&quot;</td>
+</tr>
+<tr>
+<td>&quot;expectedMonthlySales&quot;</td>
+<td>40000</td>
+</tr>
+<tr>
+<td>&quot;shopName&quot;</td>
+<td>&quot;MyBrand&quot;</td>
+</tr>
+<tr>
+<td>&quot;website&quot;</td>
+<td>&quot;https://merchant.website.com&quot;</td>
+</tr>
+<tr>
+<td>*&quot;repAaddress&quot;(CORP only)</td>
+<td>(street 2 can be bland if not needed)</td>
+</tr>
+<tr>
+<td>&quot;street1&quot;</td>
+<td>&quot;东四北大街107号&quot;</td>
+</tr>
+<tr>
+<td>&quot;street2&quot;</td>
+<td>&quot;克林大厦107室&quot;</td>
+</tr>
+<tr>
+<td>&quot;city&quot;</td>
+<td>&quot;beijing&quot;</td>
+</tr>
+<tr>
+<td>&quot;state&quot;</td>
+<td>&quot;beijing&quot;</td>
+</tr>
+<tr>
+<td>&quot;country&quot;</td>
+<td>&quot;CN&quot;</td>
+</tr>
+<tr>
+<td>&quot;postalCode&quot;</td>
+<td>&quot;100007&quot;</td>
+</tr>
+<tr>
+<td>*&quot;companyNameCn&quot;(CORP only)</td>
+<td>&quot;ABC有限责任公司&quot;</td>
+</tr>
+<tr>
+<td>*&quot;companyNameEn&quot;(CORP only)</td>
+<td>&quot;ABC Company Limited&quot;</td>
+</tr>
+<tr>
+<td>*&quot;registrationNumber&quot;(CORP only)</td>
+<td>&quot;123456789&quot;</td>
+</tr>
+<tr>
+<td>*&quot;coiDoc&quot;(CORP only)</td>
+<td>null</td>
+</tr>
+<tr>
+<td>&quot;salesDoc&quot;(may be required for high volume clients)</td>
+<td>null</td>
+</tr>
+<tr>
+<td>*&quot;dateOfEstablishment&quot;</td>
+<td>UNIX (milliseconds)</td>
+</tr>
+<tr>
+<td>&quot;beneficialOwners&quot;(HK CORP only)</td>
+<td></td>
+</tr>
+<tr>
+<td>&quot;fullName&quot;</td>
+<td>&quot;Richard&quot;</td>
+</tr>
+<tr>
+<td>&quot;idNumber&quot;</td>
+<td>&quot;1231321312&quot;</td>
+</tr>
+<tr>
+<td>&quot;idDoc&quot;</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<pre class="highlight plaintext"><code>curl -v -XPOST 'https://api.testwyre.com/v2/wallets' \
+  -H "Content-Type: application/json" \
+  -H "X-Api-Key: {api-key}" \
+  -H "X-Api-Signature: {signature}" \
+  -d '{"type":"VBA","name":"{your-unique-identifier}"
+</code></pre><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"callbackUrl"</span><span class="p">:</span><span class="s2">"https://your.website.io/callback"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="s2">"12345678977897800"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"type"</span><span class="p">:</span><span class="s2">"VBA"</span><span class="p">,</span><span class="w">
